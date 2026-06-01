@@ -26,7 +26,8 @@ let package = Package(
             dependencies: [
                 .product(name: "SwiftTerm", package: "SwiftTerm")
             ],
-            path: "Sources/AgentBoard"
+            path: "Sources/AgentBoard",
+            exclude: ["Resources"]
         ),
         .testTarget(
             name: "AgentBoardTests",

@@ -40,10 +40,12 @@ fi
 
 APP_DIR="$ROOT_DIR/dist/$APP_NAME.app"
 MACOS_DIR="$APP_DIR/Contents/MacOS"
+RESOURCES_DIR="$APP_DIR/Contents/Resources"
+APP_ICON="$ROOT_DIR/Sources/AgentBoard/Resources/AppIcon.icns"
 
 echo "==> Staging $APP_DIR"
 rm -rf "$APP_DIR"
-mkdir -p "$MACOS_DIR"
+mkdir -p "$MACOS_DIR" "$RESOURCES_DIR"
 
 cat > "$APP_DIR/Contents/Info.plist" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
@@ -56,6 +58,8 @@ cat > "$APP_DIR/Contents/Info.plist" <<PLIST
     <string>$BUNDLE_ID</string>
     <key>CFBundleName</key>
     <string>$APP_NAME</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -73,6 +77,7 @@ cat > "$APP_DIR/Contents/Info.plist" <<PLIST
 PLIST
 
 cp "$EXECUTABLE" "$MACOS_DIR/$APP_NAME"
+cp "$APP_ICON" "$RESOURCES_DIR/AppIcon.icns"
 
 echo "==> Launching $APP_NAME"
 /usr/bin/open -n "$APP_DIR"
