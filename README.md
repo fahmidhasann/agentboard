@@ -2,6 +2,8 @@
 
 A native macOS command center for multiple embedded terminal sessions.
 
+**Website:** https://agentboard-roan.vercel.app
+
 ## Install
 
 1. Download the latest `.dmg` from [Releases](https://github.com/fahmidhasann/agentboard/releases)

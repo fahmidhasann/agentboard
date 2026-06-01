@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentBoard — macOS Terminal Command Center</title>
+    <meta name="description" content="A native macOS command center for multiple embedded terminal sessions. Monitor AI agents, dev servers, and background tasks in one window.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #8b949e;
+            margin-bottom: 2.5rem;
+        }
+
+        .features {
+            text-align: left;
+            margin: 0 auto 2.5rem;
+            max-width: 420px;
+        }
+
+        .features li {
+            list-style: none;
+            padding: 0.4rem 0;
+            color: #c9d1d9;
+            font-size: 1rem;
+        }
+
+        .features li::before {
+            content: "▸ ";
+            color: #58a6ff;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #238636;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.9rem 2.2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.2s;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn:hover {
+            background: #2ea043;
+        }
+
+        .meta {
+            color: #8b949e;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .gatekeeper {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 480px;
+            text-align: left;
+            font-size: 0.85rem;
+            color: #8b949e;
+        }
+
+        .gatekeeper summary {
+            cursor: pointer;
+            color: #c9d1d9;
+            font-weight: 500;
+        }
+
+        .gatekeeper p {
+            margin-top: 0.5rem;
+        }
+
+        .gatekeeper code {
+            background: #0d1117;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'SF Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            color: #484f58;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AgentBoard</h1>
+        <p class="tagline">A native macOS command center for multiple terminal sessions</p>
+
+        <ul class="features">
+            <li>Run and monitor multiple terminal sessions in one window</li>
+            <li>Auto-detects AI agents (Claude, Codex, Gemini, Aider)</li>
+            <li>Live status badges &mdash; running, idle, needs attention</li>
+            <li>Sessions persist across app restarts</li>
+        </ul>
+
+        <a href="https://github.com/fahmidhasann/agentboard/releases/download/v0.9.0/AgentBoard-0.9.0-arm64.dmg" class="download-btn">
+            Download for macOS
+        </a>
+
+        <p class="meta">Requires macOS 14+ (Sonoma) &middot; Apple Silicon</p>
+
+        <details class="gatekeeper">
+            <summary>First launch blocked by macOS?</summary>
+            <p>AgentBoard is not signed with an Apple Developer certificate. To open it:</p>
+            <p>Right-click the app &rarr; <strong>Open</strong> &rarr; click <strong>Open</strong> in the dialog.</p>
+            <p>Or run: <code>xattr -cr /Applications/AgentBoard.app</code></p>
+        </details>
+
+        <footer>
+            Open source &middot; <a href="https://github.com/fahmidhasann/agentboard">GitHub</a> &middot; MIT License
+        </footer>
+    </div>
+</body>
+</html>
