@@ -13,6 +13,7 @@ struct TerminalSnapshot {
 /// still feeding SwiftTerm's renderer via `super`.
 final class AgentTerminalView: LocalProcessTerminalView {
     weak var controller: TerminalSessionController?
+    private var lastAppliedTheme: TerminalTheme?
 
     override func dataReceived(slice: ArraySlice<UInt8>) {
         super.dataReceived(slice: slice)
@@ -20,6 +21,9 @@ final class AgentTerminalView: LocalProcessTerminalView {
     }
 
     func applyTheme(_ theme: TerminalTheme) {
+        guard theme != lastAppliedTheme else { return }
+
+        lastAppliedTheme = theme
         nativeForegroundColor = theme.foregroundColor
         nativeBackgroundColor = theme.backgroundColor
         caretColor = theme.cursorColor
