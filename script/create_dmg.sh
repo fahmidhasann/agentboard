@@ -1,49 +1,37 @@
 #!/bin/bash
 #
-# Canonical local launcher for AgentBoard.
+# Build a release .dmg for AgentBoard.
 #
-#   ./script/build_and_run.sh            build, (re)stage the .app bundle, and launch it
-#   ./script/build_and_run.sh --verify   the above, then confirm the process is running
+#   ./script/create_dmg.sh
+#
+# Output: dist/AgentBoard-<version>-arm64.dmg
 #
 set -euo pipefail
 
-APP_NAME="AgentBoard"
-BUNDLE_ID="com.fahmid.AgentBoard"
-CONFIG="debug"
-
-# Resolve repo root regardless of where the script is invoked from.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-
-source "$SCRIPT_DIR/version.sh"
 cd "$ROOT_DIR"
 
-VERIFY=0
-for arg in "$@"; do
-    case "$arg" in
-        --verify) VERIFY=1 ;;
-        --release) CONFIG="release" ;;
-        *) echo "Unknown argument: $arg" >&2; exit 2 ;;
-    esac
-done
+source "$SCRIPT_DIR/version.sh"
 
-echo "==> Stopping any running $APP_NAME"
-pkill -x "$APP_NAME" 2>/dev/null || true
+APP_NAME="AgentBoard"
+BUNDLE_ID="com.fahmid.AgentBoard"
+APP_DIR="$ROOT_DIR/dist/$APP_NAME.app"
+MACOS_DIR="$APP_DIR/Contents/MacOS"
+RESOURCES_DIR="$APP_DIR/Contents/Resources"
+APP_ICON="$ROOT_DIR/Sources/AgentBoard/Resources/AppIcon.icns"
+DMG_NAME="$APP_NAME-$APP_VERSION-arm64.dmg"
+DMG_PATH="$ROOT_DIR/dist/$DMG_NAME"
 
-echo "==> Building ($CONFIG)"
-swift build -c "$CONFIG"
+echo "==> Building release (arm64)"
+swift build -c release --arch arm64
 
-BIN_DIR="$(swift build -c "$CONFIG" --show-bin-path)"
+BIN_DIR="$(swift build -c release --arch arm64 --show-bin-path)"
 EXECUTABLE="$BIN_DIR/$APP_NAME"
 if [[ ! -x "$EXECUTABLE" ]]; then
     echo "Build did not produce an executable at $EXECUTABLE" >&2
     exit 1
 fi
-
-APP_DIR="$ROOT_DIR/dist/$APP_NAME.app"
-MACOS_DIR="$APP_DIR/Contents/MacOS"
-RESOURCES_DIR="$APP_DIR/Contents/Resources"
-APP_ICON="$ROOT_DIR/Sources/AgentBoard/Resources/AppIcon.icns"
 
 echo "==> Staging $APP_DIR"
 rm -rf "$APP_DIR"
@@ -81,18 +69,18 @@ PLIST
 cp "$EXECUTABLE" "$MACOS_DIR/$APP_NAME"
 cp "$APP_ICON" "$RESOURCES_DIR/AppIcon.icns"
 
-echo "==> Launching $APP_NAME"
-/usr/bin/open -n "$APP_DIR"
+echo "==> Creating DMG"
+STAGING_DIR=$(mktemp -d)
+cp -R "$APP_DIR" "$STAGING_DIR/"
+ln -s /Applications "$STAGING_DIR/Applications"
 
-if [[ "$VERIFY" -eq 1 ]]; then
-    echo "==> Verifying"
-    for _ in 1 2 3 4 5 6 7 8 9 10; do
-        if pgrep -x "$APP_NAME" >/dev/null 2>&1; then
-            echo "OK: $APP_NAME is running (pid $(pgrep -x "$APP_NAME" | tr '\n' ' '))"
-            exit 0
-        fi
-        sleep 0.5
-    done
-    echo "FAIL: $APP_NAME did not start" >&2
-    exit 1
-fi
+rm -f "$DMG_PATH"
+hdiutil create "$DMG_PATH" \
+    -volname "$APP_NAME" \
+    -srcfolder "$STAGING_DIR" \
+    -ov \
+    -format UDZO
+
+rm -rf "$STAGING_DIR"
+
+echo "==> Done: $DMG_PATH"

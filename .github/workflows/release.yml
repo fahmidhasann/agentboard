@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-dmg:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build release binary
+        run: swift build -c release --arch arm64
+
+      - name: Stage .app bundle
+        run: |
+          source script/version.sh
+          APP_NAME="AgentBoard"
+          BUNDLE_ID="com.fahmid.AgentBoard"
+          BIN_DIR="$(swift build -c release --arch arm64 --show-bin-path)"
+          APP_DIR="dist/$APP_NAME.app"
+          mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
+
+          cat > "$APP_DIR/Contents/Info.plist" <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>CFBundleExecutable</key>
+              <string>$APP_NAME</string>
+              <key>CFBundleIdentifier</key>
+              <string>$BUNDLE_ID</string>
+              <key>CFBundleName</key>
+              <string>$APP_NAME</string>
+              <key>CFBundleIconFile</key>
+              <string>AppIcon</string>
+              <key>CFBundlePackageType</key>
+              <string>APPL</string>
+              <key>CFBundleShortVersionString</key>
+              <string>$APP_VERSION</string>
+              <key>CFBundleVersion</key>
+              <string>$APP_BUILD</string>
+              <key>LSMinimumSystemVersion</key>
+              <string>14.0</string>
+              <key>NSPrincipalClass</key>
+              <string>NSApplication</string>
+              <key>NSHighResolutionCapable</key>
+              <true/>
+          </dict>
+          </plist>
+          PLIST
+
+          cp "$BIN_DIR/$APP_NAME" "$APP_DIR/Contents/MacOS/$APP_NAME"
+          cp "Sources/AgentBoard/Resources/AppIcon.icns" "$APP_DIR/Contents/Resources/AppIcon.icns"
+
+      - name: Create DMG
+        run: |
+          source script/version.sh
+          APP_NAME="AgentBoard"
+          DMG_NAME="$APP_NAME-$APP_VERSION-arm64.dmg"
+          STAGING=$(mktemp -d)
+          cp -R "dist/$APP_NAME.app" "$STAGING/"
+          ln -s /Applications "$STAGING/Applications"
+          hdiutil create "dist/$DMG_NAME" -volname "$APP_NAME" -srcfolder "$STAGING" -ov -format UDZO
+          rm -rf "$STAGING"
+          echo "DMG_NAME=$DMG_NAME" >> "$GITHUB_ENV"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/${{ env.DMG_NAME }}
+          generate_release_notes: true
