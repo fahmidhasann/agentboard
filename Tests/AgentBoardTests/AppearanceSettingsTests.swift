@@ -55,6 +55,31 @@ struct AppearanceSettingsTests {
         #expect(TerminalTheme.resolve(appTheme: .system, systemColorScheme: .dark) == .dark)
     }
 
+    @Test("Shortcut reference lists useful app shortcuts")
+    func shortcutReferenceListsUsefulAppShortcuts() {
+        let groups = ShortcutReferenceGroup.all
+
+        #expect(groups.map(\.title) == ["General", "Session", "Search", "View"])
+        #expect(groups.flatMap(\.items).count == 14)
+        #expect(groups[0].items == [
+            ShortcutReferenceItem(title: "New Session", shortcut: "Cmd+N"),
+            ShortcutReferenceItem(title: "New Session with Command", shortcut: "Cmd+Shift+N"),
+            ShortcutReferenceItem(title: "Settings", shortcut: "Cmd+,"),
+            ShortcutReferenceItem(title: "Command Palette", shortcut: "Cmd+Shift+P")
+        ])
+        #expect(groups[1].items.contains(
+            ShortcutReferenceItem(title: "Select Session", shortcut: "Cmd+1 ... Cmd+9")
+        ))
+        #expect(groups[2].items.contains(
+            ShortcutReferenceItem(title: "Close Find", shortcut: "Esc")
+        ))
+        #expect(groups[3].items == [
+            ShortcutReferenceItem(title: "Zoom In", shortcut: "Cmd++"),
+            ShortcutReferenceItem(title: "Zoom Out", shortcut: "Cmd+-"),
+            ShortcutReferenceItem(title: "Actual Size", shortcut: "Cmd+0")
+        ])
+    }
+
     private func decodePreferences(theme: String) throws -> AgentBoardPreferences {
         let data = Data("""
         {

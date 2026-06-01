@@ -1,6 +1,57 @@
 import SwiftUI
 
-/// App settings: terminal, appearance, history, behavior, and the palette shortcut (display-only).
+struct ShortcutReferenceGroup: Equatable, Identifiable {
+    let title: String
+    let items: [ShortcutReferenceItem]
+
+    var id: String { title }
+
+    static let all: [ShortcutReferenceGroup] = [
+        ShortcutReferenceGroup(
+            title: "General",
+            items: [
+                ShortcutReferenceItem(title: "New Session", shortcut: "Cmd+N"),
+                ShortcutReferenceItem(title: "New Session with Command", shortcut: "Cmd+Shift+N"),
+                ShortcutReferenceItem(title: "Settings", shortcut: "Cmd+,"),
+                ShortcutReferenceItem(title: "Command Palette", shortcut: "Cmd+Shift+P")
+            ]
+        ),
+        ShortcutReferenceGroup(
+            title: "Session",
+            items: [
+                ShortcutReferenceItem(title: "Close Session", shortcut: "Cmd+W"),
+                ShortcutReferenceItem(title: "Clear Terminal", shortcut: "Cmd+K"),
+                ShortcutReferenceItem(title: "Select Session", shortcut: "Cmd+1 ... Cmd+9")
+            ]
+        ),
+        ShortcutReferenceGroup(
+            title: "Search",
+            items: [
+                ShortcutReferenceItem(title: "Find", shortcut: "Cmd+F"),
+                ShortcutReferenceItem(title: "Find Next", shortcut: "Cmd+G"),
+                ShortcutReferenceItem(title: "Find Previous", shortcut: "Cmd+Shift+G"),
+                ShortcutReferenceItem(title: "Close Find", shortcut: "Esc")
+            ]
+        ),
+        ShortcutReferenceGroup(
+            title: "View",
+            items: [
+                ShortcutReferenceItem(title: "Zoom In", shortcut: "Cmd++"),
+                ShortcutReferenceItem(title: "Zoom Out", shortcut: "Cmd+-"),
+                ShortcutReferenceItem(title: "Actual Size", shortcut: "Cmd+0")
+            ]
+        )
+    ]
+}
+
+struct ShortcutReferenceItem: Equatable, Identifiable {
+    let title: String
+    let shortcut: String
+
+    var id: String { "\(title)-\(shortcut)" }
+}
+
+/// App settings: terminal, appearance, history, behavior, and shortcut reference.
 struct SettingsView: View {
     @EnvironmentObject var prefs: PreferencesStore
 
@@ -84,10 +135,25 @@ struct SettingsView: View {
             }
 
             Section("Shortcuts") {
-                LabeledContent("Command palette", value: prefs.preferences.paletteShortcutDisplay)
+                ForEach(ShortcutReferenceGroup.all) { group in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(group.title)
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.secondary)
+
+                        ForEach(group.items) { item in
+                            LabeledContent(item.title) {
+                                Text(item.shortcut)
+                                    .font(.system(.body, design: .monospaced))
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                    .padding(.vertical, 2)
+                }
             }
         }
         .formStyle(.grouped)
-        .frame(width: 460, height: 520)
+        .frame(width: 460, height: 640)
     }
 }
