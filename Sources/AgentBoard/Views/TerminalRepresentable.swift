@@ -8,10 +8,12 @@ import AppKit
 struct TerminalRepresentable: NSViewRepresentable {
     let controller: TerminalSessionController
     var fontSize: Double
+    @Environment(\.colorScheme) private var colorScheme
 
     func makeNSView(context: Context) -> AgentTerminalView {
         let view = controller.terminalView
         view.font = Self.font(size: fontSize)
+        applyAppearance(to: view)
         return view
     }
 
@@ -20,6 +22,15 @@ struct TerminalRepresentable: NSViewRepresentable {
         if abs(nsView.font.pointSize - target) > 0.5 {
             nsView.font = Self.font(size: fontSize)
         }
+        applyAppearance(to: nsView)
+    }
+
+    private func applyAppearance(to view: AgentTerminalView) {
+        let name: NSAppearance.Name = (colorScheme == .dark) ? .darkAqua : .aqua
+        let desired = NSAppearance(named: name)
+        guard view.appearance !== desired else { return }
+        view.appearance = desired
+        view.applyThemeColors()
     }
 
     private static func font(size: Double) -> NSFont {
