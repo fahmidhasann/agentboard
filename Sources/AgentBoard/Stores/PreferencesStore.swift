@@ -34,10 +34,6 @@ final class PreferencesStore: ObservableObject {
     }
 
     var preferredColorScheme: ColorScheme? {
-        switch preferences.theme {
-        case .system: return nil
-        case .light: return .light
-        case .dark: return .dark
-        }
+        preferences.theme.preferredColorScheme
     }
 }

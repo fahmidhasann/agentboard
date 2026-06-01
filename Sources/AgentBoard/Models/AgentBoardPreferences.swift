@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /// User-selectable appearance for the app window.
 enum AppTheme: String, Codable, CaseIterable, Identifiable {
@@ -14,6 +15,20 @@ enum AppTheme: String, Codable, CaseIterable, Identifiable {
         case .light: return "Light"
         case .dark: return "Dark"
         }
+    }
+}
+
+extension AppTheme {
+    var preferredColorScheme: ColorScheme? {
+        switch self {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
+        }
+    }
+
+    func resolvedColorScheme(system: ColorScheme) -> ColorScheme {
+        preferredColorScheme ?? system
     }
 }
 

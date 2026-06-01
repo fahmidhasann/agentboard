@@ -4,6 +4,7 @@ import SwiftUI
 struct CommandPaletteView: View {
     @EnvironmentObject var store: SessionStore
     @EnvironmentObject var palette: CommandPaletteModel
+    @Environment(\.openSettings) private var openSettings
 
     @FocusState private var searchFocused: Bool
 
@@ -57,10 +58,10 @@ struct CommandPaletteView: View {
         switch item {
         case .session(let session):
             store.selection = session.id
+            palette.isPresented = false
         case .action(let action):
             perform(action)
         }
-        palette.isPresented = false
     }
 
     private func perform(_ action: CommandPaletteModel.Action) {
@@ -76,8 +77,13 @@ struct CommandPaletteView: View {
         case .clearTerminal:
             if let id = store.selection { store.clearTerminal(id: id) }
         case .settings:
-            AppDelegate.openSettings()
+            palette.isPresented = false
+            DispatchQueue.main.async {
+                openSettings()
+            }
+            return
         }
+        palette.isPresented = false
     }
 }
 

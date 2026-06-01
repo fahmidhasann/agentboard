@@ -4,12 +4,17 @@ import SwiftUI
 struct TerminalDetailView: View {
     @EnvironmentObject var store: SessionStore
     @EnvironmentObject var prefs: PreferencesStore
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         Group {
             if let id = store.selection, let session = store.session(id: id) {
                 if let controller = store.controller(for: id) {
-                    TerminalContainer(session: session, controller: controller)
+                    TerminalContainer(
+                        session: session,
+                        controller: controller,
+                        systemColorScheme: colorScheme
+                    )
                         .id(id)
                 } else {
                     ExitedPlaceholder(session: session)
@@ -29,6 +34,7 @@ private struct TerminalContainer: View {
 
     let session: AgentSession
     let controller: TerminalSessionController
+    let systemColorScheme: ColorScheme
 
     @State private var isRenaming = false
     @State private var isConfirmingClose = false
@@ -40,7 +46,12 @@ private struct TerminalContainer: View {
     @FocusState private var findFieldFocused: Bool
 
     var body: some View {
-        TerminalRepresentable(controller: controller, fontSize: prefs.preferences.terminalFontSize)
+        TerminalRepresentable(
+            controller: controller,
+            fontSize: prefs.preferences.terminalFontSize,
+            appTheme: prefs.preferences.theme,
+            systemColorScheme: systemColorScheme
+        )
             .background(Color(nsColor: .textBackgroundColor))
             .overlay(alignment: .top) {
                 if isFinding {

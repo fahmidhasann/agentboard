@@ -98,16 +98,4 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-
-    /// Opens the Settings scene programmatically (e.g. from the command palette).
-    static func openSettings() {
-        let selectors = ["showSettingsWindow:", "showPreferencesWindow:"]
-        for name in selectors {
-            let selector = Selector((name))
-            if NSApp.responds(to: selector) || NSApp.sendAction(selector, to: nil, from: nil) {
-                NSApp.sendAction(selector, to: nil, from: nil)
-                return
-            }
-        }
-    }
 }

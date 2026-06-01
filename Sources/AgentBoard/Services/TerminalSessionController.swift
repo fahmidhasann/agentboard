@@ -18,6 +18,16 @@ final class AgentTerminalView: LocalProcessTerminalView {
         super.dataReceived(slice: slice)
         controller?.ingest(slice)
     }
+
+    func applyTheme(_ theme: TerminalTheme) {
+        nativeForegroundColor = theme.foregroundColor
+        nativeBackgroundColor = theme.backgroundColor
+        caretColor = theme.cursorColor
+        caretTextColor = theme.backgroundColor
+        layer?.backgroundColor = theme.backgroundColor.cgColor
+        terminal.updateFullScreen()
+        needsDisplay = true
+    }
 }
 
 /// Owns one live terminal: the SwiftTerm view, its process, and the rolling tail/inference state.
