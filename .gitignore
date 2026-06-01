@@ -1,0 +1,12 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# AgentBoard build artifacts
+dist/
+
+# Superpowers
+.superpowers/
+
+# macOS
+.DS_Store

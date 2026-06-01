@@ -1,0 +1,9 @@
+# Codex environment actions for AgentBoard.
+
+[actions.Run]
+description = "Build and launch AgentBoard"
+command = "./script/build_and_run.sh"
+
+[actions.Verify]
+description = "Build, launch, and verify AgentBoard is running"
+command = "./script/build_and_run.sh --verify"
