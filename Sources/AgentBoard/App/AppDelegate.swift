@@ -104,8 +104,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let selectors = ["showSettingsWindow:", "showPreferencesWindow:"]
         for name in selectors {
             let selector = Selector((name))
-            if NSApp.responds(to: selector) || NSApp.sendAction(selector, to: nil, from: nil) {
-                NSApp.sendAction(selector, to: nil, from: nil)
+            if NSApp.sendAction(selector, to: nil, from: nil) {
                 return
             }
         }
