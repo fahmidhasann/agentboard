@@ -27,7 +27,7 @@ struct SidebarView: View {
     @ViewBuilder
     private var flatContent: some View {
         ForEach(store.sessions) { session in
-            SidebarRowView(session: session, showFolder: true)
+            SidebarRowView(session: session)
                 .tag(session.id)
                 .contextMenu { contextMenu(for: session) }
         }
@@ -39,7 +39,7 @@ struct SidebarView: View {
         ForEach(folderGroups) { group in
             Section {
                 ForEach(group.sessions) { session in
-                    SidebarRowView(session: session, showFolder: false)
+                    SidebarRowView(session: session)
                         .tag(session.id)
                         .contextMenu { contextMenu(for: session) }
                 }
@@ -104,7 +104,11 @@ private struct FolderGroup: Identifiable {
     var id: String { path }
 
     var displayName: String {
-        let name = (path as NSString).lastPathComponent
-        return name.isEmpty ? path : name
+        let home = NSHomeDirectory()
+        if path == home { return "~" }
+        if path.hasPrefix(home + "/") {
+            return "~/" + path.dropFirst(home.count + 1)
+        }
+        return path
     }
 }

@@ -23,37 +23,24 @@ struct StatusBadge: View {
     }
 }
 
-/// One sidebar entry: status dot, summary, agent label. In flat mode it also shows the working
-/// folder (in grouped mode the section header already carries it, so `showFolder` is false).
+/// One sidebar entry: status dot + agent–summary, tilde-relative path, and a colored status pill.
 struct SidebarRowView: View {
     let session: AgentSession
-    var showFolder: Bool = false
 
     var body: some View {
         HStack(spacing: 10) {
             StatusBadge(status: session.status)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(session.summary)
+            VStack(alignment: .leading, spacing: 3) {
+                (Text(session.agentLabel).bold() + Text(" - ") + Text(session.summary))
                     .lineLimit(1)
                     .truncationMode(.tail)
-                HStack(spacing: 6) {
-                    Text(session.agentLabel)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    if session.status == .exited, let code = session.exitCode {
-                        Text("· exit \(code)")
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
-                    }
-                    if showFolder, let folder = folderName {
-                        Text("· \(folder)")
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(1)
-                            .truncationMode(.middle)
-                            .help(session.cwd)
-                    }
-                }
+                Text(displayPath)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .truncationMode(.middle)
+                    .help(session.cwd)
+                StatusPill(status: session.status)
             }
             Spacer(minLength: 0)
         }
@@ -61,8 +48,43 @@ struct SidebarRowView: View {
         .contentShape(Rectangle())
     }
 
-    private var folderName: String? {
-        let name = (session.cwd as NSString).lastPathComponent
-        return name.isEmpty ? nil : name
+    private var displayPath: String {
+        let home = NSHomeDirectory()
+        if session.cwd == home { return "~" }
+        if session.cwd.hasPrefix(home + "/") {
+            return "~/" + session.cwd.dropFirst(home.count + 1)
+        }
+        return session.cwd
+    }
+}
+
+struct StatusPill: View {
+    let status: SessionStatus
+
+    var body: some View {
+        Text(status.displayName)
+            .font(.caption2)
+            .foregroundStyle(foregroundColor)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 1)
+            .background(backgroundColor, in: Capsule())
+    }
+
+    private var foregroundColor: Color {
+        switch status {
+        case .running: return .green
+        case .idle: return .gray
+        case .attentionNeeded: return .orange
+        case .exited: return .red
+        }
+    }
+
+    private var backgroundColor: Color {
+        switch status {
+        case .running: return .green.opacity(0.15)
+        case .idle: return .gray.opacity(0.15)
+        case .attentionNeeded: return .orange.opacity(0.15)
+        case .exited: return .red.opacity(0.15)
+        }
     }
 }

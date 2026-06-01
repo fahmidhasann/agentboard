@@ -40,6 +40,12 @@ struct ContentView: View {
                 .menuIndicator(.visible)
                 .help("New Session (⌘N) — ▾ for options")
             }
+            ToolbarItem(placement: .primaryAction) {
+                SettingsLink {
+                    Label("Settings", systemImage: "gearshape")
+                }
+                .help("Settings (⌘,)")
+            }
         }
         .sheet(isPresented: $store.isPresentingNewSession) {
             NewSessionSheet()

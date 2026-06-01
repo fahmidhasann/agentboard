@@ -134,8 +134,12 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
         if slice.contains(0x07) {
             bellPending = true
         }
-        let text = decoder.decode(slice)
+        var text = decoder.decode(slice)
         if !text.isEmpty {
+            if let afterClear = ScreenClearDetector.textAfterLastClear(text) {
+                buffer.clear()
+                text = afterClear
+            }
             buffer.ingest(AnsiSanitizer.strip(text))
         }
         attentionSignaled = AttentionEvaluator.evaluate(

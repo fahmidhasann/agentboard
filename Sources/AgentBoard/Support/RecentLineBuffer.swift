@@ -32,13 +32,25 @@ struct RecentLineBuffer {
         partial.isEmpty ? (lines.last ?? "") : partial
     }
 
-    /// Feed already-sanitized text (newlines preserved) into the buffer.
+    /// Feed already-sanitized text (newlines and `\r` preserved) into the buffer.
+    ///
+    /// `\r\n` is treated as a single newline. A standalone `\r` simulates a carriage return by
+    /// discarding everything before it on the current line — this is how TUI apps (Ink, Bubble Tea)
+    /// overwrite previous content during redraws.
     mutating func ingest(_ text: String) {
         guard !text.isEmpty else { return }
-        partial += text
+        let normalized = text.replacingOccurrences(of: "\r\n", with: "\n")
+        partial += normalized
         while let nl = partial.firstIndex(of: "\n") {
-            appendLine(String(partial[partial.startIndex..<nl]))
+            var line = String(partial[partial.startIndex..<nl])
+            if let cr = line.lastIndex(of: "\r") {
+                line = String(line[line.index(after: cr)...])
+            }
+            appendLine(line)
             partial = String(partial[partial.index(after: nl)...])
+        }
+        if let cr = partial.lastIndex(of: "\r") {
+            partial = String(partial[partial.index(after: cr)...])
         }
         if partial.count > maxFragment {
             appendLine(String(partial.suffix(maxFragment)))
@@ -85,7 +97,7 @@ enum AnsiSanitizer {
         // Drop remaining C0 control chars (incl. carriage returns and BEL) except tab and newline.
         var scalars = String.UnicodeScalarView()
         for u in noEscapes.unicodeScalars {
-            if u == "\n" || u == "\t" {
+            if u == "\n" || u == "\t" || u == "\r" {
                 scalars.append(u)
             } else if u.value >= 0x20 && u.value != 0x7F {
                 scalars.append(u)
@@ -145,6 +157,17 @@ enum AttentionEvaluator {
     static func evaluate(latestLine: String, bellPending: Bool, isSelected: Bool) -> Bool {
         guard !isSelected else { return false }
         return bellPending || AnsiSanitizer.looksLikePrompt(latestLine)
+    }
+}
+
+/// Detects `ESC[2J` (erase display) sequences in raw decoded text and returns only the
+/// content after the last occurrence, so TUI full-screen redraws don't accumulate stale lines.
+enum ScreenClearDetector {
+    private static let eraseDisplay = "\u{1B}[2J"
+
+    static func textAfterLastClear(_ input: String) -> String? {
+        guard let range = input.range(of: eraseDisplay, options: .backwards) else { return nil }
+        return String(input[range.upperBound...])
     }
 }
 
