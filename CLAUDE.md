@@ -64,6 +64,22 @@ The design splits **persisted value-type metadata** from **non-persisted live te
 - Shells launch as login shells: `ShellResolver.loginExecName` produces the `-zsh` style `execName`, resolving `$SHELL` (fallback `/bin/zsh`), launched in `NSHomeDirectory()`.
 - `attentionNeeded` is raised only for **unselected** sessions, on a bell (0x07) or prompt-like output; viewing a session clears it. Background notifications fire only when notifications are enabled and the session is backgrounded.
 - `NotificationService` guards on bundle identifier presence — `UNUserNotificationCenter` traps on bare executables without a bundle, so notifications only work when launched as the staged `.app`.
-- Version is centralized in `script/version.sh` (currently 0.9.0, build 1) — sourced by all build scripts and the CI workflow.
+- Version is centralized in `script/version.sh` — sourced by all build scripts and the CI workflow.
 - CI (`.github/workflows/release.yml`) triggers on `v*` tags, builds a release DMG on macOS 14, and publishes to GitHub Releases.
 - The Codex run actions (`.codex/environments/environment.toml`) just shell out to `build_and_run.sh`.
+
+## Release workflow
+
+The release pipeline is fully automated. When the user asks to "release" or "ship" a new version:
+
+1. **Bump version** — edit `script/version.sh` to the new `APP_VERSION` (e.g. `"0.11.0"`).
+2. **Commit** — stage and commit the version bump (and any other pending changes).
+3. **Tag** — `git tag v<version>` (e.g. `git tag v0.11.0`).
+4. **Push** — `git push origin main --tags`.
+
+That's it. Everything else is automated:
+- GitHub Actions builds the release DMG and uploads it to GitHub Releases with both a versioned name (`AgentBoard-0.11.0-arm64.dmg`) and a stable name (`AgentBoard-latest-arm64.dmg`).
+- The Vercel landing page (`site/index.html`) uses the permanent URL `https://github.com/fahmidhasann/agentboard/releases/latest/download/AgentBoard-latest-arm64.dmg` — it always serves the newest release without any site changes.
+- Vercel auto-deploys from `main` on every push, so any landing page content changes go live immediately.
+
+**Do not hardcode version numbers in `site/index.html` download links.** The `/releases/latest/download/` pattern handles this automatically.
