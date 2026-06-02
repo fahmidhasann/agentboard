@@ -40,7 +40,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 window.makeKeyAndOrderFront(nil)
             }
         }
+        SessionStore.shared.requestSelectedTerminalFocus()
         return true
+    }
+
+    func applicationDidBecomeActive(_ notification: Notification) {
+        SessionStore.shared.requestSelectedTerminalFocus()
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
@@ -80,6 +85,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             closeButton.target = self
             closeButton.action = #selector(hideMainWindow(_:))
         }
+        SessionStore.shared.requestSelectedTerminalFocus()
     }
 
     @objc private func hideMainWindow(_ sender: Any?) {

@@ -28,6 +28,8 @@ final class SessionStore: ObservableObject {
 
     /// Incremented by the View ▸ Find menu to ask the active terminal to show its find bar.
     @Published var findActivationToken = 0
+    /// Incremented when the visible terminal should become first responder.
+    @Published private(set) var terminalFocusRequest = 0
 
     /// Number of stored tail lines to persist; mirrors the user's preference.
     var tailLimit: Int = 500
@@ -97,8 +99,7 @@ final class SessionStore: ObservableObject {
 
         // Seed the label without locking it, so inference can still confirm/refine it.
         let label = hasLabel ? agentLabel! : "Shell"
-        // Prefer the agent name, then the command, for the initial summary.
-        let summary = hasLabel ? agentLabel! : (hasCommand ? trimmedCommand! : "New Session")
+        let summary = PathDisplayName.abbreviate(resolvedCwd)
 
         let session = AgentSession(
             summary: summary,
@@ -120,6 +121,7 @@ final class SessionStore: ObservableObject {
         controllers[session.id] = controller
         selection = session.id
         controller.isSelected = true
+        requestTerminalFocus()
         saveNow()
         return session.id
     }
@@ -185,11 +187,23 @@ final class SessionStore: ObservableObject {
         sessions[index].cwd = cwd
         sessions[index].lastActivityAt = Date()
         sessions[index].updatedAt = Date()
+        if selection == id {
+            requestTerminalFocus()
+        }
         saveNow()
     }
 
     func clearTerminal(id: UUID) {
         controllers[id]?.clear()
+    }
+
+    func requestTerminalFocus() {
+        terminalFocusRequest += 1
+    }
+
+    func requestSelectedTerminalFocus() {
+        guard let id = selection, controllers[id]?.isProcessRunning == true else { return }
+        requestTerminalFocus()
     }
 
     /// Opens the New Session dialog, optionally prefilled from a quick-launch agent.
@@ -211,7 +225,7 @@ final class SessionStore: ObservableObject {
         saveNow()
     }
 
-    // MARK: - Renaming (locks auto-inference for the edited field)
+    // MARK: - Renaming
 
     func setSummary(id: UUID, _ text: String) {
         guard let index = sessions.firstIndex(where: { $0.id == id }) else { return }
@@ -317,6 +331,9 @@ final class SessionStore: ObservableObject {
         }
         guard let current = selection, let controller = controllers[current] else { return }
         controller.isSelected = true // didSet clears any pending bell + attention badge
+        if controller.isProcessRunning {
+            requestTerminalFocus()
+        }
         // Reflect cleared attention immediately rather than waiting for the next tick.
         if let index = sessions.firstIndex(where: { $0.id == current }), sessions[index].status == .attentionNeeded {
             sessions[index].status = controller.isProcessRunning ? .running : .exited
@@ -351,6 +368,9 @@ final class SessionStore: ObservableObject {
             sessions = decoded.map { session in
                 var session = session
                 if session.status != .exited { session.status = .exited }
+                if !session.isSummaryUserEdited {
+                    session.summary = PathDisplayName.abbreviate(session.cwd)
+                }
                 return session
             }
         } catch {

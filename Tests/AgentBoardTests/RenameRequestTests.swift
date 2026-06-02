@@ -34,6 +34,39 @@ import Testing
     #expect(store.session(id: session.id)?.cwd == "/tmp/AgentBoard Folder")
 }
 
+@Test func pathDisplayNameAbbreviatesHomePaths() {
+    let home = "/Users/example"
+
+    #expect(PathDisplayName.abbreviate(home, homeDirectory: home) == "~")
+    #expect(PathDisplayName.abbreviate(home + "/Downloads", homeDirectory: home) == "~/Downloads")
+    #expect(PathDisplayName.abbreviate("/tmp/AgentBoard", homeDirectory: home) == "/tmp/AgentBoard")
+}
+
+@Test func loadingNormalizesUneditedSessionNamesToDirectoryLabels() throws {
+    let directory = try temporaryDirectory()
+    let sessionsFile = directory.appendingPathComponent("sessions.json")
+    let home = NSHomeDirectory()
+    let unedited = makeSession(summary: "untrusted output", cwd: home + "/Downloads")
+    let edited = makeSession(summary: "Manual Name", cwd: home + "/Documents", isSummaryUserEdited: true)
+    let data = try JSONEncoder().encode([unedited, edited])
+    try data.write(to: sessionsFile)
+
+    let store = SessionStore(directory: directory)
+
+    #expect(store.session(id: unedited.id)?.summary == "~/Downloads")
+    #expect(store.session(id: edited.id)?.summary == "Manual Name")
+}
+
+@Test func inferenceDoesNotChangeSessionName() {
+    let service = LabelInferenceService()
+    var session = makeSession(summary: "~/Projects")
+
+    service.apply(service.infer(text: "$ claude\nYes, I trust this folder\n"), to: &session)
+
+    #expect(session.agentLabel == "Claude")
+    #expect(session.summary == "~/Projects")
+}
+
 @Test func corruptSessionsFileLoadsEmptyAndCreatesBackup() throws {
     let directory = try temporaryDirectory()
     let sessionsFile = directory.appendingPathComponent("sessions.json")
@@ -98,13 +131,15 @@ private func makeStore(tailLimit: Int = 500) -> SessionStore {
 private func makeSession(
     summary: String = "Session",
     cwd: String = NSTemporaryDirectory(),
-    recentTail: [String] = []
+    recentTail: [String] = [],
+    isSummaryUserEdited: Bool = false
 ) -> AgentSession {
     AgentSession(
         summary: summary,
         agentLabel: "Shell",
         cwd: cwd,
         shellPath: "/bin/zsh",
+        isSummaryUserEdited: isSummaryUserEdited,
         recentTail: recentTail
     )
 }

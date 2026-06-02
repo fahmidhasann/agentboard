@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Small editor for a session's summary and agent label; saving marks each field user-edited.
+/// Small editor for a session's name and agent label; saving marks each field user-edited.
 struct RenameSheet: View {
     @EnvironmentObject var store: SessionStore
     @Environment(\.dismiss) private var dismiss
@@ -21,7 +21,7 @@ struct RenameSheet: View {
             Text("Rename Session")
                 .font(.headline)
             Form {
-                TextField("Summary", text: $summary)
+                TextField("Name", text: $summary)
                 TextField("Agent", text: $agentLabel)
             }
             .formStyle(.grouped)

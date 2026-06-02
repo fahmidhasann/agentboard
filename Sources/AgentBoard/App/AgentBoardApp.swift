@@ -71,6 +71,14 @@ struct AppCommands: Commands {
         }
 
         CommandMenu("Session") {
+            Button("Rename Session…") {
+                if let id = store.selection { store.pendingRenameID = id }
+            }
+            .keyboardShortcut("r", modifiers: [.command, .shift])
+            .disabled(store.selection == nil)
+
+            Divider()
+
             Button("Close Session") {
                 if let id = store.selection { store.requestCloseSession(id: id) }
             }
