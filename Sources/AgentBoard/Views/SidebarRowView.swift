@@ -25,6 +25,8 @@ struct StatusBadge: View {
 
 /// One sidebar entry: status dot + agent–summary, tilde-relative path, and a colored status pill.
 struct SidebarRowView: View {
+    @EnvironmentObject var store: SessionStore
+
     let session: AgentSession
 
     var body: some View {
@@ -43,6 +45,18 @@ struct SidebarRowView: View {
                 StatusPill(status: session.status)
             }
             Spacer(minLength: 0)
+            Button {
+                store.pendingRenameID = session.id
+            } label: {
+                Image(systemName: "pencil")
+                    .font(.system(size: 15, weight: .medium))
+                    .frame(width: 28, height: 28)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .foregroundStyle(.secondary)
+            .help("Rename Session")
+            .accessibilityLabel("Rename Session")
         }
         .padding(.vertical, 2)
         .contentShape(Rectangle())

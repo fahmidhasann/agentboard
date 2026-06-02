@@ -30,7 +30,6 @@ private struct TerminalContainer: View {
     let session: AgentSession
     let controller: TerminalSessionController
 
-    @State private var isRenaming = false
     @State private var isConfirmingClose = false
 
     @State private var isFinding = false
@@ -62,7 +61,7 @@ private struct TerminalContainer: View {
             .navigationSubtitle(session.agentLabel)
             .toolbar {
                 ToolbarItemGroup(placement: .primaryAction) {
-                    Button { isRenaming = true } label: {
+                    Button { store.pendingRenameID = session.id } label: {
                         Label("Rename", systemImage: "pencil")
                     }
                     Button { store.clearTerminal(id: session.id) } label: {
@@ -80,20 +79,11 @@ private struct TerminalContainer: View {
                     .help("Close Session (⌘W)")
                 }
             }
-            .sheet(isPresented: $isRenaming) {
-                RenameSheet(session: session)
-            }
             .alert("Close this session?", isPresented: $isConfirmingClose) {
                 Button("Close", role: .destructive) { store.closeSession(id: session.id) }
                 Button("Cancel", role: .cancel) {}
             } message: {
                 Text("“\(session.summary)” will be closed and its process terminated.")
-            }
-            .onChange(of: store.pendingRenameID) { _, newValue in
-                if newValue == session.id {
-                    isRenaming = true
-                    store.pendingRenameID = nil
-                }
             }
     }
 
@@ -200,50 +190,5 @@ private struct EmptyDetailView: View {
         }
         .padding(40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-
-/// Small editor for a session's summary and agent label; saving marks each field user-edited.
-private struct RenameSheet: View {
-    @EnvironmentObject var store: SessionStore
-    @Environment(\.dismiss) private var dismiss
-
-    let session: AgentSession
-
-    @State private var summary: String
-    @State private var agentLabel: String
-
-    init(session: AgentSession) {
-        self.session = session
-        _summary = State(initialValue: session.summary)
-        _agentLabel = State(initialValue: session.agentLabel)
-    }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("Rename Session")
-                .font(.headline)
-            Form {
-                TextField("Summary", text: $summary)
-                TextField("Agent", text: $agentLabel)
-            }
-            .formStyle(.grouped)
-            HStack {
-                Spacer()
-                Button("Cancel") { dismiss() }
-                    .keyboardShortcut(.cancelAction)
-                Button("Save") { save() }
-                    .keyboardShortcut(.defaultAction)
-                    .buttonStyle(.borderedProminent)
-            }
-        }
-        .padding(20)
-        .frame(width: 380)
-    }
-
-    private func save() {
-        store.setSummary(id: session.id, summary)
-        store.setAgentLabel(id: session.id, agentLabel)
-        dismiss()
     }
 }

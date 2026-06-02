@@ -6,6 +6,8 @@ struct ContentView: View {
     @EnvironmentObject var prefs: PreferencesStore
     @EnvironmentObject var palette: CommandPaletteModel
 
+    @State private var renamingSession: AgentSession?
+
     var body: some View {
         NavigationSplitView {
             SidebarView()
@@ -56,6 +58,26 @@ struct ContentView: View {
             CommandPaletteView()
                 .environmentObject(store)
                 .environmentObject(palette)
+        }
+        .sheet(item: $renamingSession) { session in
+            RenameSheet(session: session)
+                .environmentObject(store)
+        }
+        .onChange(of: store.pendingRenameID) { _, newValue in
+            presentPendingRename(id: newValue)
+        }
+    }
+
+    private func presentPendingRename(id: UUID?) {
+        guard let id else { return }
+        guard let session = store.session(id: id) else {
+            store.pendingRenameID = nil
+            return
+        }
+
+        store.pendingRenameID = nil
+        DispatchQueue.main.async {
+            renamingSession = session
         }
     }
 }
