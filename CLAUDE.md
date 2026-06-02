@@ -20,6 +20,15 @@ swift build                          # bare build (no .app bundle / launch)
 
 `build_and_run.sh` is the canonical launcher — it `pkill`s any running instance, rebuilds, regenerates `dist/AgentBoard.app/Contents/Info.plist` (bundle ID `com.fahmid.AgentBoard`), copies the executable in, and `open -n`s it. There is no Xcode project; everything is SwiftPM.
 
+## Agent workflow
+
+- After any code change, rebuild and relaunch with `./script/build_and_run.sh --verify`.
+- Run `./script/run_tests.sh` for relevant unit tests when tests are available or affected.
+- Verify the changed feature in the launched `dist/AgentBoard.app` before final response.
+- Use `./script/create_dmg.sh` only when a release/installable build is needed.
+- If build, launch, or tests fail, report the exact command and the main blocker.
+- Do not assume an already-open AgentBoard app includes source changes; rebuild first.
+
 **Tests require the `run_tests.sh` wrapper** on a Command-Line-Tools-only machine: it points swift at the developer frameworks dir so the bundled swift-testing framework resolves. Plain `swift test` only works with full Xcode installed. The tests use the `swift-testing` framework (`@Test`/`#expect`), not XCTest.
 
 ## Source layout

@@ -314,12 +314,48 @@ final class SessionStore: ObservableObject {
             sessions = decoded.map { session in
                 var session = session
                 if session.status != .exited { session.status = .exited }
+                // Legacy cleanup: repair garbled summaries from pre-71cd719 sessions.
+                if !session.isSummaryUserEdited && isGarbled(session.summary) {
+                    session.summary = (session.agentLabel != "Shell") ? session.agentLabel : "New Session"
+                }
                 return session
             }
         } catch {
             backupCorruptFile()
             sessions = []
         }
+    }
+
+    /// Conservative heuristic: detect summaries that are obviously garbled (repeated patterns,
+    /// excessive box-drawing chars, or unreasonably long first-line content).
+    private func isGarbled(_ text: String) -> Bool {
+        guard !text.isEmpty else { return false }
+
+        // Repeated 3+ character patterns: "oopencodeopopen..." → garbled
+        if text.range(of: #"(.{3,})\1"#, options: .regularExpression) != nil {
+            return true
+        }
+
+        // Starts and ends with box-drawing characters: "│ Available Tools │" → banner noise
+        let first = text.unicodeScalars.first
+        let last = text.unicodeScalars.last
+        if let f = first, let l = last,
+           (f.value >= 0x2500 && f.value <= 0x257F) && (l.value >= 0x2500 && l.value <= 0x257F) {
+            return true
+        }
+
+        // Mostly box-drawing characters (Unicode 0x2500-0x257F)
+        let boxChars = text.unicodeScalars.filter { $0.value >= 0x2500 && $0.value <= 0x257F }
+        if boxChars.count > text.count / 2 {
+            return true
+        }
+
+        // Unreasonably long first-line summary without spaces (>60 chars solid)
+        if text.count > 60 && !text.contains(" ") {
+            return true
+        }
+
+        return false
     }
 
     private func backupCorruptFile() {

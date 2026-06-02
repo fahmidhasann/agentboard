@@ -27,7 +27,7 @@ struct SidebarView: View {
     @ViewBuilder
     private var flatContent: some View {
         ForEach(store.sessions) { session in
-            SidebarRowView(session: session)
+            SidebarRowView(session: session) { store.pendingRenameID = session.id }
                 .tag(session.id)
                 .contextMenu { contextMenu(for: session) }
         }
@@ -39,7 +39,7 @@ struct SidebarView: View {
         ForEach(folderGroups) { group in
             Section {
                 ForEach(group.sessions) { session in
-                    SidebarRowView(session: session)
+                    SidebarRowView(session: session) { store.pendingRenameID = session.id }
                         .tag(session.id)
                         .contextMenu { contextMenu(for: session) }
                 }

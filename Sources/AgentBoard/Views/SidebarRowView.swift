@@ -26,6 +26,9 @@ struct StatusBadge: View {
 /// One sidebar entry: status dot + agent–summary, tilde-relative path, and a colored status pill.
 struct SidebarRowView: View {
     let session: AgentSession
+    var onRename: (() -> Void)?
+
+    @State private var isHovering = false
 
     var body: some View {
         HStack(spacing: 10) {
@@ -43,9 +46,19 @@ struct SidebarRowView: View {
                 StatusPill(status: session.status)
             }
             Spacer(minLength: 0)
+            if isHovering, let onRename {
+                Button(action: onRename) {
+                    Image(systemName: "pencil")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                .buttonStyle(.plain)
+                .help("Rename (⇧⌘R)")
+            }
         }
         .padding(.vertical, 2)
         .contentShape(Rectangle())
+        .onHover { isHovering = $0 }
     }
 
     private var displayPath: String {

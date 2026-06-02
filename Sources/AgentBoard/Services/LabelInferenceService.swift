@@ -73,30 +73,9 @@ struct LabelInferenceService {
 
     // MARK: - Summary
 
-    /// Concise summary from the first meaningful (non-empty, non-prompt) line of text.
+    /// Disabled: auto-generated summaries from terminal output were unreliable. Users rename
+    /// sessions manually via the pencil icon or ⇧⌘R.
     func suggestSummary(from text: String) -> String? {
-        for rawLine in text.split(separator: "\n", omittingEmptySubsequences: false) {
-            let candidate = meaningfulContent(of: String(rawLine))
-            if let candidate { return concise(candidate) }
-        }
         return nil
-    }
-
-    private func meaningfulContent(of line: String) -> String? {
-        var working = Substring(line)
-        if let promptRange = working.range(of: #"^.*[\$#%›❯]\s+"#, options: .regularExpression) {
-            working = working[promptRange.upperBound...]
-        }
-        let trimmed = working.trimmingCharacters(in: .whitespaces)
-        guard trimmed.count >= 2 else { return nil }
-        guard trimmed.rangeOfCharacter(from: .alphanumerics) != nil else { return nil }
-        return trimmed
-    }
-
-    private func concise(_ text: String, limit: Int = 48) -> String {
-        let collapsed = text.replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression)
-        if collapsed.count <= limit { return collapsed }
-        let end = collapsed.index(collapsed.startIndex, offsetBy: limit)
-        return collapsed[collapsed.startIndex..<end].trimmingCharacters(in: .whitespaces) + "…"
     }
 }
