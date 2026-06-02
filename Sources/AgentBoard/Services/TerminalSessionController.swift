@@ -127,6 +127,10 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
         buffer.clear()
     }
 
+    func updateTailLimit(_ limit: Int) {
+        buffer.updateLimit(limit)
+    }
+
     // MARK: - Output ingestion (called from AgentTerminalView.dataReceived)
 
     func ingest(_ slice: ArraySlice<UInt8>) {

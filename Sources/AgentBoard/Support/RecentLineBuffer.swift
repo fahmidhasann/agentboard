@@ -69,6 +69,11 @@ struct RecentLineBuffer {
         }
     }
 
+    mutating func updateLimit(_ newLimit: Int) {
+        limit = max(1, newLimit)
+        trim()
+    }
+
     mutating func clear() {
         lines.removeAll(keepingCapacity: true)
         partial = ""

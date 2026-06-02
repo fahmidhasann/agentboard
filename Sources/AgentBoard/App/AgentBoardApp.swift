@@ -72,7 +72,7 @@ struct AppCommands: Commands {
 
         CommandMenu("Session") {
             Button("Close Session") {
-                if let id = store.selection { store.closeSession(id: id) }
+                if let id = store.selection { store.requestCloseSession(id: id) }
             }
             .keyboardShortcut("w", modifiers: .command)
             .disabled(store.selection == nil)

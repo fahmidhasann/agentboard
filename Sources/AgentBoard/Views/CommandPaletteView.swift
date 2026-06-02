@@ -72,7 +72,7 @@ struct CommandPaletteView: View {
         case .renameSession:
             store.pendingRenameID = store.selection
         case .closeSession:
-            if let id = store.selection { store.closeSession(id: id) }
+            if let id = store.selection { store.requestCloseSession(id: id) }
         case .clearTerminal:
             if let id = store.selection { store.clearTerminal(id: id) }
         case .settings:

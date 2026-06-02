@@ -68,7 +68,7 @@ struct SidebarView: View {
             Button("Restart") { store.restartSession(id: session.id) }
         }
         Divider()
-        Button("Close Session", role: .destructive) { store.closeSession(id: session.id) }
+        Button("Close Session", role: .destructive) { store.requestCloseSession(id: session.id) }
     }
 
     private var emptyState: some View {

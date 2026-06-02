@@ -1,9 +1,11 @@
 import Foundation
 import SwiftUI
+import os
 
 /// Observable owner of ``AgentBoardPreferences``, persisted to JSON for inspectability.
 final class PreferencesStore: ObservableObject {
     static let shared = PreferencesStore()
+    private static let logger = Logger(subsystem: "com.fahmid.AgentBoard", category: "PreferencesStore")
 
     @Published var preferences: AgentBoardPreferences {
         didSet { saveNow() }
@@ -13,10 +15,13 @@ final class PreferencesStore: ObservableObject {
 
     init(url: URL = AppPaths.preferencesFile) {
         self.url = url
-        if let data = try? Data(contentsOf: url),
-           let decoded = try? JSONDecoder().decode(AgentBoardPreferences.self, from: data) {
-            self.preferences = decoded
-        } else {
+        do {
+            let data = try Data(contentsOf: url)
+            self.preferences = try JSONDecoder().decode(AgentBoardPreferences.self, from: data)
+        } catch CocoaError.fileReadNoSuchFile {
+            self.preferences = AgentBoardPreferences()
+        } catch {
+            Self.logger.error("Failed to load preferences from \(url.path, privacy: .public): \(error.localizedDescription, privacy: .public)")
             self.preferences = AgentBoardPreferences()
         }
         // didSet does not run for initialization, so no spurious write here.
@@ -25,12 +30,16 @@ final class PreferencesStore: ObservableObject {
     func saveNow() {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
-        guard let data = try? encoder.encode(preferences) else { return }
-        try? FileManager.default.createDirectory(
-            at: url.deletingLastPathComponent(),
-            withIntermediateDirectories: true
-        )
-        try? data.write(to: url, options: .atomic)
+        do {
+            let data = try encoder.encode(preferences)
+            try FileManager.default.createDirectory(
+                at: url.deletingLastPathComponent(),
+                withIntermediateDirectories: true
+            )
+            try data.write(to: url, options: .atomic)
+        } catch {
+            Self.logger.error("Failed to save preferences to \(self.url.path, privacy: .public): \(error.localizedDescription, privacy: .public)")
+        }
     }
 
     var preferredColorScheme: ColorScheme? {

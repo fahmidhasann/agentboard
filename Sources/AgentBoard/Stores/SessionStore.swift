@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import AppKit
+import os
 
 /// The single source of truth for session metadata and live terminal controllers.
 ///
@@ -9,6 +10,7 @@ import AppKit
 /// reloads as `.exited` with its recent tail intact, ready to be restarted.
 final class SessionStore: ObservableObject {
     static let shared = SessionStore()
+    private static let logger = Logger(subsystem: "com.fahmid.AgentBoard", category: "SessionStore")
 
     @Published var sessions: [AgentSession] = []
     @Published var selection: UUID? {
@@ -19,6 +21,8 @@ final class SessionStore: ObservableObject {
 
     /// Drives the New Session… dialog (mirrors `pendingRenameID`).
     @Published var isPresentingNewSession = false
+    /// Set when the app should ask before closing a session.
+    @Published var pendingCloseID: UUID?
     /// When set, the New Session dialog prefills its agent + command from this quick-launch config.
     @Published var newSessionPrefill: AgentLaunchConfig?
 
@@ -86,7 +90,7 @@ final class SessionStore: ObservableObject {
     @discardableResult
     func addSession(cwd: String? = nil, command: String? = nil, agentLabel: String? = nil) -> UUID {
         let shell = ShellResolver.resolve()
-        let resolvedCwd = (cwd?.isEmpty == false) ? cwd! : NSHomeDirectory()
+        let resolvedCwd = resolveLaunchDirectory(cwd)
         let trimmedCommand = command?.trimmingCharacters(in: .whitespacesAndNewlines)
         let hasCommand = trimmedCommand?.isEmpty == false
         let hasLabel = agentLabel?.isEmpty == false
@@ -131,6 +135,30 @@ final class SessionStore: ObservableObject {
         saveNow()
     }
 
+    func requestCloseSession(id: UUID) {
+        guard sessions.contains(where: { $0.id == id }) else { return }
+        requestCloseSession(id: id, confirmClose: PreferencesStore.shared.preferences.confirmClose)
+    }
+
+    func requestCloseSession(id: UUID, confirmClose: Bool) {
+        guard sessions.contains(where: { $0.id == id }) else { return }
+        if confirmClose {
+            pendingCloseID = id
+        } else {
+            closeSession(id: id)
+        }
+    }
+
+    func confirmPendingClose() {
+        guard let id = pendingCloseID else { return }
+        pendingCloseID = nil
+        closeSession(id: id)
+    }
+
+    func cancelPendingClose() {
+        pendingCloseID = nil
+    }
+
     /// Relaunches the shell for an exited session, keeping its row and recent tail.
     func restartSession(id: UUID) {
         guard let index = sessions.firstIndex(where: { $0.id == id }) else { return }
@@ -138,7 +166,7 @@ final class SessionStore: ObservableObject {
 
         let stored = sessions[index]
         let shell = fileManager.fileExists(atPath: stored.shellPath) ? stored.shellPath : ShellResolver.resolve()
-        let cwd = stored.cwd.isEmpty ? NSHomeDirectory() : stored.cwd
+        let cwd = resolveLaunchDirectory(stored.cwd)
 
         let controller = TerminalSessionController(
             sessionID: id,
@@ -154,6 +182,7 @@ final class SessionStore: ObservableObject {
         sessions[index].status = .running
         sessions[index].exitCode = nil
         sessions[index].shellPath = shell
+        sessions[index].cwd = cwd
         sessions[index].lastActivityAt = Date()
         sessions[index].updatedAt = Date()
         saveNow()
@@ -208,12 +237,20 @@ final class SessionStore: ObservableObject {
         }
     }
 
+    func updateTailLimit(_ limit: Int) {
+        tailLimit = max(1, limit)
+        for controller in controllers.values {
+            controller.updateTailLimit(tailLimit)
+        }
+        saveNow()
+    }
+
     // MARK: - Controller callbacks
 
     /// Invoked by a controller when the shell reports a new working directory (OSC 7).
     func updateCwd(id: UUID, _ directory: String?) {
-        guard let directory, let index = sessions.firstIndex(where: { $0.id == id }) else { return }
-        let path = directory.replacingOccurrences(of: "file://", with: "")
+        guard let path = normalizedCwd(from: directory),
+              let index = sessions.firstIndex(where: { $0.id == id }) else { return }
         guard !path.isEmpty, sessions[index].cwd != path else { return }
         sessions[index].cwd = path
         scheduleSave()
@@ -317,6 +354,7 @@ final class SessionStore: ObservableObject {
                 return session
             }
         } catch {
+            Self.logger.error("Failed to load sessions from \(self.sessionsFile.path, privacy: .public): \(error.localizedDescription, privacy: .public)")
             backupCorruptFile()
             sessions = []
         }
@@ -325,7 +363,11 @@ final class SessionStore: ObservableObject {
     private func backupCorruptFile() {
         let stamp = Int(Date().timeIntervalSince1970)
         let backup = directory.appendingPathComponent("sessions.corrupt-\(stamp).json")
-        try? fileManager.copyItem(at: sessionsFile, to: backup)
+        do {
+            try fileManager.copyItem(at: sessionsFile, to: backup)
+        } catch {
+            Self.logger.error("Failed to back up corrupt sessions file \(self.sessionsFile.path, privacy: .public) to \(backup.path, privacy: .public): \(error.localizedDescription, privacy: .public)")
+        }
     }
 
     /// Debounced save (coalesces bursts). Runs on the main run loop so reading `sessions` is safe.
@@ -339,8 +381,12 @@ final class SessionStore: ObservableObject {
     func saveNow() {
         saveWorkItem?.cancel()
         guard let data = encodeTrimmed() else { return }
-        try? fileManager.createDirectory(at: directory, withIntermediateDirectories: true)
-        try? data.write(to: sessionsFile, options: .atomic)
+        do {
+            try fileManager.createDirectory(at: directory, withIntermediateDirectories: true)
+            try data.write(to: sessionsFile, options: .atomic)
+        } catch {
+            Self.logger.error("Failed to save sessions to \(self.sessionsFile.path, privacy: .public): \(error.localizedDescription, privacy: .public)")
+        }
     }
 
     private func encodeTrimmed() -> Data? {
@@ -355,5 +401,24 @@ final class SessionStore: ObservableObject {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return try? encoder.encode(trimmed)
+    }
+
+    private func resolveLaunchDirectory(_ directory: String?) -> String {
+        let candidate = directory?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let path = candidate?.isEmpty == false ? candidate! : NSHomeDirectory()
+        var isDirectory: ObjCBool = false
+        if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
+            return path
+        }
+        Self.logger.error("Working directory \(path, privacy: .public) is unavailable; falling back to home directory")
+        return NSHomeDirectory()
+    }
+
+    private func normalizedCwd(from directory: String?) -> String? {
+        guard let directory, !directory.isEmpty else { return nil }
+        if let url = URL(string: directory), url.isFileURL {
+            return url.path
+        }
+        return directory.removingPercentEncoding ?? directory
     }
 }

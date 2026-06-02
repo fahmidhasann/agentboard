@@ -9,7 +9,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
 
-        SessionStore.shared.tailLimit = PreferencesStore.shared.preferences.persistedTailSize
+        SessionStore.shared.updateTailLimit(PreferencesStore.shared.preferences.persistedTailSize)
         SessionStore.shared.activate()
         NotificationService.shared.requestAuthorizationIfEnabled(
             PreferencesStore.shared.preferences.notificationsEnabled

@@ -63,9 +63,30 @@ struct ContentView: View {
             RenameSheet(session: session)
                 .environmentObject(store)
         }
+        .alert(
+            "Close this session?",
+            isPresented: Binding(
+                get: { store.pendingCloseID != nil },
+                set: { if !$0 { store.cancelPendingClose() } }
+            )
+        ) {
+            Button("Close", role: .destructive) { store.confirmPendingClose() }
+            Button("Cancel", role: .cancel) { store.cancelPendingClose() }
+        } message: {
+            if let session = pendingCloseSession {
+                Text("“\(session.summary)” will be closed and its process terminated.")
+            } else {
+                Text("This session will be closed and its process terminated.")
+            }
+        }
         .onChange(of: store.pendingRenameID) { _, newValue in
             presentPendingRename(id: newValue)
         }
+    }
+
+    private var pendingCloseSession: AgentSession? {
+        guard let id = store.pendingCloseID else { return nil }
+        return store.session(id: id)
     }
 
     private func presentPendingRename(id: UUID?) {

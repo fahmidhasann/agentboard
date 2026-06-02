@@ -30,8 +30,6 @@ private struct TerminalContainer: View {
     let session: AgentSession
     let controller: TerminalSessionController
 
-    @State private var isConfirmingClose = false
-
     @State private var isFinding = false
     @State private var findText = ""
     @State private var findCaseSensitive = false
@@ -73,26 +71,12 @@ private struct TerminalContainer: View {
                             Label("Restart", systemImage: "arrow.clockwise")
                         }
                     }
-                    Button(role: .destructive) { requestClose() } label: {
+                    Button(role: .destructive) { store.requestCloseSession(id: session.id) } label: {
                         Label("Close", systemImage: "xmark")
                     }
                     .help("Close Session (⌘W)")
                 }
             }
-            .alert("Close this session?", isPresented: $isConfirmingClose) {
-                Button("Close", role: .destructive) { store.closeSession(id: session.id) }
-                Button("Cancel", role: .cancel) {}
-            } message: {
-                Text("“\(session.summary)” will be closed and its process terminated.")
-            }
-    }
-
-    private func requestClose() {
-        if prefs.preferences.confirmClose {
-            isConfirmingClose = true
-        } else {
-            store.closeSession(id: session.id)
-        }
     }
 
     // MARK: - Find
@@ -140,7 +124,7 @@ private struct ExitedPlaceholder: View {
                 }
                 .buttonStyle(.borderedProminent)
                 Button(role: .destructive) {
-                    store.closeSession(id: session.id)
+                    store.requestCloseSession(id: session.id)
                 } label: {
                     Label("Close", systemImage: "xmark")
                 }

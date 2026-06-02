@@ -34,7 +34,7 @@ struct SettingsView: View {
                     Text("Persisted tail: \(prefs.preferences.persistedTailSize) lines")
                 }
                 .onChange(of: prefs.preferences.persistedTailSize) { _, newValue in
-                    SessionStore.shared.tailLimit = newValue
+                    SessionStore.shared.updateTailLimit(newValue)
                 }
             }
 
