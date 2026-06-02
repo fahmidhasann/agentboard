@@ -36,6 +36,26 @@ struct AgentSession: Identifiable, Codable, Equatable {
     var recentTail: [String]
     var exitCode: Int32?
 
+    var displayTitle: String {
+        let trimmedSummary = summary.trimmingCharacters(in: .whitespacesAndNewlines)
+        if isSummaryUserEdited, !trimmedSummary.isEmpty {
+            return trimmedSummary
+        }
+        return displayPath
+    }
+
+    var displayPath: String {
+        Self.abbreviatedPath(cwd)
+    }
+
+    var searchableDisplayText: [String] {
+        var values = [displayTitle, displayPath, cwd, agentLabel]
+        if isSummaryUserEdited {
+            values.append(summary)
+        }
+        return values
+    }
+
     init(
         id: UUID = UUID(),
         summary: String = "New Session",
@@ -64,5 +84,14 @@ struct AgentSession: Identifiable, Codable, Equatable {
         self.isAgentUserEdited = isAgentUserEdited
         self.recentTail = recentTail
         self.exitCode = exitCode
+    }
+
+    static func abbreviatedPath(_ path: String) -> String {
+        let home = NSHomeDirectory()
+        if path == home { return "~" }
+        if path.hasPrefix(home + "/") {
+            return "~/" + String(path.dropFirst(home.count + 1))
+        }
+        return path
     }
 }

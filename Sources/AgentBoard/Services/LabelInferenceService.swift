@@ -1,13 +1,12 @@
 import Foundation
 
-/// Derives a session's agent label and summary locally from terminal text.
+/// Derives a session's agent label locally from terminal text.
 ///
 /// Inference never calls a remote service. Results are only applied to fields the user has
 /// not manually edited (see ``apply(_:to:)``).
 struct LabelInferenceService {
     struct Result: Equatable {
         var agentLabel: String?
-        var summary: String?
     }
 
     /// Known coding agents recognized from command invocations, with their display labels.
@@ -23,16 +22,13 @@ struct LabelInferenceService {
     static let defaultAgentLabel = "Shell"
 
     func infer(text: String) -> Result {
-        Result(agentLabel: detectAgent(in: text), summary: suggestSummary(from: text))
+        Result(agentLabel: detectAgent(in: text))
     }
 
     /// Applies inferred values, but never overwrites a field the user has edited.
     func apply(_ result: Result, to session: inout AgentSession) {
         if let agent = result.agentLabel, !session.isAgentUserEdited, session.agentLabel != agent {
             session.agentLabel = agent
-        }
-        if let summary = result.summary, !session.isSummaryUserEdited, session.summary != summary {
-            session.summary = summary
         }
     }
 
@@ -71,32 +67,4 @@ struct LabelInferenceService {
         return cleaned.isEmpty ? nil : cleaned.lowercased()
     }
 
-    // MARK: - Summary
-
-    /// Concise summary from the first meaningful (non-empty, non-prompt) line of text.
-    func suggestSummary(from text: String) -> String? {
-        for rawLine in text.split(separator: "\n", omittingEmptySubsequences: false) {
-            let candidate = meaningfulContent(of: String(rawLine))
-            if let candidate { return concise(candidate) }
-        }
-        return nil
-    }
-
-    private func meaningfulContent(of line: String) -> String? {
-        var working = Substring(line)
-        if let promptRange = working.range(of: #"^.*[\$#%›❯]\s+"#, options: .regularExpression) {
-            working = working[promptRange.upperBound...]
-        }
-        let trimmed = working.trimmingCharacters(in: .whitespaces)
-        guard trimmed.count >= 2 else { return nil }
-        guard trimmed.rangeOfCharacter(from: .alphanumerics) != nil else { return nil }
-        return trimmed
-    }
-
-    private func concise(_ text: String, limit: Int = 48) -> String {
-        let collapsed = text.replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression)
-        if collapsed.count <= limit { return collapsed }
-        let end = collapsed.index(collapsed.startIndex, offsetBy: limit)
-        return collapsed[collapsed.startIndex..<end].trimmingCharacters(in: .whitespaces) + "…"
-    }
 }

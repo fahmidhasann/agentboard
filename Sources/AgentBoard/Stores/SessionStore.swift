@@ -97,8 +97,7 @@ final class SessionStore: ObservableObject {
 
         // Seed the label without locking it, so inference can still confirm/refine it.
         let label = hasLabel ? agentLabel! : "Shell"
-        // Prefer the agent name, then the command, for the initial summary.
-        let summary = hasLabel ? agentLabel! : (hasCommand ? trimmedCommand! : "New Session")
+        let summary = AgentSession.abbreviatedPath(resolvedCwd)
 
         let session = AgentSession(
             summary: summary,
@@ -252,7 +251,10 @@ final class SessionStore: ObservableObject {
         guard let path = normalizedCwd(from: directory),
               let index = sessions.firstIndex(where: { $0.id == id }) else { return }
         guard !path.isEmpty, sessions[index].cwd != path else { return }
-        sessions[index].cwd = path
+        var session = sessions[index]
+        session.cwd = path
+        session.updatedAt = Date()
+        sessions[index] = session
         scheduleSave()
     }
 
@@ -329,9 +331,9 @@ final class SessionStore: ObservableObject {
         guard isBackground else { return }
         switch newStatus {
         case .attentionNeeded:
-            NotificationService.shared.notify(title: session.summary, body: "Needs attention — \(session.agentLabel)")
+            NotificationService.shared.notify(title: session.displayTitle, body: "Needs attention — \(session.agentLabel)")
         case .exited:
-            NotificationService.shared.notify(title: session.summary, body: "Session ended")
+            NotificationService.shared.notify(title: session.displayTitle, body: "Session ended")
         default:
             break
         }

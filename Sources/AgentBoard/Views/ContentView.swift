@@ -74,7 +74,7 @@ struct ContentView: View {
             Button("Cancel", role: .cancel) { store.cancelPendingClose() }
         } message: {
             if let session = pendingCloseSession {
-                Text("“\(session.summary)” will be closed and its process terminated.")
+                Text("“\(session.displayTitle)” will be closed and its process terminated.")
             } else {
                 Text("This session will be closed and its process terminated.")
             }

@@ -1,18 +1,18 @@
 import SwiftUI
 
-/// Small editor for a session's summary and agent label; saving marks each field user-edited.
+/// Small editor for a session's custom title and agent label; saving marks each field user-edited.
 struct RenameSheet: View {
     @EnvironmentObject var store: SessionStore
     @Environment(\.dismiss) private var dismiss
 
     let session: AgentSession
 
-    @State private var summary: String
+    @State private var title: String
     @State private var agentLabel: String
 
     init(session: AgentSession) {
         self.session = session
-        _summary = State(initialValue: session.summary)
+        _title = State(initialValue: session.displayTitle)
         _agentLabel = State(initialValue: session.agentLabel)
     }
 
@@ -21,7 +21,7 @@ struct RenameSheet: View {
             Text("Rename Session")
                 .font(.headline)
             Form {
-                TextField("Summary", text: $summary)
+                TextField("Title", text: $title)
                 TextField("Agent", text: $agentLabel)
             }
             .formStyle(.grouped)
@@ -39,7 +39,7 @@ struct RenameSheet: View {
     }
 
     private func save() {
-        store.setSummary(id: session.id, summary)
+        store.setSummary(id: session.id, title)
         store.setAgentLabel(id: session.id, agentLabel)
         dismiss()
     }

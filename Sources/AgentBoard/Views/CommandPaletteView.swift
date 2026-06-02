@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Spotlight-style palette to search sessions (by summary/agent) and run actions.
+/// Spotlight-style palette to search sessions (by title/path/agent) and run actions.
 struct CommandPaletteView: View {
     @EnvironmentObject var store: SessionStore
     @EnvironmentObject var palette: CommandPaletteModel
@@ -120,14 +120,14 @@ private struct PaletteRow: View {
     private var title: String {
         switch item {
         case .action(let action): return action.title
-        case .session(let session): return session.summary
+        case .session(let session): return session.displayTitle
         }
     }
 
     private var subtitle: String? {
         switch item {
         case .action: return nil
-        case .session(let session): return session.agentLabel
+        case .session(let session): return session.displayPath
         }
     }
 

@@ -70,15 +70,16 @@ final class CommandPaletteModel: ObservableObject {
         }
     }
 
-    /// Pure filter used by the palette UI and unit tests. Sessions match on summary and agent
-    /// label only; actions match on their title. An empty query returns everything.
+    /// Pure filter used by the palette UI and unit tests. Sessions match on display title, cwd,
+    /// custom title, and agent label; actions match on their title. An empty query returns everything.
     func items(sessions: [AgentSession], query: String) -> [Item] {
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
 
         let matchingSessions = sessions.filter { session in
-            trimmed.isEmpty
-                || session.summary.localizedCaseInsensitiveContains(trimmed)
-                || session.agentLabel.localizedCaseInsensitiveContains(trimmed)
+            guard !trimmed.isEmpty else { return true }
+            return session.searchableDisplayText.contains {
+                $0.localizedCaseInsensitiveContains(trimmed)
+            }
         }
 
         let matchingActions = Action.allCases.filter { action in

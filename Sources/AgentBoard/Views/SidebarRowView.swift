@@ -23,7 +23,7 @@ struct StatusBadge: View {
     }
 }
 
-/// One sidebar entry: status dot + agent–summary, tilde-relative path, and a colored status pill.
+/// One sidebar entry: status dot, display title, and tilde-relative path.
 struct SidebarRowView: View {
     @EnvironmentObject var store: SessionStore
 
@@ -33,16 +33,16 @@ struct SidebarRowView: View {
         HStack(spacing: 10) {
             StatusBadge(status: session.status)
             VStack(alignment: .leading, spacing: 3) {
-                (Text(session.agentLabel).bold() + Text(" - ") + Text(session.summary))
+                Text(session.displayTitle)
+                    .fontWeight(.semibold)
                     .lineLimit(1)
                     .truncationMode(.tail)
-                Text(displayPath)
+                Text(session.displayPath)
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                     .truncationMode(.middle)
                     .help(session.cwd)
-                StatusPill(status: session.status)
             }
             Spacer(minLength: 0)
             Button {
@@ -60,45 +60,5 @@ struct SidebarRowView: View {
         }
         .padding(.vertical, 2)
         .contentShape(Rectangle())
-    }
-
-    private var displayPath: String {
-        let home = NSHomeDirectory()
-        if session.cwd == home { return "~" }
-        if session.cwd.hasPrefix(home + "/") {
-            return "~/" + session.cwd.dropFirst(home.count + 1)
-        }
-        return session.cwd
-    }
-}
-
-struct StatusPill: View {
-    let status: SessionStatus
-
-    var body: some View {
-        Text(status.displayName)
-            .font(.caption2)
-            .foregroundStyle(foregroundColor)
-            .padding(.horizontal, 6)
-            .padding(.vertical, 1)
-            .background(backgroundColor, in: Capsule())
-    }
-
-    private var foregroundColor: Color {
-        switch status {
-        case .running: return .green
-        case .idle: return .gray
-        case .attentionNeeded: return .orange
-        case .exited: return .red
-        }
-    }
-
-    private var backgroundColor: Color {
-        switch status {
-        case .running: return .green.opacity(0.15)
-        case .idle: return .gray.opacity(0.15)
-        case .attentionNeeded: return .orange.opacity(0.15)
-        case .exited: return .red.opacity(0.15)
-        }
     }
 }

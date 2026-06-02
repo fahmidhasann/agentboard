@@ -104,11 +104,6 @@ private struct FolderGroup: Identifiable {
     var id: String { path }
 
     var displayName: String {
-        let home = NSHomeDirectory()
-        if path == home { return "~" }
-        if path.hasPrefix(home + "/") {
-            return "~/" + path.dropFirst(home.count + 1)
-        }
-        return path
+        AgentSession.abbreviatedPath(path)
     }
 }

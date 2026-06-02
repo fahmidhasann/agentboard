@@ -55,8 +55,8 @@ private struct TerminalContainer: View {
                 }
             }
             .onChange(of: store.findActivationToken) { _, _ in openFind() }
-            .navigationTitle(session.summary)
-            .navigationSubtitle(session.agentLabel)
+            .navigationTitle(session.displayTitle)
+            .navigationSubtitle(session.displayPath)
             .toolbar {
                 ToolbarItemGroup(placement: .primaryAction) {
                     Button { store.pendingRenameID = session.id } label: {
@@ -112,7 +112,7 @@ private struct ExitedPlaceholder: View {
                 .font(.system(size: 40))
                 .foregroundStyle(.secondary)
             VStack(spacing: 4) {
-                Text(session.summary).font(.headline)
+                Text(session.displayTitle).font(.headline)
                 Text("This session isn't running.")
                     .foregroundStyle(.secondary)
             }
@@ -146,8 +146,8 @@ private struct ExitedPlaceholder: View {
         }
         .padding(32)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle(session.summary)
-        .navigationSubtitle(session.agentLabel)
+        .navigationTitle(session.displayTitle)
+        .navigationSubtitle(session.displayPath)
     }
 }
 
