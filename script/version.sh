@@ -1,3 +1,3 @@
 #!/bin/bash
-APP_VERSION="0.9.0"
+APP_VERSION="0.10.0"
 APP_BUILD="1"
