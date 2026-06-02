@@ -1,0 +1,13 @@
+.build
+.swiftpm
+dist
+Tests
+Sources
+script
+.github
+.codex
+.superpowers
+Package.swift
+Package.resolved
+CLAUDE.md
+PLAN.md
