@@ -58,7 +58,7 @@ struct NewSessionSheet: View {
     }
 
     private var directoryDisplay: String {
-        PathDisplayName.abbreviate(directory)
+        (directory as NSString).abbreviatingWithTildeInPath
     }
 
     private func agent(for id: UUID?) -> AgentLaunchConfig? {
@@ -94,9 +94,6 @@ struct NewSessionSheet: View {
             agentLabel: agent(for: selectedAgentID)?.name
         )
         close()
-        DispatchQueue.main.async {
-            store.requestSelectedTerminalFocus()
-        }
     }
 
     private func close() {

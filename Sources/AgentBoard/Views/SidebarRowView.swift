@@ -23,7 +23,7 @@ struct StatusBadge: View {
     }
 }
 
-/// One sidebar entry: status dot + agent–name, tilde-relative path, and a colored status pill.
+/// One sidebar entry: status dot + agent–summary, tilde-relative path, and a colored status pill.
 struct SidebarRowView: View {
     @EnvironmentObject var store: SessionStore
 
@@ -63,7 +63,12 @@ struct SidebarRowView: View {
     }
 
     private var displayPath: String {
-        PathDisplayName.abbreviate(session.cwd)
+        let home = NSHomeDirectory()
+        if session.cwd == home { return "~" }
+        if session.cwd.hasPrefix(home + "/") {
+            return "~/" + session.cwd.dropFirst(home.count + 1)
+        }
+        return session.cwd
     }
 }
 

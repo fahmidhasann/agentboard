@@ -37,12 +37,7 @@ private struct TerminalContainer: View {
     @FocusState private var findFieldFocused: Bool
 
     var body: some View {
-        TerminalRepresentable(
-            controller: controller,
-            fontSize: prefs.preferences.terminalFontSize,
-            focusRequest: store.terminalFocusRequest,
-            allowsAutoFocus: !isFinding
-        )
+        TerminalRepresentable(controller: controller, fontSize: prefs.preferences.terminalFontSize)
             .background(Color(nsColor: .textBackgroundColor))
             .overlay(alignment: .top) {
                 if isFinding {
@@ -94,7 +89,6 @@ private struct TerminalContainer: View {
     private func closeFind() {
         withAnimation(.easeInOut(duration: 0.12)) { isFinding = false }
         controller.clearSearch()
-        store.requestTerminalFocus()
     }
 
     private func findNext() {
