@@ -5,9 +5,9 @@
     "semantic_hash": "9b178b5022033676c04f4c4930649161"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/App/AgentBoardApp.swift": {
-    "mtime": 1780298173.2671788,
-    "ast_hash": "e872a816d80b540374bc64f5608203dc",
-    "semantic_hash": "e872a816d80b540374bc64f5608203dc"
+    "mtime": 1780389409.2042885,
+    "ast_hash": "02fd29ea6e5102c48936827d89932d92",
+    "semantic_hash": "02fd29ea6e5102c48936827d89932d92"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/App/AppDelegate.swift": {
     "mtime": 1780309957.3387508,
@@ -35,9 +35,9 @@
     "semantic_hash": "d413f3b8bed81a375adcebc9add5f503"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/LabelInferenceService.swift": {
-    "mtime": 1780290153.2438548,
-    "ast_hash": "e7b3ae88b6c75f86b0a65cda0f16b74b",
-    "semantic_hash": "e7b3ae88b6c75f86b0a65cda0f16b74b"
+    "mtime": 1780389404.3940678,
+    "ast_hash": "10809ebf68610f68886694b6c8ce448d",
+    "semantic_hash": "10809ebf68610f68886694b6c8ce448d"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/NotificationService.swift": {
     "mtime": 1780285646.347075,
@@ -50,9 +50,9 @@
     "semantic_hash": "3ffe13d09624623599b5001fa531a989"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/TerminalSessionController.swift": {
-    "mtime": 1780307019.7504125,
-    "ast_hash": "0e9b54a2a83be327d38ed90563a4cedf",
-    "semantic_hash": "0e9b54a2a83be327d38ed90563a4cedf"
+    "mtime": 1780332351.6926868,
+    "ast_hash": "d475b30b38d5059496255ebd2c048346",
+    "semantic_hash": "d475b30b38d5059496255ebd2c048346"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Stores/PreferencesStore.swift": {
     "mtime": 1780303135.0762494,
@@ -60,9 +60,9 @@
     "semantic_hash": "16bc3afd0130be5ed37859d64cc76ca3"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Stores/SessionStore.swift": {
-    "mtime": 1780292117.3243449,
-    "ast_hash": "eef48b6295b7df0947e1df890a326967",
-    "semantic_hash": "eef48b6295b7df0947e1df890a326967"
+    "mtime": 1780388013.3270361,
+    "ast_hash": "1d1a90cc88a978e6025d72bb0d2f716a",
+    "semantic_hash": "1d1a90cc88a978e6025d72bb0d2f716a"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Support/AppPaths.swift": {
     "mtime": 1780285537.772385,
@@ -70,9 +70,9 @@
     "semantic_hash": "6aecf45231f53492fdef6b92cf2098d0"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Support/RecentLineBuffer.swift": {
-    "mtime": 1780290040.0252807,
-    "ast_hash": "2ed3b9aec070370172305abbf8386672",
-    "semantic_hash": "2ed3b9aec070370172305abbf8386672"
+    "mtime": 1780332239.1998122,
+    "ast_hash": "24e910ce3ef80daa22b43a601ae8470a",
+    "semantic_hash": "24e910ce3ef80daa22b43a601ae8470a"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Support/ShellResolver.swift": {
     "mtime": 1780285548.3529077,
@@ -85,9 +85,9 @@
     "semantic_hash": "45bfb1b21212906ea2083f1e75df52c4"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/ContentView.swift": {
-    "mtime": 1780303135.077038,
-    "ast_hash": "b4154f9b97f7fe376fdd791f83275443",
-    "semantic_hash": "b4154f9b97f7fe376fdd791f83275443"
+    "mtime": 1780333860.8093262,
+    "ast_hash": "b948cafea84d535f1dbe79820303e9ef",
+    "semantic_hash": "b948cafea84d535f1dbe79820303e9ef"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/FindBar.swift": {
     "mtime": 1780291972.5390615,
@@ -105,14 +105,14 @@
     "semantic_hash": "9befed826ba913a4f9cef4b89eebd8a2"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/SidebarRowView.swift": {
-    "mtime": 1780292133.6775987,
-    "ast_hash": "76521d495ee172f35e61b8e6ca94b97f",
-    "semantic_hash": "76521d495ee172f35e61b8e6ca94b97f"
+    "mtime": 1780389422.3112237,
+    "ast_hash": "c8b92d26da331fe254fde1dd6dd808ef",
+    "semantic_hash": "c8b92d26da331fe254fde1dd6dd808ef"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/SidebarView.swift": {
-    "mtime": 1780292161.734017,
-    "ast_hash": "e61b99c03a6647ee22e5678fc054187b",
-    "semantic_hash": "e61b99c03a6647ee22e5678fc054187b"
+    "mtime": 1780389431.8269503,
+    "ast_hash": "c951bace3ea4015aadb20efdd1ba0813",
+    "semantic_hash": "c951bace3ea4015aadb20efdd1ba0813"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/TerminalDetailView.swift": {
     "mtime": 1780306215.8420582,
@@ -123,11 +123,6 @@
     "mtime": 1780307026.5067716,
     "ast_hash": "40e4ba75164a939d83295eb0a7fde63a",
     "semantic_hash": "40e4ba75164a939d83295eb0a7fde63a"
-  },
-  "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Tests/AgentBoardTests/PlaceholderTests.swift": {
-    "mtime": 1780305276.39144,
-    "ast_hash": "9d1def558ea97a178f9d4ccbb26a7da8",
-    "semantic_hash": "9d1def558ea97a178f9d4ccbb26a7da8"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/script/build_and_run.sh": {
     "mtime": 1780310807.7629068,
@@ -165,9 +160,9 @@
     "semantic_hash": "13f8307fa33d6d35f4279a1d169c55e5"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/CLAUDE.md": {
-    "mtime": 1780324020.6153977,
-    "ast_hash": "80294f4cf18b5f1bed2b3e8df987eed5",
-    "semantic_hash": "80294f4cf18b5f1bed2b3e8df987eed5"
+    "mtime": 1780386086.607169,
+    "ast_hash": "3f9947f9aaacb1adc6bbc6a38d26b597",
+    "semantic_hash": "3f9947f9aaacb1adc6bbc6a38d26b597"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/README.md": {
     "mtime": 1780312712.549594,
@@ -180,13 +175,38 @@
     "semantic_hash": "2b13c79d37d6ed82a3255b83b6815034"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/site/index.html": {
-    "mtime": 1780311490.6514623,
-    "ast_hash": "b024938a35ce83d56f5d59570ff3c37a",
-    "semantic_hash": "b024938a35ce83d56f5d59570ff3c37a"
+    "mtime": 1780330983.5859072,
+    "ast_hash": "73523e23c075abd9193283d6f90e8721",
+    "semantic_hash": "73523e23c075abd9193283d6f90e8721"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Resources/AppIcon.png": {
     "mtime": 1780305143.279415,
     "ast_hash": "7d3f8a01887b7e4f0afe8c146959daf6",
     "semantic_hash": "7d3f8a01887b7e4f0afe8c146959daf6"
+  },
+  "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Tests/AgentBoardTests/RecentLineBufferTests.swift": {
+    "mtime": 1780385732.4929507,
+    "ast_hash": "76b24cea9126b0e6cbe2cdfe4cb3f9df",
+    "semantic_hash": "76b24cea9126b0e6cbe2cdfe4cb3f9df"
+  },
+  "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Tests/AgentBoardTests/SessionNameGenerationTests.swift": {
+    "mtime": 1780385732.4934747,
+    "ast_hash": "6fe443ee418a613ec8e87372f793388d",
+    "semantic_hash": "6fe443ee418a613ec8e87372f793388d"
+  },
+  "/Users/fahmidhasantaohid/Documents/Development/Agentboard/AGENTS.md": {
+    "mtime": 1780386077.621059,
+    "ast_hash": "b520cacad3c9efa04563c0c040fbf69b",
+    "semantic_hash": "b520cacad3c9efa04563c0c040fbf69b"
+  },
+  "/Users/fahmidhasantaohid/Documents/Development/Agentboard/site/assets/agentboard-hero.png": {
+    "mtime": 1780330504.775786,
+    "ast_hash": "da823a4cce3150e04cb9c1551bc972fd",
+    "semantic_hash": "da823a4cce3150e04cb9c1551bc972fd"
+  },
+  "/Users/fahmidhasantaohid/Documents/Development/Agentboard/site/assets/favicon.svg": {
+    "mtime": 1780330983.5864272,
+    "ast_hash": "f715a9eb6af7fc0551801ef2b3a31e90",
+    "semantic_hash": "f715a9eb6af7fc0551801ef2b3a31e90"
   }
 }
