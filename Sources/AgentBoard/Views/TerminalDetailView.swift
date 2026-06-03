@@ -89,6 +89,10 @@ private struct TerminalContainer: View {
     private func closeFind() {
         withAnimation(.easeInOut(duration: 0.12)) { isFinding = false }
         controller.clearSearch()
+        DispatchQueue.main.async { [controller] in
+            guard let window = controller.terminalView.window else { return }
+            window.makeFirstResponder(controller.terminalView)
+        }
     }
 
     private func findNext() {
