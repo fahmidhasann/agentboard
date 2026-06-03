@@ -80,6 +80,6 @@ The release pipeline is fully automated. When the user asks to "release" or "shi
 That's it. Everything else is automated:
 - GitHub Actions builds the release DMG and uploads it to GitHub Releases with both a versioned name (`AgentBoard-0.11.0-arm64.dmg`) and a stable name (`AgentBoard-latest-arm64.dmg`).
 - The Vercel landing page (`site/index.html`) uses the permanent URL `https://github.com/fahmidhasann/agentboard/releases/latest/download/AgentBoard-latest-arm64.dmg` — it always serves the newest release without any site changes.
-- Vercel auto-deploys from `main` on every push, so any landing page content changes go live immediately.
+- Vercel only redeploys when files inside `site/` actually change (controlled by `ignoreCommand` in `site/vercel.json`). Pushing app code to `main` does not trigger a redeploy.
 
 **Do not hardcode version numbers in `site/index.html` download links.** The `/releases/latest/download/` pattern handles this automatically.
