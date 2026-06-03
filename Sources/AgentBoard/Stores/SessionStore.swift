@@ -135,8 +135,21 @@ final class SessionStore: ObservableObject {
     }
 
     func requestCloseSession(id: UUID) {
-        guard sessions.contains(where: { $0.id == id }) else { return }
-        requestCloseSession(id: id, confirmClose: PreferencesStore.shared.preferences.confirmClose)
+        guard let session = sessions.first(where: { $0.id == id }) else { return }
+
+        guard PreferencesStore.shared.preferences.confirmClose else {
+            closeSession(id: id)
+            return
+        }
+
+        let isRunning = controllers[id]?.isProcessRunning ?? false
+        let hasActiveAgent = session.agentLabel != LabelInferenceService.defaultAgentLabel
+
+        if isRunning && hasActiveAgent {
+            pendingCloseID = id
+        } else {
+            closeSession(id: id)
+        }
     }
 
     func requestCloseSession(id: UUID, confirmClose: Bool) {

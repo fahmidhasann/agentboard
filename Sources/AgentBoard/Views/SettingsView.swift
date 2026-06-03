@@ -39,7 +39,7 @@ struct SettingsView: View {
             }
 
             Section("Behavior") {
-                Toggle("Confirm before closing a session", isOn: $prefs.preferences.confirmClose)
+                Toggle("Confirm before closing active agent sessions", isOn: $prefs.preferences.confirmClose)
                 Toggle("Enable notifications", isOn: $prefs.preferences.notificationsEnabled)
                     .onChange(of: prefs.preferences.notificationsEnabled) { _, enabled in
                         if enabled {
