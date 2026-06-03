@@ -19,6 +19,11 @@ final class AgentTerminalView: LocalProcessTerminalView {
         controller?.ingest(slice)
     }
 
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        controller?.focusIfSelected()
+    }
+
     func applyThemeColors() {
         nativeForegroundColor = .textColor
         nativeBackgroundColor = .textBackgroundColor
@@ -129,6 +134,39 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
 
     func updateTailLimit(_ limit: Int) {
         buffer.updateLimit(limit)
+    }
+
+    // MARK: - Focus
+
+    func focusIfSelected() {
+        guard isSelected else { return }
+        focusTerminal()
+    }
+
+    func focusTerminal(retries: Int = 4) {
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async { [weak self] in
+                self?.focusTerminal(retries: retries)
+            }
+            return
+        }
+
+        guard let window = terminalView.window else {
+            guard retries > 0 else { return }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+                self?.focusTerminal(retries: retries - 1)
+            }
+            return
+        }
+
+        NSApp.activate(ignoringOtherApps: true)
+        window.makeKeyAndOrderFront(nil)
+        guard window.makeFirstResponder(terminalView) || retries == 0 else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
+                self?.focusTerminal(retries: retries - 1)
+            }
+            return
+        }
     }
 
     // MARK: - Output ingestion (called from AgentTerminalView.dataReceived)

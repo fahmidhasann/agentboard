@@ -14,10 +14,7 @@ struct TerminalRepresentable: NSViewRepresentable {
         let view = controller.terminalView
         view.font = Self.font(size: fontSize)
         applyAppearance(to: view)
-        DispatchQueue.main.async {
-            guard let window = view.window else { return }
-            window.makeFirstResponder(view)
-        }
+        controller.focusIfSelected()
         return view
     }
 

@@ -23,7 +23,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         )
 
         // Let our Session ▸ Close Session (⌘W) win over the default File ▸ Close Window.
-        DispatchQueue.main.async { Self.relaxDefaultCloseShortcut() }
+        DispatchQueue.main.async {
+            Self.relaxDefaultCloseShortcut()
+            SessionStore.shared.focusSelectedTerminal()
+        }
     }
 
     /// Keep the app (and its sessions) alive when the window goes away.
@@ -40,6 +43,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 window.makeKeyAndOrderFront(nil)
             }
         }
+        SessionStore.shared.focusSelectedTerminal()
         return true
     }
 

@@ -120,6 +120,7 @@ final class SessionStore: ObservableObject {
         selection = session.id
         controller.isSelected = true
         saveNow()
+        controller.focusTerminal()
         return session.id
     }
 
@@ -198,6 +199,7 @@ final class SessionStore: ObservableObject {
         sessions[index].lastActivityAt = Date()
         sessions[index].updatedAt = Date()
         saveNow()
+        controller.focusIfSelected()
     }
 
     func clearTerminal(id: UUID) {
@@ -255,6 +257,11 @@ final class SessionStore: ObservableObject {
             controller.updateTailLimit(tailLimit)
         }
         saveNow()
+    }
+
+    func focusSelectedTerminal() {
+        guard let current = selection, let controller = controllers[current] else { return }
+        controller.focusTerminal()
     }
 
     // MARK: - Controller callbacks
@@ -336,6 +343,7 @@ final class SessionStore: ObservableObject {
         if let index = sessions.firstIndex(where: { $0.id == current }), sessions[index].status == .attentionNeeded {
             sessions[index].status = controller.isProcessRunning ? .running : .exited
         }
+        controller.focusTerminal()
     }
 
     private func notifyIfBackground(session: AgentSession, newStatus: SessionStatus) {

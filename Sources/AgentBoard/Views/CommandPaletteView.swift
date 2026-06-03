@@ -46,7 +46,7 @@ struct CommandPaletteView: View {
         .frame(width: 560, height: 420)
         .background(.regularMaterial)
         .onAppear { searchFocused = true }
-        .onExitCommand { palette.isPresented = false }
+        .onExitCommand { close(refocusTerminal: true) }
     }
 
     private func runFirst() {
@@ -57,26 +57,39 @@ struct CommandPaletteView: View {
         switch item {
         case .session(let session):
             store.selection = session.id
+            close(refocusTerminal: true)
         case .action(let action):
-            perform(action)
+            close(refocusTerminal: perform(action))
         }
-        palette.isPresented = false
     }
 
-    private func perform(_ action: CommandPaletteModel.Action) {
+    private func perform(_ action: CommandPaletteModel.Action) -> Bool {
         switch action {
         case .newSession:
             store.addSession()
+            return true
         case .switchSession:
-            break // session rows above are the switch targets
+            return true // session rows above are the switch targets
         case .renameSession:
             store.pendingRenameID = store.selection
+            return false
         case .closeSession:
             if let id = store.selection { store.requestCloseSession(id: id) }
+            return false
         case .clearTerminal:
             if let id = store.selection { store.clearTerminal(id: id) }
+            return true
         case .settings:
             AppDelegate.openSettings()
+            return false
+        }
+    }
+
+    private func close(refocusTerminal: Bool) {
+        palette.isPresented = false
+        guard refocusTerminal else { return }
+        DispatchQueue.main.async { [store] in
+            store.focusSelectedTerminal()
         }
     }
 }

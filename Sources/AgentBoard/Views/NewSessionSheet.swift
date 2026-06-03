@@ -99,5 +99,8 @@ struct NewSessionSheet: View {
     private func close() {
         store.newSessionPrefill = nil
         store.isPresentingNewSession = false
+        DispatchQueue.main.async { [store] in
+            store.focusSelectedTerminal()
+        }
     }
 }
