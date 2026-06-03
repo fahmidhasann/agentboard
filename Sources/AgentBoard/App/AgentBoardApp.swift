@@ -7,6 +7,7 @@ struct AgentBoardApp: App {
     @StateObject private var store = SessionStore.shared
     @StateObject private var prefs = PreferencesStore.shared
     @StateObject private var palette = CommandPaletteModel.shared
+    @StateObject private var updates = UpdateCheckService.shared
 
     var body: some Scene {
         WindowGroup(id: "main") {
@@ -14,15 +15,17 @@ struct AgentBoardApp: App {
                 .environmentObject(store)
                 .environmentObject(prefs)
                 .environmentObject(palette)
+                .environmentObject(updates)
                 .preferredColorScheme(prefs.preferredColorScheme)
         }
         .commands {
-            AppCommands(store: store, palette: palette, prefs: prefs)
+            AppCommands(store: store, palette: palette, prefs: prefs, updates: updates)
         }
 
         Settings {
             SettingsView()
                 .environmentObject(prefs)
+                .environmentObject(updates)
                 .preferredColorScheme(prefs.preferredColorScheme)
         }
     }
@@ -33,8 +36,17 @@ struct AppCommands: Commands {
     @ObservedObject var store: SessionStore
     @ObservedObject var palette: CommandPaletteModel
     @ObservedObject var prefs: PreferencesStore
+    @ObservedObject var updates: UpdateCheckService
 
     var body: some Commands {
+        CommandGroup(after: .appInfo) {
+            Button("Check for Updates…") {
+                AppDelegate.showMainWindow()
+                updates.checkManually()
+            }
+            .disabled(updates.isChecking)
+        }
+
         CommandGroup(replacing: .newItem) {
             Button("New Session") { store.addSession() }
                 .keyboardShortcut("n", modifiers: .command)

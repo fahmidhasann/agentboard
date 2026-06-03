@@ -3,6 +3,7 @@ import SwiftUI
 /// App settings: terminal, appearance, history, behavior, and the palette shortcut (display-only).
 struct SettingsView: View {
     @EnvironmentObject var prefs: PreferencesStore
+    @EnvironmentObject var updates: UpdateCheckService
 
     var body: some View {
         Form {
@@ -46,6 +47,17 @@ struct SettingsView: View {
                             NotificationService.shared.requestAuthorizationIfEnabled(true)
                         }
                     }
+                Toggle("Check for updates automatically", isOn: $prefs.preferences.checkForUpdatesAutomatically)
+                Button {
+                    updates.checkManually()
+                } label: {
+                    if updates.isChecking {
+                        Label("Checking…", systemImage: "arrow.triangle.2.circlepath")
+                    } else {
+                        Label("Check for Updates…", systemImage: "arrow.down.circle")
+                    }
+                }
+                .disabled(updates.isChecking)
             }
 
             Section {
@@ -89,5 +101,6 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .frame(width: 460, height: 520)
+        .updateAlert(using: updates)
     }
 }

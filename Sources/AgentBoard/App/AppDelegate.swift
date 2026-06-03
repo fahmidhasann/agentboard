@@ -14,6 +14,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         NotificationService.shared.requestAuthorizationIfEnabled(
             PreferencesStore.shared.preferences.notificationsEnabled
         )
+        Task { @MainActor in
+            UpdateCheckService.shared.checkAutomaticallyIfNeeded()
+        }
 
         NotificationCenter.default.addObserver(
             self,
@@ -111,6 +114,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             if NSApp.sendAction(selector, to: nil, from: nil) {
                 return
             }
+        }
+    }
+
+    static func showMainWindow() {
+        NSApp.activate(ignoringOtherApps: true)
+        for window in NSApp.windows where window.canBecomeMain {
+            window.makeKeyAndOrderFront(nil)
+            return
         }
     }
 }

@@ -24,6 +24,9 @@ struct AgentBoardPreferences: Codable, Equatable {
     var theme: AppTheme
     var confirmClose: Bool
     var notificationsEnabled: Bool
+    var checkForUpdatesAutomatically: Bool
+    var lastUpdateCheckAt: Date?
+    var lastNotifiedUpdateVersion: String?
     var paletteShortcutDisplay: String
     var agents: [AgentLaunchConfig]
     var groupByFolder: Bool
@@ -34,6 +37,9 @@ struct AgentBoardPreferences: Codable, Equatable {
         theme: AppTheme = .system,
         confirmClose: Bool = true,
         notificationsEnabled: Bool = true,
+        checkForUpdatesAutomatically: Bool = true,
+        lastUpdateCheckAt: Date? = nil,
+        lastNotifiedUpdateVersion: String? = nil,
         paletteShortcutDisplay: String = "Cmd+Shift+P",
         agents: [AgentLaunchConfig] = AgentLaunchConfig.defaults,
         groupByFolder: Bool = false
@@ -43,6 +49,9 @@ struct AgentBoardPreferences: Codable, Equatable {
         self.theme = theme
         self.confirmClose = confirmClose
         self.notificationsEnabled = notificationsEnabled
+        self.checkForUpdatesAutomatically = checkForUpdatesAutomatically
+        self.lastUpdateCheckAt = lastUpdateCheckAt
+        self.lastNotifiedUpdateVersion = lastNotifiedUpdateVersion
         self.paletteShortcutDisplay = paletteShortcutDisplay
         self.agents = agents
         self.groupByFolder = groupByFolder
@@ -57,6 +66,9 @@ struct AgentBoardPreferences: Codable, Equatable {
         theme = try c.decodeIfPresent(AppTheme.self, forKey: .theme) ?? d.theme
         confirmClose = try c.decodeIfPresent(Bool.self, forKey: .confirmClose) ?? d.confirmClose
         notificationsEnabled = try c.decodeIfPresent(Bool.self, forKey: .notificationsEnabled) ?? d.notificationsEnabled
+        checkForUpdatesAutomatically = try c.decodeIfPresent(Bool.self, forKey: .checkForUpdatesAutomatically) ?? d.checkForUpdatesAutomatically
+        lastUpdateCheckAt = try c.decodeIfPresent(Date.self, forKey: .lastUpdateCheckAt) ?? d.lastUpdateCheckAt
+        lastNotifiedUpdateVersion = try c.decodeIfPresent(String.self, forKey: .lastNotifiedUpdateVersion) ?? d.lastNotifiedUpdateVersion
         paletteShortcutDisplay = try c.decodeIfPresent(String.self, forKey: .paletteShortcutDisplay) ?? d.paletteShortcutDisplay
         agents = try c.decodeIfPresent([AgentLaunchConfig].self, forKey: .agents) ?? d.agents
         groupByFolder = try c.decodeIfPresent(Bool.self, forKey: .groupByFolder) ?? d.groupByFolder

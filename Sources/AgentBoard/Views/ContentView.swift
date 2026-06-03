@@ -5,6 +5,7 @@ struct ContentView: View {
     @EnvironmentObject var store: SessionStore
     @EnvironmentObject var prefs: PreferencesStore
     @EnvironmentObject var palette: CommandPaletteModel
+    @EnvironmentObject var updates: UpdateCheckService
 
     @State private var renamingSession: AgentSession?
 
@@ -63,6 +64,7 @@ struct ContentView: View {
             RenameSheet(session: session)
                 .environmentObject(store)
         }
+        .updateAlert(using: updates)
         .alert(
             "Close this session?",
             isPresented: Binding(
