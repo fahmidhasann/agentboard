@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-AgentBoard is a native macOS 14+ SwiftPM GUI app: a single-window command center for multiple embedded terminal sessions. A `NavigationSplitView` shows sessions in a native sidebar (with task summary, inferred agent label, and status badge); selecting one shows its live terminal in the detail pane. SwiftUI is the app shell; SwiftTerm provides terminal emulation. `PLAN.md` is the original implementation spec and remains the authoritative description of intended behavior.
+AgentBoard is a native macOS 14+ SwiftPM GUI app: a single-window command center for multiple embedded terminal sessions. A `NavigationSplitView` shows sessions in a native sidebar (with display title, inferred agent label, and status badge); selecting one shows its live terminal in the detail pane. SwiftUI is the app shell; SwiftTerm provides terminal emulation.
 
 ## Commands
 
@@ -13,7 +13,8 @@ AgentBoard is a native macOS 14+ SwiftPM GUI app: a single-window command center
 ./script/build_and_run.sh --verify   # the above, then confirm the process is running via pgrep
 ./script/build_and_run.sh --release  # release build
 ./script/run_tests.sh                # run all unit tests
-./script/run_tests.sh --filter SessionStoreTests          # run one test target/case
+./script/run_tests.sh --filter SessionStorePersistenceTests   # run one suite
+./script/run_tests.sh --filter "loads sessions as exited"       # run one test by name
 ./script/create_dmg.sh               # release build + DMG to dist/AgentBoard-<ver>-arm64.dmg
 swift build                          # bare build (no .app bundle / launch)
 ```
@@ -30,7 +31,7 @@ Sources/AgentBoard/
   Models/       AgentSession, AgentBoardPreferences, AgentLaunchConfig (all Codable value types)
   Stores/       SessionStore (singleton, sessions + controllers), PreferencesStore (singleton)
   Services/     TerminalSessionController, LabelInferenceService, StatusService,
-                CommandPaletteModel, NotificationService
+                CommandPaletteModel, NotificationService, UpdateCheckService
   Support/      RecentLineBuffer (ring buffer + ANSI sanitizer + attention evaluator),
                 ShellResolver, AppPaths
   Views/        ContentView, SidebarView, TerminalDetailView, TerminalRepresentable,
@@ -52,7 +53,7 @@ The design splits **persisted value-type metadata** from **non-persisted live te
 
 - **Periodic sync loop** — `SessionStore.activate()` starts a 0.5s timer that pulls a `TerminalSnapshot` from every controller, recomputes status via `StatusService`, applies label inference via `LabelInferenceService`, and schedules a debounced save. This cadence is what coalesces high-frequency terminal output into bounded UI/disk updates — do not bypass it by mutating sessions from the output path directly.
 
-- **Inference & status** — `LabelInferenceService` derives the agent label from terminal text only (no remote calls, ever). Known agents: Codex, Claude, Gemini, OpenCode, Aider, Hermes — anything else maps to `Shell`. Also extracts a short summary (first meaningful line, truncated to 48 chars). `apply(_:to:)` respects the `isSummaryUserEdited`/`isAgentUserEdited` locks — once a user renames a field, inference stops touching it. `StatusService` maps activity into `running`/`idle`/`attentionNeeded`/`exited` (idle threshold: 60s).
+- **Inference & status** — `LabelInferenceService` derives the agent label from terminal text only (no remote calls, ever). Known agents: Codex, Claude, Gemini, OpenCode, Aider, Hermes — anything else leaves the label unchanged. `apply(_:to:)` only updates `agentLabel` and respects `isAgentUserEdited` — once the user renames the agent field, inference stops touching it. New sessions seed `summary` from the launch directory (`AgentSession.abbreviatedPath`); `summary` is user-editable via rename and is not inferred from terminal output. `StatusService` maps activity into `running`/`idle`/`attentionNeeded`/`exited` (idle threshold: 60s).
 
 - **Persistence** — JSON under `~/Library/Application Support/AgentBoard/` (`AppPaths`). Two files: `sessions.json` (session metadata + tail) and `preferences.json` (font size, theme, tail limit, agents list, etc.). Session saves are debounced (`scheduleSave`, 1.5s) or immediate (`saveNow`, atomic write). Only metadata + the last `tailLimit` (default 500) terminal lines are stored. Corrupt JSON is backed up to `sessions.corrupt-<timestamp>.json` and the app starts empty.
 
@@ -65,7 +66,7 @@ The design splits **persisted value-type metadata** from **non-persisted live te
 - `attentionNeeded` is raised only for **unselected** sessions, on a bell (0x07) or prompt-like output; viewing a session clears it. Background notifications fire only when notifications are enabled and the session is backgrounded.
 - `NotificationService` guards on bundle identifier presence — `UNUserNotificationCenter` traps on bare executables without a bundle, so notifications only work when launched as the staged `.app`.
 - Version is centralized in `script/version.sh` — sourced by all build scripts and the CI workflow.
-- CI (`.github/workflows/release.yml`) triggers on `v*` tags, builds a release DMG on macOS 14, and publishes to GitHub Releases.
+- CI (`.github/workflows/ci.yml`) runs unit tests on pushes to `main`; release (`.github/workflows/release.yml`) triggers on `v*` tags, runs tests, builds a release DMG on macOS 14, and publishes to GitHub Releases.
 - The Codex run actions (`.codex/environments/environment.toml`) just shell out to `build_and_run.sh`.
 
 ## Release workflow

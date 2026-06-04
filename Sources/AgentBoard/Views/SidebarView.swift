@@ -62,13 +62,7 @@ struct SidebarView: View {
 
     @ViewBuilder
     private func contextMenu(for session: AgentSession) -> some View {
-        Button("Rename…") { store.pendingRenameID = session.id }
-        Button("Clear Terminal") { store.clearTerminal(id: session.id) }
-        if session.status == .exited {
-            Button("Restart") { store.restartSession(id: session.id) }
-        }
-        Divider()
-        Button("Close Session", role: .destructive) { store.requestCloseSession(id: session.id) }
+        SessionActionButtons(session: session, store: store, style: .menu)
     }
 
     private var emptyState: some View {

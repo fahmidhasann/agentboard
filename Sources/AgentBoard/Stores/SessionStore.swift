@@ -10,7 +10,7 @@ import os
 /// reloads as `.exited` with its recent tail intact, ready to be restarted.
 final class SessionStore: ObservableObject {
     static let shared = SessionStore()
-    private static let logger = Logger(subsystem: "com.fahmid.AgentBoard", category: "SessionStore")
+    private static let logger = Logger(subsystem: AppPaths.bundleIdentifier, category: "SessionStore")
 
     @Published var sessions: [AgentSession] = []
     @Published var selection: UUID? {
@@ -76,6 +76,10 @@ final class SessionStore: ObservableObject {
 
     func controller(for id: UUID) -> TerminalSessionController? {
         controllers[id]
+    }
+
+    private func sessionIndex(for id: UUID) -> Int? {
+        sessions.firstIndex { $0.id == id }
     }
 
     var runningCount: Int {
@@ -174,7 +178,7 @@ final class SessionStore: ObservableObject {
 
     /// Relaunches the shell for an exited session, keeping its row and recent tail.
     func restartSession(id: UUID) {
-        guard let index = sessions.firstIndex(where: { $0.id == id }) else { return }
+        guard let index = sessionIndex(for: id) else { return }
         controllers[id]?.terminate()
 
         let stored = sessions[index]
@@ -228,7 +232,7 @@ final class SessionStore: ObservableObject {
     // MARK: - Renaming (locks auto-inference for the edited field)
 
     func setSummary(id: UUID, _ text: String) {
-        guard let index = sessions.firstIndex(where: { $0.id == id }) else { return }
+        guard let index = sessionIndex(for: id) else { return }
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
         sessions[index].summary = trimmed.isEmpty ? sessions[index].summary : trimmed
         sessions[index].isSummaryUserEdited = true
@@ -237,7 +241,7 @@ final class SessionStore: ObservableObject {
     }
 
     func setAgentLabel(id: UUID, _ text: String) {
-        guard let index = sessions.firstIndex(where: { $0.id == id }) else { return }
+        guard let index = sessionIndex(for: id) else { return }
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
         sessions[index].agentLabel = trimmed.isEmpty ? sessions[index].agentLabel : trimmed
         sessions[index].isAgentUserEdited = true
@@ -264,12 +268,18 @@ final class SessionStore: ObservableObject {
         controller.focusTerminal()
     }
 
+    func focusSelectedTerminalAsync() {
+        DispatchQueue.main.async { [weak self] in
+            self?.focusSelectedTerminal()
+        }
+    }
+
     // MARK: - Controller callbacks
 
     /// Invoked by a controller when the shell reports a new working directory (OSC 7).
     func updateCwd(id: UUID, _ directory: String?) {
         guard let path = normalizedCwd(from: directory),
-              let index = sessions.firstIndex(where: { $0.id == id }) else { return }
+              let index = sessionIndex(for: id) else { return }
         guard !path.isEmpty, sessions[index].cwd != path else { return }
         var session = sessions[index]
         session.cwd = path
@@ -280,7 +290,7 @@ final class SessionStore: ObservableObject {
 
     /// Invoked by a controller when its process terminates.
     func handleProcessExit(id: UUID, exitCode: Int32?) {
-        guard let index = sessions.firstIndex(where: { $0.id == id }) else { return }
+        guard let index = sessionIndex(for: id) else { return }
         let previous = sessions[index].status
         sessions[index].exitCode = exitCode
         sessions[index].status = .exited
@@ -301,7 +311,7 @@ final class SessionStore: ObservableObject {
         var changed = false
 
         for (id, controller) in controllers {
-            guard let index = sessions.firstIndex(where: { $0.id == id }) else { continue }
+            guard let index = sessionIndex(for: id) else { continue }
             var session = sessions[index]
             let selected = (id == selection)
             controller.isSelected = selected // clears any pending attention when selected
@@ -421,20 +431,19 @@ final class SessionStore: ObservableObject {
             }
             return session
         }
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        let encoder = JSONEncoder.agentBoard
         return try? encoder.encode(trimmed)
     }
 
     private func resolveLaunchDirectory(_ directory: String?) -> String {
         let candidate = directory?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let path = candidate?.isEmpty == false ? candidate! : NSHomeDirectory()
+        let path = candidate?.isEmpty == false ? candidate! : AppPaths.home
         var isDirectory: ObjCBool = false
         if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.boolValue {
             return path
         }
         Self.logger.error("Working directory \(path, privacy: .public) is unavailable; falling back to home directory")
-        return NSHomeDirectory()
+        return AppPaths.home
     }
 
     private func normalizedCwd(from directory: String?) -> String? {

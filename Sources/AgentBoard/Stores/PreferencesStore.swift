@@ -5,7 +5,7 @@ import os
 /// Observable owner of ``AgentBoardPreferences``, persisted to JSON for inspectability.
 final class PreferencesStore: ObservableObject {
     static let shared = PreferencesStore()
-    private static let logger = Logger(subsystem: "com.fahmid.AgentBoard", category: "PreferencesStore")
+    private static let logger = Logger(subsystem: AppPaths.bundleIdentifier, category: "PreferencesStore")
 
     @Published var preferences: AgentBoardPreferences {
         didSet { saveNow() }
@@ -28,8 +28,7 @@ final class PreferencesStore: ObservableObject {
     }
 
     func saveNow() {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        let encoder = JSONEncoder.agentBoard
         do {
             let data = try encoder.encode(preferences)
             try FileManager.default.createDirectory(

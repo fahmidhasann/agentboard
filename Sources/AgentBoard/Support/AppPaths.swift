@@ -4,6 +4,7 @@ import Foundation
 enum AppPaths {
     static let bundleIdentifier = "com.fahmid.AgentBoard"
     static let folderName = "AgentBoard"
+    static let home = NSHomeDirectory()
 
     /// `~/Library/Application Support/AgentBoard`, created on demand.
     static var appSupportDirectory: URL {

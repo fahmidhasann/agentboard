@@ -38,6 +38,7 @@ struct RenameSheet: View {
         .frame(width: 380)
     }
 
+    // Sheet dismiss pattern — keep in sync with NewSessionSheet.close() and CommandPaletteView.close().
     private func save() {
         store.setSummary(id: session.id, title)
         store.setAgentLabel(id: session.id, agentLabel)

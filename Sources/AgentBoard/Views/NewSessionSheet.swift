@@ -7,7 +7,7 @@ struct NewSessionSheet: View {
     @EnvironmentObject var store: SessionStore
     @EnvironmentObject var prefs: PreferencesStore
 
-    @State private var directory: String = NSHomeDirectory()
+    @State private var directory: String = AppPaths.home
     @State private var selectedAgentID: UUID?   // nil = plain shell
     @State private var command: String = ""
 
@@ -96,11 +96,10 @@ struct NewSessionSheet: View {
         close()
     }
 
+    // Sheet dismiss pattern — keep in sync with CommandPaletteView.close() and RenameSheet.save()/dismiss().
     private func close() {
         store.newSessionPrefill = nil
         store.isPresentingNewSession = false
-        DispatchQueue.main.async { [store] in
-            store.focusSelectedTerminal()
-        }
+        store.focusSelectedTerminalAsync()
     }
 }

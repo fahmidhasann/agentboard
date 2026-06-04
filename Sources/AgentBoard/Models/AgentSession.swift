@@ -87,7 +87,7 @@ struct AgentSession: Identifiable, Codable, Equatable {
     }
 
     static func abbreviatedPath(_ path: String) -> String {
-        let home = NSHomeDirectory()
+        let home = AppPaths.home
         if path == home { return "~" }
         if path.hasPrefix(home + "/") {
             return "~/" + String(path.dropFirst(home.count + 1))

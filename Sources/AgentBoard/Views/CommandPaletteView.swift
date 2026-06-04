@@ -85,12 +85,11 @@ struct CommandPaletteView: View {
         }
     }
 
+    // Sheet dismiss pattern — keep in sync with NewSessionSheet.close() and RenameSheet.save()/dismiss().
     private func close(refocusTerminal: Bool) {
         palette.isPresented = false
         guard refocusTerminal else { return }
-        DispatchQueue.main.async { [store] in
-            store.focusSelectedTerminal()
-        }
+        store.focusSelectedTerminalAsync()
     }
 }
 
