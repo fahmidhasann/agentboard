@@ -13,15 +13,61 @@ struct TerminalSnapshot {
 /// still feeding SwiftTerm's renderer via `super`.
 final class AgentTerminalView: LocalProcessTerminalView {
     weak var controller: TerminalSessionController?
+    private(set) var autocompleteEngine: InlineAutocompleteEngine?
+    private let ghostOverlay = GhostTextOverlay()
+
+    func setupAutocomplete(historyStore: CommandHistoryStore) {
+        autocompleteEngine = InlineAutocompleteEngine(
+            historyStore: historyStore,
+            terminalView: self
+        )
+    }
+
+    func showGhostText(_ text: String) {
+        let buffer = terminal.buffer
+        let cellSize = Self.computeCellSize(font: font)
+        let cursorX = cellSize.width * CGFloat(buffer.x)
+        let cursorY = cellSize.height * CGFloat(buffer.y)
+        ghostOverlay.show(text: text, at: CGPoint(x: cursorX, y: cursorY), cellHeight: cellSize.height)
+    }
+
+    private static func computeCellSize(font: NSFont) -> CGSize {
+        let attrs: [NSAttributedString.Key: Any] = [.font: font]
+        let sample = "W" as NSString
+        let size = sample.size(withAttributes: attrs)
+        return CGSize(width: ceil(size.width), height: ceil(size.height))
+    }
+
+    func hideGhostText() {
+        ghostOverlay.hide()
+    }
+
+    override func send(source: TerminalView, data: ArraySlice<UInt8>) {
+        if let engine = autocompleteEngine {
+            engine.isEnabled = PreferencesStore.shared.preferences.inlineAutocompleteEnabled
+            if engine.shouldAccept(data: data) {
+                let completionBytes = Array(engine.currentCompletion.utf8)
+                super.send(source: source, data: completionBytes[0...])
+                engine.didAccept()
+                return
+            }
+            engine.handleOutgoing(data: data)
+        }
+        super.send(source: source, data: data)
+    }
 
     override func dataReceived(slice: ArraySlice<UInt8>) {
         super.dataReceived(slice: slice)
         controller?.ingest(slice)
+        autocompleteEngine?.handlePTYOutput()
     }
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
         controller?.focusIfSelected()
+        if ghostOverlay.superview == nil {
+            addSubview(ghostOverlay)
+        }
     }
 
     func applyThemeColors() {
@@ -30,6 +76,10 @@ final class AgentTerminalView: LocalProcessTerminalView {
         layer?.backgroundColor = nativeBackgroundColor.cgColor
         terminal.updateFullScreen()
         needsDisplay = true
+    }
+
+    func updateAutocompleteFont(_ font: NSFont) {
+        ghostOverlay.updateFont(font)
     }
 
     override func viewDidChangeEffectiveAppearance() {
@@ -92,6 +142,7 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
 
         terminalView.controller = self
         terminalView.processDelegate = self
+        terminalView.setupAutocomplete(historyStore: CommandHistoryStore.shared)
         start(shellPath: shellPath, cwd: cwd)
     }
 
@@ -227,7 +278,9 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
 
     // MARK: - LocalProcessTerminalViewDelegate
 
-    func sizeChanged(source: LocalProcessTerminalView, newCols: Int, newRows: Int) {}
+    func sizeChanged(source: LocalProcessTerminalView, newCols: Int, newRows: Int) {
+        terminalView.autocompleteEngine?.reset()
+    }
 
     func setTerminalTitle(source: LocalProcessTerminalView, title: String) {}
 

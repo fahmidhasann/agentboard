@@ -30,6 +30,7 @@ struct AgentBoardPreferences: Codable, Equatable {
     var paletteShortcutDisplay: String
     var agents: [AgentLaunchConfig]
     var groupByFolder: Bool
+    var inlineAutocompleteEnabled: Bool
 
     init(
         terminalFontSize: Double = 13,
@@ -42,7 +43,8 @@ struct AgentBoardPreferences: Codable, Equatable {
         lastNotifiedUpdateVersion: String? = nil,
         paletteShortcutDisplay: String = "Cmd+Shift+P",
         agents: [AgentLaunchConfig] = AgentLaunchConfig.defaults,
-        groupByFolder: Bool = false
+        groupByFolder: Bool = false,
+        inlineAutocompleteEnabled: Bool = true
     ) {
         self.terminalFontSize = terminalFontSize
         self.persistedTailSize = persistedTailSize
@@ -55,6 +57,7 @@ struct AgentBoardPreferences: Codable, Equatable {
         self.paletteShortcutDisplay = paletteShortcutDisplay
         self.agents = agents
         self.groupByFolder = groupByFolder
+        self.inlineAutocompleteEnabled = inlineAutocompleteEnabled
     }
 
     // Tolerate older/partial JSON by defaulting any missing fields.
@@ -72,5 +75,6 @@ struct AgentBoardPreferences: Codable, Equatable {
         paletteShortcutDisplay = try c.decodeIfPresent(String.self, forKey: .paletteShortcutDisplay) ?? d.paletteShortcutDisplay
         agents = try c.decodeIfPresent([AgentLaunchConfig].self, forKey: .agents) ?? d.agents
         groupByFolder = try c.decodeIfPresent(Bool.self, forKey: .groupByFolder) ?? d.groupByFolder
+        inlineAutocompleteEnabled = try c.decodeIfPresent(Bool.self, forKey: .inlineAutocompleteEnabled) ?? d.inlineAutocompleteEnabled
     }
 }

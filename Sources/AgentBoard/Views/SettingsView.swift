@@ -41,6 +41,7 @@ struct SettingsView: View {
 
             Section("Behavior") {
                 Toggle("Confirm before closing active agent sessions", isOn: $prefs.preferences.confirmClose)
+                Toggle("Inline command suggestions", isOn: $prefs.preferences.inlineAutocompleteEnabled)
                 Toggle("Enable notifications", isOn: $prefs.preferences.notificationsEnabled)
                     .onChange(of: prefs.preferences.notificationsEnabled) { _, enabled in
                         if enabled {
