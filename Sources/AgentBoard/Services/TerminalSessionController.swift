@@ -16,6 +16,10 @@ final class AgentTerminalView: LocalProcessTerminalView {
     private(set) var autocompleteEngine: InlineAutocompleteEngine?
     private let ghostOverlay = GhostTextOverlay()
 
+    /// Flips true the first time the view is on-screen at a real size, so the controller can run
+    /// any deferred initial command only after the PTY has its correct dimensions.
+    private var didSignalReady = false
+
     func setupAutocomplete(historyStore: CommandHistoryStore) {
         autocompleteEngine = InlineAutocompleteEngine(
             historyStore: historyStore,
@@ -74,13 +78,33 @@ final class AgentTerminalView: LocalProcessTerminalView {
             needsDisplay = true
             var size = self.getWindowSize()
             let _ = PseudoTerminalHelpers.setWinSize(masterPtyDescriptor: process.childfd, windowSize: &size)
+            signalReadyIfNeeded()
         }
     }
 
+    /// SwiftTerm recomputes the terminal grid (and the PTY winsize) here on every resize. Once that
+    /// has happened at a real on-screen size, the controller can safely run a deferred initial
+    /// command at the correct dimensions.
+    override func setFrameSize(_ newSize: NSSize) {
+        super.setFrameSize(newSize)
+        signalReadyIfNeeded()
+    }
+
+    private func signalReadyIfNeeded() {
+        guard !didSignalReady, window != nil, bounds.width > 1, bounds.height > 1 else { return }
+        didSignalReady = true
+        controller?.viewDidBecomeReady()
+    }
+
     func applyThemeColors() {
-        nativeForegroundColor = .textColor
-        nativeBackgroundColor = .textBackgroundColor
-        layer?.backgroundColor = nativeBackgroundColor.cgColor
+        // Resolve the dynamic system colors against this view's *own* appearance rather than
+        // whatever appearance happens to be current — otherwise a freshly created terminal can
+        // paint dark-on-dark (or light-on-light) and look broken until the next redraw.
+        effectiveAppearance.performAsCurrentDrawingAppearance {
+            nativeForegroundColor = .textColor
+            nativeBackgroundColor = .textBackgroundColor
+            layer?.backgroundColor = nativeBackgroundColor.cgColor
+        }
         terminal.updateFullScreen()
         needsDisplay = true
     }
@@ -101,6 +125,11 @@ final class AgentTerminalView: LocalProcessTerminalView {
 /// main thread and needs no additional locking.
 final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegate {
     let sessionID: UUID
+    /// Stable per-controller identity. A session keeps the same `sessionID` across a restart, but
+    /// gets a fresh controller (and a fresh `terminalView`). The detail view keys its hosted
+    /// `NSView` on this so restarting reliably swaps in the new live terminal instead of leaving
+    /// the dead one on screen.
+    let instanceID = UUID()
     let terminalView: AgentTerminalView
 
     weak var store: SessionStore?
@@ -128,8 +157,9 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
     private let inference = LabelInferenceService()
     private var lastActivityAt = Date()
 
-    /// Optional command auto-run once the shell is live (e.g. launching an agent in a new session).
-    private let initialCommand: String?
+    /// Command to auto-run once the shell is live (e.g. launching an agent in a new session). Held
+    /// until the terminal view is on-screen at its real size so TUIs start at the correct grid.
+    private var pendingInitialCommand: String?
 
     init(
         sessionID: UUID,
@@ -138,17 +168,22 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
         tailLimit: Int,
         seedTail: [String],
         store: SessionStore,
+        fontSize: Double = 13,
         initialCommand: String? = nil
     ) {
         self.sessionID = sessionID
         self.store = store
         self.buffer = RecentLineBuffer(limit: tailLimit, seed: seedTail)
-        self.initialCommand = (initialCommand?.isEmpty == false) ? initialCommand : nil
+        self.pendingInitialCommand = (initialCommand?.isEmpty == false) ? initialCommand : nil
         self.terminalView = AgentTerminalView(frame: CGRect(x: 0, y: 0, width: 800, height: 480))
         super.init()
 
         terminalView.controller = self
         terminalView.processDelegate = self
+        // Set the font *before* launching so the PTY's initial winsize is computed with the same
+        // cell metrics the view will display. Otherwise the grid changes the instant the view
+        // appears (font is applied in TerminalRepresentable), reflowing the shell's first output.
+        terminalView.font = NSFont.monospacedSystemFont(ofSize: CGFloat(fontSize), weight: .regular)
         terminalView.setupAutocomplete(historyStore: CommandHistoryStore.shared)
         start(shellPath: shellPath, cwd: cwd)
     }
@@ -163,11 +198,28 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
             currentDirectory: cwd
         )
         lastActivityAt = Date()
-        // The PTY buffers stdin, so sending right after startProcess is safe — the shell reads it
-        // once it is up. See PLAN.md / the improvements plan "Initial-command timing" risk note.
-        if let command = initialCommand {
-            runCommand(command)
+        // The initial command is held until the view is on-screen at its real size (see
+        // viewDidBecomeReady) so agent TUIs launch at the correct dimensions. This fallback
+        // guarantees it still runs if the view never becomes ready (e.g. the window is hidden).
+        if pendingInitialCommand != nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+                self?.runPendingInitialCommand()
+            }
         }
+    }
+
+    /// Called by the terminal view once it is on-screen at its real size. Runs the deferred initial
+    /// command (if any) now that the PTY has the correct dimensions.
+    func viewDidBecomeReady() {
+        DispatchQueue.main.async { [weak self] in
+            self?.runPendingInitialCommand()
+        }
+    }
+
+    private func runPendingInitialCommand() {
+        guard let command = pendingInitialCommand else { return }
+        pendingInitialCommand = nil
+        runCommand(command)
     }
 
     /// Writes a command line to the shell's stdin, as if the user typed it and pressed Return.
@@ -201,6 +253,12 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
         focusTerminal()
     }
 
+    /// Makes the terminal the first responder so typed input goes to it.
+    ///
+    /// This deliberately does **not** activate the app or reorder windows: routine session
+    /// selection should never yank AgentBoard to the foreground over whatever the user is doing.
+    /// Bringing the window forward is the app lifecycle's job (see `AppDelegate`), which activates
+    /// before asking the store to refocus.
     func focusTerminal(retries: Int = 4) {
         guard Thread.isMainThread else {
             DispatchQueue.main.async { [weak self] in
@@ -217,8 +275,6 @@ final class TerminalSessionController: NSObject, LocalProcessTerminalViewDelegat
             return
         }
 
-        NSApp.activate(ignoringOtherApps: true)
-        window.makeKeyAndOrderFront(nil)
         guard window.makeFirstResponder(terminalView) || retries == 0 else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { [weak self] in
                 self?.focusTerminal(retries: retries - 1)

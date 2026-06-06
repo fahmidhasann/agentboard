@@ -1,0 +1,4771 @@
+{
+  "nodes": [
+    {
+      "id": "claude_settings",
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude_settings_hooks",
+      "label": "hooks",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "claude_settings_hooks_pretooluse",
+      "label": "PreToolUse",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "app_appdelegate",
+      "label": "AppDelegate.swift",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "app_appdelegate_appdelegate",
+      "label": "AppDelegate",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L5"
+    },
+    {
+      "id": "nsobject",
+      "label": "NSObject",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "nsapplicationdelegate",
+      "label": "NSApplicationDelegate",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "nswindow",
+      "label": "NSWindow",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L6"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_applicationdidfinishlaunching",
+      "label": ".applicationDidFinishLaunching()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L8"
+    },
+    {
+      "id": "notification",
+      "label": "Notification",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L8"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_applicationshouldterminateafterlastwindowclosed",
+      "label": ".applicationShouldTerminateAfterLastWindowClosed()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L36"
+    },
+    {
+      "id": "nsapplication",
+      "label": "NSApplication",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L36"
+    },
+    {
+      "id": "sources_agentboard_app_appdelegate_swift_bool",
+      "label": "Bool",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L36"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_applicationshouldhandlereopen",
+      "label": ".applicationShouldHandleReopen()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L40"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_applicationshouldterminate",
+      "label": ".applicationShouldTerminate()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L53"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_applicationwillterminate",
+      "label": ".applicationWillTerminate()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L77"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_windowdidbecomemain",
+      "label": ".windowDidBecomeMain()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L84"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_hidemainwindow",
+      "label": ".hideMainWindow()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L93"
+    },
+    {
+      "id": "any",
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L93"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_relaxdefaultcloseshortcut",
+      "label": ".relaxDefaultCloseShortcut()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L100"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_opensettings",
+      "label": ".openSettings()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L111"
+    },
+    {
+      "id": "app_appdelegate_appdelegate_showmainwindow",
+      "label": ".showMainWindow()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L121"
+    },
+    {
+      "id": "services_commandhistorystore",
+      "label": "CommandHistoryStore.swift",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore",
+      "label": "CommandHistoryStore",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L3"
+    },
+    {
+      "id": "sources_agentboard_services_commandhistorystore_swift_string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L6"
+    },
+    {
+      "id": "sources_agentboard_services_commandhistorystore_swift_int",
+      "label": "Int",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L6"
+    },
+    {
+      "id": "sources_agentboard_services_commandhistorystore_swift_url",
+      "label": "URL",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L8"
+    },
+    {
+      "id": "sources_agentboard_services_commandhistorystore_swift_dispatchworkitem",
+      "label": "DispatchWorkItem",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L9"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore_init",
+      "label": ".init()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L11"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore_record",
+      "label": ".record()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L16"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore_suggestions",
+      "label": ".suggestions()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L24"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore_evictifneeded",
+      "label": ".evictIfNeeded()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L34"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore_schedulesave",
+      "label": ".scheduleSave()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L45"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore_savenow",
+      "label": ".saveNow()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L54"
+    },
+    {
+      "id": "services_commandhistorystore_commandhistorystore_load",
+      "label": ".load()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L59"
+    },
+    {
+      "id": "services_terminalsessioncontroller",
+      "label": "TerminalSessionController.swift",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsnapshot",
+      "label": "TerminalSnapshot",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L6"
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L7"
+    },
+    {
+      "id": "date",
+      "label": "Date",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L8"
+    },
+    {
+      "id": "labelinferenceservice",
+      "label": "LabelInferenceService",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L9"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview",
+      "label": "AgentTerminalView",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L14"
+    },
+    {
+      "id": "localprocessterminalview",
+      "label": "LocalProcessTerminalView",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_terminalsessioncontroller",
+      "label": "TerminalSessionController",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L15"
+    },
+    {
+      "id": "inlineautocompleteengine",
+      "label": "InlineAutocompleteEngine",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L16"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_setupautocomplete",
+      "label": ".setupAutocomplete()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L23"
+    },
+    {
+      "id": "commandhistorystore",
+      "label": "CommandHistoryStore",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L23"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_showghosttext",
+      "label": ".showGhostText()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L30"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_computecellsize",
+      "label": ".computeCellSize()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L38"
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_nsfont",
+      "label": "NSFont",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L38"
+    },
+    {
+      "id": "cgsize",
+      "label": "CGSize",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L38"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_hideghosttext",
+      "label": ".hideGhostText()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L45"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_send",
+      "label": ".send()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49"
+    },
+    {
+      "id": "terminalview",
+      "label": "TerminalView",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49"
+    },
+    {
+      "id": "arrayslice",
+      "label": "ArraySlice",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49"
+    },
+    {
+      "id": "uint8",
+      "label": "UInt8",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_datareceived",
+      "label": ".dataReceived()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L63"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_viewdidmovetowindow",
+      "label": ".viewDidMoveToWindow()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L69"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_setframesize",
+      "label": ".setFrameSize()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L88"
+    },
+    {
+      "id": "nssize",
+      "label": "NSSize",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L88"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_signalreadyifneeded",
+      "label": ".signalReadyIfNeeded()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L93"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_applythemecolors",
+      "label": ".applyThemeColors()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L99"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_updateautocompletefont",
+      "label": ".updateAutocompleteFont()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L112"
+    },
+    {
+      "id": "services_terminalsessioncontroller_agentterminalview_viewdidchangeeffectiveappearance",
+      "label": ".viewDidChangeEffectiveAppearance()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L116"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "label": "TerminalSessionController",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L126"
+    },
+    {
+      "id": "nsobject",
+      "label": "NSObject",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "localprocessterminalviewdelegate",
+      "label": "LocalProcessTerminalViewDelegate",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_uuid",
+      "label": "UUID",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L127"
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_sessionstore",
+      "label": "SessionStore",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L135"
+    },
+    {
+      "id": "recentlinebuffer",
+      "label": "RecentLineBuffer",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L155"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "label": ".init()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164"
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_int",
+      "label": "Int",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164"
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_double",
+      "label": "Double",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_start",
+      "label": ".start()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L191"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_viewdidbecomeready",
+      "label": ".viewDidBecomeReady()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L213"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_runpendinginitialcommand",
+      "label": ".runPendingInitialCommand()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L219"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_runcommand",
+      "label": ".runCommand()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L226"
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "label": "Bool",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L230"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_terminate",
+      "label": ".terminate()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L234"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_clear",
+      "label": ".clear()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L240"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_updatetaillimit",
+      "label": ".updateTailLimit()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L245"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_focusifselected",
+      "label": ".focusIfSelected()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L251"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_focusterminal",
+      "label": ".focusTerminal()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L262"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_ingest",
+      "label": ".ingest()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L288"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_findnext",
+      "label": ".findNext()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L310"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_findprevious",
+      "label": ".findPrevious()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L320"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_clearsearch",
+      "label": ".clearSearch()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L330"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_snapshot",
+      "label": ".snapshot()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L334"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_sizechanged",
+      "label": ".sizeChanged()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L344"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_setterminaltitle",
+      "label": ".setTerminalTitle()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L348"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_hostcurrentdirectoryupdate",
+      "label": ".hostCurrentDirectoryUpdate()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L350"
+    },
+    {
+      "id": "services_terminalsessioncontroller_terminalsessioncontroller_processterminated",
+      "label": ".processTerminated()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L354"
+    },
+    {
+      "id": "sources_agentboard_services_terminalsessioncontroller_swift_int32",
+      "label": "Int32",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L354"
+    },
+    {
+      "id": "stores_sessionstore",
+      "label": "SessionStore.swift",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore",
+      "label": "SessionStore",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L11"
+    },
+    {
+      "id": "observableobject",
+      "label": "ObservableObject",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_agentsession",
+      "label": "AgentSession",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L15"
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "label": "UUID",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L16"
+    },
+    {
+      "id": "agentlaunchconfig",
+      "label": "AgentLaunchConfig",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L27"
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_int",
+      "label": "Int",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L33"
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_url",
+      "label": "URL",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L35"
+    },
+    {
+      "id": "filemanager",
+      "label": "FileManager",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L36"
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_terminalsessioncontroller",
+      "label": "TerminalSessionController",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L37"
+    },
+    {
+      "id": "timer",
+      "label": "Timer",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L42"
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_dispatchworkitem",
+      "label": "DispatchWorkItem",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L43"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_init",
+      "label": ".init()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L47"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_activate",
+      "label": ".activate()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L61"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_session",
+      "label": ".session()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L73"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_controller",
+      "label": ".controller()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L77"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_sessionindex",
+      "label": ".sessionIndex()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L81"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_addsession",
+      "label": ".addSession()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L94"
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_string",
+      "label": "String",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L94"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_closesession",
+      "label": ".closeSession()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L133"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_requestclosesession",
+      "label": ".requestCloseSession()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L143"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_confirmpendingclose",
+      "label": ".confirmPendingClose()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L161"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_cancelpendingclose",
+      "label": ".cancelPendingClose()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L167"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_restartsession",
+      "label": ".restartSession()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L172"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_clearterminal",
+      "label": ".clearTerminal()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L202"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_presentnewsession",
+      "label": ".presentNewSession()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L207"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_selectbyorder",
+      "label": ".selectByOrder()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L212"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_movesessions",
+      "label": ".moveSessions()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L220"
+    },
+    {
+      "id": "indexset",
+      "label": "IndexSet",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L220"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_setsummary",
+      "label": ".setSummary()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L227"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_setagentlabel",
+      "label": ".setAgentLabel()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L236"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_terminateall",
+      "label": ".terminateAll()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L245"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_updatetaillimit",
+      "label": ".updateTailLimit()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L251"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_focusselectedterminal",
+      "label": ".focusSelectedTerminal()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L259"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_focusselectedterminalasync",
+      "label": ".focusSelectedTerminalAsync()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L264"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_updatecwd",
+      "label": ".updateCwd()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L273"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_handleprocessexit",
+      "label": ".handleProcessExit()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L285"
+    },
+    {
+      "id": "sources_agentboard_stores_sessionstore_swift_int32",
+      "label": "Int32",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L285"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_sync",
+      "label": ".sync()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L301"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_handleselectionchange",
+      "label": ".handleSelectionChange()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L339"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_notifyifbackground",
+      "label": ".notifyIfBackground()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L366"
+    },
+    {
+      "id": "sessionstatus",
+      "label": "SessionStatus",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L366"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_load",
+      "label": ".load()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L382"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_backupcorruptfile",
+      "label": ".backupCorruptFile()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L403"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_schedulesave",
+      "label": ".scheduleSave()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L414"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_savenow",
+      "label": ".saveNow()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L421"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_encodetrimmed",
+      "label": ".encodeTrimmed()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L432"
+    },
+    {
+      "id": "data",
+      "label": "Data",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L432"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_resolvelaunchdirectory",
+      "label": ".resolveLaunchDirectory()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L445"
+    },
+    {
+      "id": "stores_sessionstore_sessionstore_normalizedcwd",
+      "label": ".normalizedCwd()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L456"
+    },
+    {
+      "id": "views_terminaldetailview",
+      "label": "TerminalDetailView.swift",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "views_terminaldetailview_terminaldetailview",
+      "label": "TerminalDetailView",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L4"
+    },
+    {
+      "id": "view",
+      "label": "View",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sources_agentboard_views_terminaldetailview_swift_sessionstore",
+      "label": "SessionStore",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L5"
+    },
+    {
+      "id": "preferencesstore",
+      "label": "PreferencesStore",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L6"
+    },
+    {
+      "id": "views_terminaldetailview_terminalcontainer",
+      "label": "TerminalContainer",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L29"
+    },
+    {
+      "id": "sources_agentboard_views_terminaldetailview_swift_agentsession",
+      "label": "AgentSession",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L33"
+    },
+    {
+      "id": "sources_agentboard_views_terminaldetailview_swift_terminalsessioncontroller",
+      "label": "TerminalSessionController",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L34"
+    },
+    {
+      "id": "sources_agentboard_views_terminaldetailview_swift_bool",
+      "label": "Bool",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L40"
+    },
+    {
+      "id": "views_terminaldetailview_terminalcontainer_openfind",
+      "label": ".openFind()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L72"
+    },
+    {
+      "id": "views_terminaldetailview_terminalcontainer_closefind",
+      "label": ".closeFind()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L77"
+    },
+    {
+      "id": "views_terminaldetailview_terminalcontainer_findnext",
+      "label": ".findNext()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L86"
+    },
+    {
+      "id": "views_terminaldetailview_terminalcontainer_findprevious",
+      "label": ".findPrevious()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L90"
+    },
+    {
+      "id": "views_terminaldetailview_exitedplaceholder",
+      "label": "ExitedPlaceholder",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L96"
+    },
+    {
+      "id": "views_terminaldetailview_emptydetailview",
+      "label": "EmptyDetailView",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L147"
+    },
+    {
+      "id": "views_terminalrepresentable",
+      "label": "TerminalRepresentable.swift",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "views_terminalrepresentable_terminalrepresentable",
+      "label": "TerminalRepresentable",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L8"
+    },
+    {
+      "id": "nsviewrepresentable",
+      "label": "NSViewRepresentable",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "sources_agentboard_views_terminalrepresentable_swift_terminalsessioncontroller",
+      "label": "TerminalSessionController",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L9"
+    },
+    {
+      "id": "sources_agentboard_views_terminalrepresentable_swift_double",
+      "label": "Double",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L10"
+    },
+    {
+      "id": "views_terminalrepresentable_terminalrepresentable_makensview",
+      "label": ".makeNSView()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L13"
+    },
+    {
+      "id": "context",
+      "label": "Context",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L13"
+    },
+    {
+      "id": "agentterminalview",
+      "label": "AgentTerminalView",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L13"
+    },
+    {
+      "id": "views_terminalrepresentable_terminalrepresentable_updatensview",
+      "label": ".updateNSView()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L21"
+    },
+    {
+      "id": "views_terminalrepresentable_terminalrepresentable_applyappearance",
+      "label": ".applyAppearance()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L31"
+    },
+    {
+      "id": "views_terminalrepresentable_terminalrepresentable_font",
+      "label": ".font()",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L39"
+    },
+    {
+      "id": "sources_agentboard_views_terminalrepresentable_swift_nsfont",
+      "label": "NSFont",
+      "file_type": "code",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L39"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests",
+      "label": "SessionStorePersistenceTests.swift",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L1"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "label": "SessionStorePersistenceTests",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L5"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_loadssessionsasexited",
+      "label": ".loadsSessionsAsExited()",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L7"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_roundtripssessionmetadataonsave",
+      "label": ".roundtripsSessionMetadataOnSave()",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L29"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_trimsrecenttailtotaillimitonsave",
+      "label": ".trimsRecentTailToTailLimitOnSave()",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L54"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_selectbyorderchoosessessionbyflatindex",
+      "label": ".selectByOrderChoosesSessionByFlatIndex()",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L74"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_restartrelaunchesexitedsession",
+      "label": ".restartRelaunchesExitedSession()",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L91"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_restartswapscontrollerinstance",
+      "label": ".restartSwapsControllerInstance()",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L116"
+    },
+    {
+      "id": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "label": ".makeTemporaryDirectory()",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L141"
+    },
+    {
+      "id": "tests_agentboardtests_sessionstorepersistencetests_swift_url",
+      "label": "URL",
+      "file_type": "code",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L141"
+    }
+  ],
+  "edges": [
+    {
+      "source": "claude_settings",
+      "target": "claude_settings_hooks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_settings_hooks",
+      "target": "claude_settings_hooks_pretooluse",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate",
+      "target": "appkit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate",
+      "target": "app_appdelegate_appdelegate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "nsobject",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "nsapplicationdelegate",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "nswindow",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_applicationdidfinishlaunching",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationdidfinishlaunching",
+      "target": "notification",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_applicationshouldterminateafterlastwindowclosed",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationshouldterminateafterlastwindowclosed",
+      "target": "nsapplication",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationshouldterminateafterlastwindowclosed",
+      "target": "sources_agentboard_app_appdelegate_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_applicationshouldhandlereopen",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationshouldhandlereopen",
+      "target": "nsapplication",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationshouldhandlereopen",
+      "target": "sources_agentboard_app_appdelegate_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationshouldhandlereopen",
+      "target": "sources_agentboard_app_appdelegate_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_applicationshouldterminate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationshouldterminate",
+      "target": "nsapplication",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationshouldterminate",
+      "target": "nsapplication",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L53",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_applicationwillterminate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationwillterminate",
+      "target": "notification",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L77",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_windowdidbecomemain",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_windowdidbecomemain",
+      "target": "notification",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L84",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_hidemainwindow",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_hidemainwindow",
+      "target": "any",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L93",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_relaxdefaultcloseshortcut",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_opensettings",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate",
+      "target": "app_appdelegate_appdelegate_showmainwindow",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationdidfinishlaunching",
+      "target": "app_appdelegate_appdelegate_windowdidbecomemain",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_applicationdidfinishlaunching",
+      "target": "app_appdelegate_appdelegate_relaxdefaultcloseshortcut",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "app_appdelegate_appdelegate_windowdidbecomemain",
+      "target": "app_appdelegate_appdelegate_hidemainwindow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/App/AppDelegate.swift",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore",
+      "target": "foundation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "sources_agentboard_services_commandhistorystore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "sources_agentboard_services_commandhistorystore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "sources_agentboard_services_commandhistorystore_swift_url",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "sources_agentboard_services_commandhistorystore_swift_dispatchworkitem",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_init",
+      "target": "sources_agentboard_services_commandhistorystore_swift_url",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore_record",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_record",
+      "target": "sources_agentboard_services_commandhistorystore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore_suggestions",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_suggestions",
+      "target": "sources_agentboard_services_commandhistorystore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_suggestions",
+      "target": "sources_agentboard_services_commandhistorystore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_suggestions",
+      "target": "sources_agentboard_services_commandhistorystore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore_evictifneeded",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore_schedulesave",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore_savenow",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore",
+      "target": "services_commandhistorystore_commandhistorystore_load",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_init",
+      "target": "services_commandhistorystore_commandhistorystore_load",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_record",
+      "target": "services_commandhistorystore_commandhistorystore_evictifneeded",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_record",
+      "target": "services_commandhistorystore_commandhistorystore_schedulesave",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_schedulesave",
+      "target": "sources_agentboard_services_commandhistorystore_swift_dispatchworkitem",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_schedulesave",
+      "target": "services_commandhistorystore_commandhistorystore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller",
+      "target": "foundation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller",
+      "target": "appkit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller",
+      "target": "swiftterm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsnapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsnapshot",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L7",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsnapshot",
+      "target": "date",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsnapshot",
+      "target": "labelinferenceservice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_agentterminalview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "localprocessterminalview",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_terminalsessioncontroller",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "inlineautocompleteengine",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_setupautocomplete",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_setupautocomplete",
+      "target": "commandhistorystore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_showghosttext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_showghosttext",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_computecellsize",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_computecellsize",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_nsfont",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_computecellsize",
+      "target": "cgsize",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_hideghosttext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_send",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_send",
+      "target": "terminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_send",
+      "target": "arrayslice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_send",
+      "target": "uint8",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L49",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_datareceived",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_datareceived",
+      "target": "arrayslice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_datareceived",
+      "target": "uint8",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L63",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_viewdidmovetowindow",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_setframesize",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_setframesize",
+      "target": "nssize",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L88",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_signalreadyifneeded",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_applythemecolors",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_updateautocompletefont",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_updateautocompletefont",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_nsfont",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L112",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview",
+      "target": "services_terminalsessioncontroller_agentterminalview_viewdidchangeeffectiveappearance",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "nsobject",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "localprocessterminalviewdelegate",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L127",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_agentterminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L133",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_sessionstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L135",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "recentlinebuffer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L155",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L162",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_sessionstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_double",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L164",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_start",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_start",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L191",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_start",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L191",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_viewdidbecomeready",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_runpendinginitialcommand",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_runcommand",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L226",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_runcommand",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L226",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L230",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_terminate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_clear",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_updatetaillimit",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_updatetaillimit",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L245",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_focusifselected",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_focusterminal",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L262",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_focusterminal",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L262",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_ingest",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L288",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_ingest",
+      "target": "arrayslice",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L288",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_ingest",
+      "target": "uint8",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L288",
+      "weight": 1.0,
+      "context": "generic_arg"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_findnext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L310",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findnext",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L310",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findnext",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L310",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findnext",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L310",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findnext",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L310",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_findprevious",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findprevious",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L320",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findprevious",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L320",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findprevious",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L320",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_findprevious",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L320",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_clearsearch",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L330",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_snapshot",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_snapshot",
+      "target": "services_terminalsessioncontroller_terminalsnapshot",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L334",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_sizechanged",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L344",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_sizechanged",
+      "target": "localprocessterminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L344",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_sizechanged",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L344",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_sizechanged",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L344",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_setterminaltitle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L348",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_setterminaltitle",
+      "target": "localprocessterminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L348",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_setterminaltitle",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L348",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_hostcurrentdirectoryupdate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_hostcurrentdirectoryupdate",
+      "target": "terminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L350",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_hostcurrentdirectoryupdate",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L350",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_processterminated",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L354",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_processterminated",
+      "target": "terminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L354",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_processterminated",
+      "target": "sources_agentboard_services_terminalsessioncontroller_swift_int32",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L354",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_setupautocomplete",
+      "target": "inlineautocompleteengine",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_showghosttext",
+      "target": "services_terminalsessioncontroller_agentterminalview_computecellsize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_computecellsize",
+      "target": "cgsize",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_datareceived",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_ingest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_viewdidmovetowindow",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_focusifselected",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_viewdidmovetowindow",
+      "target": "services_terminalsessioncontroller_agentterminalview_signalreadyifneeded",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_setframesize",
+      "target": "services_terminalsessioncontroller_agentterminalview_signalreadyifneeded",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_signalreadyifneeded",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_viewdidbecomeready",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_agentterminalview_viewdidchangeeffectiveappearance",
+      "target": "services_terminalsessioncontroller_agentterminalview_applythemecolors",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "recentlinebuffer",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "services_terminalsessioncontroller_agentterminalview",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "services_terminalsessioncontroller_agentterminalview_setupautocomplete",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L187",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_init",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_start",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_start",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_runpendinginitialcommand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_viewdidbecomeready",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_runpendinginitialcommand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_runpendinginitialcommand",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_runcommand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_runcommand",
+      "target": "services_terminalsessioncontroller_agentterminalview_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L227",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_focusifselected",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_focusterminal",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L253",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_ingest",
+      "target": "services_terminalsessioncontroller_terminalsessioncontroller_clear",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L296",
+      "weight": 1.0
+    },
+    {
+      "source": "services_terminalsessioncontroller_terminalsessioncontroller_snapshot",
+      "target": "services_terminalsessioncontroller_terminalsnapshot",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Services/TerminalSessionController.swift",
+      "source_location": "L335",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore",
+      "target": "foundation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore",
+      "target": "combine",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore",
+      "target": "appkit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore",
+      "target": "stores_sessionstore_sessionstore",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "observableobject",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_agentsession",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L16",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "agentlaunchconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L27",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_url",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L35",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "filemanager",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L36",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_terminalsessioncontroller",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L37",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "timer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L42",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_dispatchworkitem",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_url",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_init",
+      "target": "sources_agentboard_stores_sessionstore_swift_url",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_init",
+      "target": "filemanager",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_init",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L47",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_activate",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_session",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_session",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_session",
+      "target": "sources_agentboard_stores_sessionstore_swift_agentsession",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L73",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_controller",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_controller",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L77",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_controller",
+      "target": "sources_agentboard_stores_sessionstore_swift_terminalsessioncontroller",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L77",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_sessionindex",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_sessionindex",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L81",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L85",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_addsession",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L94",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_closesession",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_closesession",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L133",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_requestclosesession",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_requestclosesession",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L143",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_confirmpendingclose",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_cancelpendingclose",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_restartsession",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_restartsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L172",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_clearterminal",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_clearterminal",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L202",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_presentnewsession",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_presentnewsession",
+      "target": "agentlaunchconfig",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L207",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_selectbyorder",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_selectbyorder",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L212",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_movesessions",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_movesessions",
+      "target": "indexset",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L220",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_movesessions",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L220",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_setsummary",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L227",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setsummary",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L227",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setsummary",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L227",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_setagentlabel",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setagentlabel",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L236",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setagentlabel",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L236",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_terminateall",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_updatetaillimit",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L251",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_updatetaillimit",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L251",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_focusselectedterminal",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L259",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_focusselectedterminalasync",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_updatecwd",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L273",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_updatecwd",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L273",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_updatecwd",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L273",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_handleprocessexit",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_handleprocessexit",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L285",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_handleprocessexit",
+      "target": "sources_agentboard_stores_sessionstore_swift_int32",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L285",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_sync",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L301",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_handleselectionchange",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L339",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_handleselectionchange",
+      "target": "sources_agentboard_stores_sessionstore_swift_uuid",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L339",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_notifyifbackground",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L366",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_notifyifbackground",
+      "target": "sources_agentboard_stores_sessionstore_swift_agentsession",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L366",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_notifyifbackground",
+      "target": "sessionstatus",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L366",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_load",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L382",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_backupcorruptfile",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L403",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_schedulesave",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L414",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L421",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_encodetrimmed",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L432",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_encodetrimmed",
+      "target": "data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L432",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_resolvelaunchdirectory",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L445",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_resolvelaunchdirectory",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L445",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_resolvelaunchdirectory",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L445",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore",
+      "target": "stores_sessionstore_sessionstore_normalizedcwd",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L456",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_normalizedcwd",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L456",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_normalizedcwd",
+      "target": "sources_agentboard_stores_sessionstore_swift_string",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L456",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_init",
+      "target": "stores_sessionstore_sessionstore_load",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_activate",
+      "target": "stores_sessionstore_sessionstore_sync",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "stores_sessionstore_sessionstore_resolvelaunchdirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L97",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_agentsession",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_terminalsessioncontroller",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_addsession",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_closesession",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_requestclosesession",
+      "target": "stores_sessionstore_sessionstore_closesession",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_confirmpendingclose",
+      "target": "stores_sessionstore_sessionstore_closesession",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_restartsession",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_restartsession",
+      "target": "stores_sessionstore_sessionstore_resolvelaunchdirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_restartsession",
+      "target": "sources_agentboard_stores_sessionstore_swift_terminalsessioncontroller",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_restartsession",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_movesessions",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setsummary",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L228",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setsummary",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setagentlabel",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L237",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_setagentlabel",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_updatetaillimit",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L256",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_focusselectedterminalasync",
+      "target": "stores_sessionstore_sessionstore_focusselectedterminal",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L266",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_updatecwd",
+      "target": "stores_sessionstore_sessionstore_normalizedcwd",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_updatecwd",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L275",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_updatecwd",
+      "target": "stores_sessionstore_sessionstore_schedulesave",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L281",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_handleprocessexit",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L286",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_handleprocessexit",
+      "target": "stores_sessionstore_sessionstore_notifyifbackground",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L292",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_handleprocessexit",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L294",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_sync",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L307",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_sync",
+      "target": "stores_sessionstore_sessionstore_notifyifbackground",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L332",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_sync",
+      "target": "stores_sessionstore_sessionstore_schedulesave",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_handleselectionchange",
+      "target": "stores_sessionstore_sessionstore_sessionindex",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L352",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_load",
+      "target": "data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L388",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_load",
+      "target": "stores_sessionstore_sessionstore_backupcorruptfile",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L398",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_backupcorruptfile",
+      "target": "sources_agentboard_stores_sessionstore_swift_int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L404",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_schedulesave",
+      "target": "sources_agentboard_stores_sessionstore_swift_dispatchworkitem",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L416",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_schedulesave",
+      "target": "stores_sessionstore_sessionstore_savenow",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L416",
+      "weight": 1.0
+    },
+    {
+      "source": "stores_sessionstore_sessionstore_savenow",
+      "target": "stores_sessionstore_sessionstore_encodetrimmed",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Stores/SessionStore.swift",
+      "source_location": "L423",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview",
+      "target": "swiftui",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview",
+      "target": "views_terminaldetailview_terminaldetailview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_terminaldetailview",
+      "target": "view",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_terminaldetailview",
+      "target": "sources_agentboard_views_terminaldetailview_swift_sessionstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L5",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminaldetailview",
+      "target": "preferencesstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L6",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminaldetailview",
+      "target": "view",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview",
+      "target": "views_terminaldetailview_terminalcontainer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "view",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "sources_agentboard_views_terminaldetailview_swift_sessionstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L30",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "preferencesstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "sources_agentboard_views_terminaldetailview_swift_agentsession",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L33",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "sources_agentboard_views_terminaldetailview_swift_terminalsessioncontroller",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "sources_agentboard_views_terminaldetailview_swift_bool",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "view",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L42",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "views_terminaldetailview_terminalcontainer_openfind",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "views_terminaldetailview_terminalcontainer_closefind",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "views_terminaldetailview_terminalcontainer_findnext",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_terminalcontainer",
+      "target": "views_terminaldetailview_terminalcontainer_findprevious",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview",
+      "target": "views_terminaldetailview_exitedplaceholder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_exitedplaceholder",
+      "target": "view",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_exitedplaceholder",
+      "target": "sources_agentboard_views_terminaldetailview_swift_sessionstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L97",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_exitedplaceholder",
+      "target": "sources_agentboard_views_terminaldetailview_swift_agentsession",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L99",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_exitedplaceholder",
+      "target": "view",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L101",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview",
+      "target": "views_terminaldetailview_emptydetailview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_emptydetailview",
+      "target": "view",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminaldetailview_emptydetailview",
+      "target": "sources_agentboard_views_terminaldetailview_swift_sessionstore",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L148",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminaldetailview_emptydetailview",
+      "target": "view",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalDetailView.swift",
+      "source_location": "L150",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminalrepresentable",
+      "target": "swiftui",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable",
+      "target": "appkit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable",
+      "target": "views_terminalrepresentable_terminalrepresentable",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable",
+      "target": "nsviewrepresentable",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable",
+      "target": "sources_agentboard_views_terminalrepresentable_swift_terminalsessioncontroller",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable",
+      "target": "sources_agentboard_views_terminalrepresentable_swift_double",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable",
+      "target": "views_terminalrepresentable_terminalrepresentable_makensview",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_makensview",
+      "target": "context",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_makensview",
+      "target": "agentterminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable",
+      "target": "views_terminalrepresentable_terminalrepresentable_updatensview",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_updatensview",
+      "target": "agentterminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_updatensview",
+      "target": "context",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable",
+      "target": "views_terminalrepresentable_terminalrepresentable_applyappearance",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_applyappearance",
+      "target": "agentterminalview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L31",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable",
+      "target": "views_terminalrepresentable_terminalrepresentable_font",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_font",
+      "target": "sources_agentboard_views_terminalrepresentable_swift_double",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "parameter_type"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_font",
+      "target": "sources_agentboard_views_terminalrepresentable_swift_nsfont",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L39",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_makensview",
+      "target": "views_terminalrepresentable_terminalrepresentable_font",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_makensview",
+      "target": "views_terminalrepresentable_terminalrepresentable_applyappearance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_updatensview",
+      "target": "views_terminalrepresentable_terminalrepresentable_font",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "views_terminalrepresentable_terminalrepresentable_updatensview",
+      "target": "views_terminalrepresentable_terminalrepresentable_applyappearance",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Sources/AgentBoard/Views/TerminalRepresentable.swift",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests",
+      "target": "foundation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests",
+      "target": "testing",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests",
+      "target": "agentboard",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_loadssessionsasexited",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_roundtripssessionmetadataonsave",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_trimsrecenttailtotaillimitonsave",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_selectbyorderchoosessessionbyflatindex",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_restartrelaunchesexitedsession",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_restartswapscontrollerinstance",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L141",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "target": "tests_agentboardtests_sessionstorepersistencetests_swift_url",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L141",
+      "weight": 1.0,
+      "context": "return_type"
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_loadssessionsasexited",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_roundtripssessionmetadataonsave",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_trimsrecenttailtotaillimitonsave",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_selectbyorderchoosessessionbyflatindex",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_restartrelaunchesexitedsession",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_restartswapscontrollerinstance",
+      "target": "agentboardtests_sessionstorepersistencetests_sessionstorepersistencetests_maketemporarydirectory",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Tests/AgentBoardTests/SessionStorePersistenceTests.swift",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "services_commandhistorystore_commandhistorystore_load",
+      "target": "data",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "Sources/AgentBoard/Services/CommandHistoryStore.swift",
+      "source_location": "L60",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

@@ -113,6 +113,31 @@ struct SessionStorePersistenceTests {
         #expect(store.sessions.isEmpty)
     }
 
+    @Test("Restart swaps in a fresh controller instance")
+    func restartSwapsControllerInstance() throws {
+        // The detail view keys its hosted NSView on the controller's `instanceID`. If a restart
+        // reused the same controller (or instance id), SwiftUI would keep showing the dead terminal
+        // instead of the new live one. This guards that the instance — and thus the view — changes.
+        let directory = try makeTemporaryDirectory()
+        defer { try? FileManager.default.removeItem(at: directory) }
+
+        let session = AgentSession(cwd: NSHomeDirectory(), shellPath: "/bin/zsh", status: .exited)
+        let store = SessionStore(directory: directory, tailLimit: 50)
+        store.sessions = [session]
+        store.selection = session.id
+
+        store.restartSession(id: session.id)
+        let firstInstance = store.controller(for: session.id)?.instanceID
+        #expect(firstInstance != nil)
+
+        store.restartSession(id: session.id)
+        let secondInstance = store.controller(for: session.id)?.instanceID
+        #expect(secondInstance != nil)
+        #expect(firstInstance != secondInstance)
+
+        store.closeSession(id: session.id)
+    }
+
     private func makeTemporaryDirectory() throws -> URL {
         let url = FileManager.default.temporaryDirectory
             .appendingPathComponent("AgentBoardTests-\(UUID().uuidString)", isDirectory: true)

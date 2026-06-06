@@ -1,0 +1,9 @@
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/.claude/settings.json
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/App/AppDelegate.swift
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/CommandHistoryStore.swift
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/TerminalSessionController.swift
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Stores/SessionStore.swift
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/TerminalDetailView.swift
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/TerminalRepresentable.swift
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/Tests/AgentBoardTests/SessionStorePersistenceTests.swift
+/Users/fahmidhasantaohid/Documents/Development/Agentboard/CLAUDE.md

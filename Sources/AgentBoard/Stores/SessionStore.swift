@@ -118,13 +118,14 @@ final class SessionStore: ObservableObject {
             tailLimit: tailLimit,
             seedTail: [],
             store: self,
+            fontSize: PreferencesStore.shared.preferences.terminalFontSize,
             initialCommand: hasCommand ? trimmedCommand : nil
         )
         controllers[session.id] = controller
+        // Assigning selection drives `handleSelectionChange`, which marks this controller selected
+        // and focuses it — no need to repeat that work here.
         selection = session.id
-        controller.isSelected = true
         saveNow()
-        controller.focusTerminal()
         return session.id
     }
 
@@ -157,15 +158,6 @@ final class SessionStore: ObservableObject {
         }
     }
 
-    func requestCloseSession(id: UUID, confirmClose: Bool) {
-        guard sessions.contains(where: { $0.id == id }) else { return }
-        if confirmClose {
-            pendingCloseID = id
-        } else {
-            closeSession(id: id)
-        }
-    }
-
     func confirmPendingClose() {
         guard let id = pendingCloseID else { return }
         pendingCloseID = nil
@@ -191,7 +183,8 @@ final class SessionStore: ObservableObject {
             cwd: cwd,
             tailLimit: tailLimit,
             seedTail: stored.recentTail,
-            store: self
+            store: self,
+            fontSize: PreferencesStore.shared.preferences.terminalFontSize
         )
         controllers[id] = controller
         controller.isSelected = (selection == id)
@@ -348,19 +341,26 @@ final class SessionStore: ObservableObject {
             controller.isSelected = false
         }
         guard let current = selection, let controller = controllers[current] else { return }
-        controller.isSelected = true // didSet clears any pending bell + attention badge
-        // Reflect cleared attention immediately rather than waiting for the next tick.
-        if let index = sessions.firstIndex(where: { $0.id == current }), sessions[index].status == .attentionNeeded {
-            sessions[index].status = statusService.evaluate(
-                now: Date(),
-                lastActivityAt: sessions[index].lastActivityAt,
-                isProcessRunning: controller.isProcessRunning,
-                exitCode: sessions[index].exitCode,
-                attentionSignaled: false,
-                isSelected: true
-            )
+        controller.isSelected = true // clears any pending bell + attention badge on the controller
+
+        // The sidebar's `List(selection:)` binding can drive this `didSet` from inside a SwiftUI
+        // view update. Publishing a `sessions` change or poking AppKit focus there is undefined
+        // behavior, so defer both to the next runloop tick — imperceptible to the user.
+        DispatchQueue.main.async { [weak self] in
+            guard let self, self.selection == current else { return }
+            // Reflect cleared attention immediately rather than waiting for the next sync tick.
+            if let index = self.sessionIndex(for: current), self.sessions[index].status == .attentionNeeded {
+                self.sessions[index].status = self.statusService.evaluate(
+                    now: Date(),
+                    lastActivityAt: self.sessions[index].lastActivityAt,
+                    isProcessRunning: controller.isProcessRunning,
+                    exitCode: self.sessions[index].exitCode,
+                    attentionSignaled: false,
+                    isSelected: true
+                )
+            }
+            controller.focusTerminal()
         }
-        controller.focusTerminal()
     }
 
     private func notifyIfBackground(session: AgentSession, newStatus: SessionStatus) {

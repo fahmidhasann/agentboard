@@ -9,8 +9,11 @@ struct TerminalDetailView: View {
         Group {
             if let id = store.selection, let session = store.session(id: id) {
                 if let controller = store.controller(for: id) {
+                    // Key on the controller instance, not the session id: a restart keeps the same
+                    // session id but produces a fresh controller + live NSView, and SwiftUI must
+                    // rebuild the host so the new terminal is actually shown.
                     TerminalContainer(session: session, controller: controller)
-                        .id(id)
+                        .id(controller.instanceID)
                 } else {
                     ExitedPlaceholder(session: session)
                         .id(id)

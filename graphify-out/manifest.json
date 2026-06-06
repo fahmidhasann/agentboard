@@ -50,8 +50,8 @@
     "semantic_hash": "3ffe13d09624623599b5001fa531a989"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/TerminalSessionController.swift": {
-    "mtime": 1780743948.423235,
-    "ast_hash": "181badc0d597f4e915ef1bf913924b48",
+    "mtime": 1780756126.820229,
+    "ast_hash": "2019d729c28c114c9923f2b842539ead",
     "semantic_hash": ""
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Stores/PreferencesStore.swift": {
@@ -60,8 +60,8 @@
     "semantic_hash": "9a2412aa1472d9be66790f2257559f80"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Stores/SessionStore.swift": {
-    "mtime": 1780742355.384674,
-    "ast_hash": "17a94dfd96ad4918a3f280e85f636922",
+    "mtime": 1780756036.2774794,
+    "ast_hash": "8293beeed13ce5bc39a571f1691ad325",
     "semantic_hash": ""
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Support/AppPaths.swift": {
@@ -115,9 +115,9 @@
     "semantic_hash": "4c2d9652a8952f0899ed4407b686c36d"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/TerminalDetailView.swift": {
-    "mtime": 1780592688.7748742,
-    "ast_hash": "78a6bef80f6d6e1c9e173db6ff4c4672",
-    "semantic_hash": "78a6bef80f6d6e1c9e173db6ff4c4672"
+    "mtime": 1780756017.143499,
+    "ast_hash": "d4d46ba48464d8b13e3e7f56866bc844",
+    "semantic_hash": ""
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/TerminalRepresentable.swift": {
     "mtime": 1780742341.8885818,
@@ -240,9 +240,9 @@
     "semantic_hash": "8e61851ebf6ca15bcf006e5f5fdc25eb"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Tests/AgentBoardTests/SessionStorePersistenceTests.swift": {
-    "mtime": 1780589213.7190645,
-    "ast_hash": "0161e401a429ed1cb298a782870080bd",
-    "semantic_hash": "0161e401a429ed1cb298a782870080bd"
+    "mtime": 1780756272.4874392,
+    "ast_hash": "930532630465d43df6f69edbc5b244ed",
+    "semantic_hash": ""
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Tests/AgentBoardTests/TerminalBufferTests.swift": {
     "mtime": 1780589269.625577,
@@ -275,7 +275,7 @@
     "semantic_hash": "f715a9eb6af7fc0551801ef2b3a31e90"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/.claude/settings.json": {
-    "mtime": 1780743027.223387,
+    "mtime": 1780755269.1578045,
     "ast_hash": "87f0d903477984d0587a02f8fe185263",
     "semantic_hash": ""
   }
