@@ -10,9 +10,9 @@
     "semantic_hash": "f9d212657fa914889878657a8c377425"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/App/AppDelegate.swift": {
-    "mtime": 1780742346.1796882,
-    "ast_hash": "26e17f0ef7da0359c0e184621761e7e2",
-    "semantic_hash": ""
+    "mtime": 1780507047.6610587,
+    "ast_hash": "40f5847c9ca97ca3fcc4932dffa8369d",
+    "semantic_hash": "40f5847c9ca97ca3fcc4932dffa8369d"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Models/AgentBoardPreferences.swift": {
     "mtime": 1780659014.297502,
@@ -50,9 +50,9 @@
     "semantic_hash": "3ffe13d09624623599b5001fa531a989"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/TerminalSessionController.swift": {
-    "mtime": 1780743948.423235,
-    "ast_hash": "181badc0d597f4e915ef1bf913924b48",
-    "semantic_hash": ""
+    "mtime": 1780668508.6504745,
+    "ast_hash": "4fbeae09cda9577912394eaf8eaf3755",
+    "semantic_hash": "4fbeae09cda9577912394eaf8eaf3755"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Stores/PreferencesStore.swift": {
     "mtime": 1780594585.9582415,
@@ -60,9 +60,9 @@
     "semantic_hash": "9a2412aa1472d9be66790f2257559f80"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Stores/SessionStore.swift": {
-    "mtime": 1780742355.384674,
-    "ast_hash": "17a94dfd96ad4918a3f280e85f636922",
-    "semantic_hash": ""
+    "mtime": 1780593384.3663547,
+    "ast_hash": "a380d2aca772e3faf825c39809a1d29e",
+    "semantic_hash": "a380d2aca772e3faf825c39809a1d29e"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Support/AppPaths.swift": {
     "mtime": 1780593373.4421444,
@@ -120,9 +120,9 @@
     "semantic_hash": "78a6bef80f6d6e1c9e173db6ff4c4672"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Views/TerminalRepresentable.swift": {
-    "mtime": 1780742341.8885818,
-    "ast_hash": "bf64e76153d70e6876cc96759e2f2570",
-    "semantic_hash": ""
+    "mtime": 1780505369.2332046,
+    "ast_hash": "74ff3690c84fc69756200b34bf2c67d2",
+    "semantic_hash": "74ff3690c84fc69756200b34bf2c67d2"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/script/build_and_run.sh": {
     "mtime": 1780417700.536349,
@@ -155,9 +155,9 @@
     "semantic_hash": "73093b04211ab5b6375e6ac13d655eea"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/CLAUDE.md": {
-    "mtime": 1780742028.9395552,
-    "ast_hash": "3683d42b231cbc6e9694f37013dc1148",
-    "semantic_hash": ""
+    "mtime": 1780589198.3426836,
+    "ast_hash": "add999782c07ba4d31bd9582250da067",
+    "semantic_hash": "add999782c07ba4d31bd9582250da067"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/README.md": {
     "mtime": 1780611276.4048471,
@@ -175,9 +175,9 @@
     "semantic_hash": "7d3f8a01887b7e4f0afe8c146959daf6"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/CommandHistoryStore.swift": {
-    "mtime": 1780742335.9368486,
-    "ast_hash": "8ca8e2d5b74da53a68e112647358bddc",
-    "semantic_hash": ""
+    "mtime": 1780658939.952269,
+    "ast_hash": "6a00688fc4bf05be27d61d4888c455f4",
+    "semantic_hash": "6a00688fc4bf05be27d61d4888c455f4"
   },
   "/Users/fahmidhasantaohid/Documents/Development/Agentboard/Sources/AgentBoard/Services/InlineAutocompleteEngine.swift": {
     "mtime": 1780668708.2749379,
@@ -273,10 +273,5 @@
     "mtime": 1780330983.5864272,
     "ast_hash": "f715a9eb6af7fc0551801ef2b3a31e90",
     "semantic_hash": "f715a9eb6af7fc0551801ef2b3a31e90"
-  },
-  "/Users/fahmidhasantaohid/Documents/Development/Agentboard/.claude/settings.json": {
-    "mtime": 1780743027.223387,
-    "ast_hash": "87f0d903477984d0587a02f8fe185263",
-    "semantic_hash": ""
   }
 }
