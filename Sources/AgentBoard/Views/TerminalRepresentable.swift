@@ -21,7 +21,9 @@ struct TerminalRepresentable: NSViewRepresentable {
     func updateNSView(_ nsView: AgentTerminalView, context: Context) {
         let target = CGFloat(fontSize)
         if abs(nsView.font.pointSize - target) > 0.5 {
-            nsView.font = Self.font(size: fontSize)
+            let newFont = Self.font(size: fontSize)
+            nsView.font = newFont
+            nsView.updateAutocompleteFont(newFont)
         }
         applyAppearance(to: nsView)
     }

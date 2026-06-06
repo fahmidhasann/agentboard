@@ -75,6 +75,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
+        CommandHistoryStore.shared.saveNow()
         SessionStore.shared.saveNow()
     }
 

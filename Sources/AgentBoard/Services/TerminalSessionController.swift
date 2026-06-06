@@ -68,6 +68,13 @@ final class AgentTerminalView: LocalProcessTerminalView {
         if ghostOverlay.superview == nil {
             addSubview(ghostOverlay)
         }
+        guard window != nil, let process = self.process, process.running else { return }
+        DispatchQueue.main.async { [self] in
+            terminal.updateFullScreen()
+            needsDisplay = true
+            var size = self.getWindowSize()
+            let _ = PseudoTerminalHelpers.setWinSize(masterPtyDescriptor: process.childfd, windowSize: &size)
+        }
     }
 
     func applyThemeColors() {

@@ -1,179 +1,213 @@
-# Graph Report - .  (2026-06-01)
+# Graph Report - .  (2026-06-06)
 
 ## Corpus Check
-- Corpus is ~43,549 words - fits in a single context window. You may not need a graph.
+- 55 files · ~57,025 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 401 nodes · 593 edges · 29 communities (22 shown, 7 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.76)
+- 605 nodes · 987 edges · 38 communities (27 shown, 11 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.82)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
+- [[_COMMUNITY_Update Check & Codable Infra|Update Check & Codable Infra]]
+- [[_COMMUNITY_Terminal Session Controller|Terminal Session Controller]]
+- [[_COMMUNITY_Session Store & Persistence|Session Store & Persistence]]
+- [[_COMMUNITY_Views & UI Components|Views & UI Components]]
+- [[_COMMUNITY_Terminal Buffer Tests|Terminal Buffer Tests]]
+- [[_COMMUNITY_Update & Preferences Tests|Update & Preferences Tests]]
+- [[_COMMUNITY_Command Palette Tests & App Entry|Command Palette Tests & App Entry]]
 - [[_COMMUNITY_Preferences Model|Preferences Model]]
-- [[_COMMUNITY_Main Views State|Main Views State]]
-- [[_COMMUNITY_Session Persistence|Session Persistence]]
-- [[_COMMUNITY_Terminal Controller|Terminal Controller]]
-- [[_COMMUNITY_Core UI Flow|Core UI Flow]]
-- [[_COMMUNITY_App Architecture Docs|App Architecture Docs]]
-- [[_COMMUNITY_Terminal Text Parsing|Terminal Text Parsing]]
-- [[_COMMUNITY_App Lifecycle|App Lifecycle]]
-- [[_COMMUNITY_Label Inference|Label Inference]]
-- [[_COMMUNITY_Terminal Bridge View|Terminal Bridge View]]
-- [[_COMMUNITY_New Session Flow|New Session Flow]]
-- [[_COMMUNITY_App Commands|App Commands]]
-- [[_COMMUNITY_Command Palette|Command Palette]]
-- [[_COMMUNITY_Status Evaluation|Status Evaluation]]
-- [[_COMMUNITY_Preferences Store|Preferences Store]]
-- [[_COMMUNITY_Notifications|Notifications]]
-- [[_COMMUNITY_Shell Resolution|Shell Resolution]]
+- [[_COMMUNITY_Ghost Text & NSView Bridge|Ghost Text & NSView Bridge]]
+- [[_COMMUNITY_Session Store Tests|Session Store Tests]]
+- [[_COMMUNITY_Inline Autocomplete Engine|Inline Autocomplete Engine]]
+- [[_COMMUNITY_App Delegate Lifecycle|App Delegate Lifecycle]]
+- [[_COMMUNITY_Notification Service|Notification Service]]
+- [[_COMMUNITY_Session Sheets (NewRename)|Session Sheets (New/Rename)]]
+- [[_COMMUNITY_Label Inference Tests|Label Inference Tests]]
+- [[_COMMUNITY_Autocomplete Engine Tests|Autocomplete Engine Tests]]
+- [[_COMMUNITY_Hero Screenshot UI|Hero Screenshot UI]]
+- [[_COMMUNITY_Command History Tests|Command History Tests]]
+- [[_COMMUNITY_Landing Page Features|Landing Page Features]]
+- [[_COMMUNITY_Command Palette View|Command Palette View]]
+- [[_COMMUNITY_App Version Parsing|App Version Parsing]]
+- [[_COMMUNITY_Status Service|Status Service]]
+- [[_COMMUNITY_Build & Deploy Scripts|Build & Deploy Scripts]]
+- [[_COMMUNITY_Shell Resolver|Shell Resolver]]
 - [[_COMMUNITY_App Icon Design|App Icon Design]]
-- [[_COMMUNITY_Vercel Project Metadata|Vercel Project Metadata]]
-- [[_COMMUNITY_Vercel Build Config|Vercel Build Config]]
-- [[_COMMUNITY_App Paths|App Paths]]
-- [[_COMMUNITY_Vercel Site Setup|Vercel Site Setup]]
-- [[_COMMUNITY_Attention Sanitization|Attention Sanitization]]
-- [[_COMMUNITY_Build Script|Build Script]]
-- [[_COMMUNITY_DMG Packaging|DMG Packaging]]
-- [[_COMMUNITY_Version Script|Version Script]]
-- [[_COMMUNITY_Test Script|Test Script]]
+- [[_COMMUNITY_Vercel Config|Vercel Config]]
+- [[_COMMUNITY_SwiftPM Manifest|SwiftPM Manifest]]
+- [[_COMMUNITY_Test Runner Script|Test Runner Script]]
+- [[_COMMUNITY_CICD Workflows|CI/CD Workflows]]
+- [[_COMMUNITY_Find Bar|Find Bar]]
+- [[_COMMUNITY_Shell Resolver (singleton)|Shell Resolver (singleton)]]
+- [[_COMMUNITY_Project Documentation|Project Documentation]]
+- [[_COMMUNITY_Launch Config|Launch Config]]
+- [[_COMMUNITY_Notification Service (singleton)|Notification Service (singleton)]]
+- [[_COMMUNITY_Test Script Wrapper|Test Script Wrapper]]
+- [[_COMMUNITY_Status Evaluator|Status Evaluator]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `SessionStore` - 35 edges
-2. `TerminalSessionController` - 23 edges
-3. `SessionStore` - 19 edges
-4. `AppDelegate` - 13 edges
-5. `UUID` - 12 edges
-6. `TerminalContainer` - 12 edges
-7. `SessionStatus` - 11 edges
-8. `AgentSession` - 11 edges
-9. `NewSessionSheet` - 11 edges
-10. `AppTheme` - 10 edges
+1. `SessionStore` - 63 edges
+2. `TerminalSessionController` - 35 edges
+3. `UpdateCheckService` - 30 edges
+4. `InlineAutocompleteEngine` - 23 edges
+5. `AppDelegate` - 18 edges
+6. `CommandHistoryStore` - 17 edges
+7. `AgentTerminalView` - 17 edges
+8. `PreferencesStore` - 17 edges
+9. `AgentSession` - 15 edges
+10. `NewSessionSheet` - 15 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Release Workflow` --semantically_similar_to--> `DMG Packager`  [INFERRED] [semantically similar]
-  .github/workflows/release.yml → script/create_dmg.sh
-- `AgentBoard Website Landing Page` --references--> `Central App Version`  [INFERRED]
-  site/index.html → script/version.sh
-- `Notification Service` --conceptually_related_to--> `Unsigned Gatekeeper Distribution`  [INFERRED]
-  Sources/AgentBoard/Services/NotificationService.swift → README.md
-- `Terminal Session Controller` --implements--> `Terminal Output Pipeline`  [EXTRACTED]
-  Sources/AgentBoard/Services/TerminalSessionController.swift → CLAUDE.md
-- `Terminal Session Controller` --shares_data_with--> `Recent Line Buffer`  [EXTRACTED]
-  Sources/AgentBoard/Services/TerminalSessionController.swift → CLAUDE.md
+- `CommandHistoryStore` --conceptually_related_to--> `Debounced Persistence Strategy`  [INFERRED]
+  Sources/AgentBoard/Services/CommandHistoryStore.swift → CLAUDE.md
+- `Debounced Persistence Strategy` --rationale_for--> `PreferencesStore`  [INFERRED]
+  CLAUDE.md → Sources/AgentBoard/Stores/PreferencesStore.swift
+- `Persisted Value-Type Metadata vs Non-Persisted Live Controllers` --rationale_for--> `SessionStore`  [EXTRACTED]
+  CLAUDE.md → Sources/AgentBoard/Stores/SessionStore.swift
+- `Persisted Value-Type Metadata vs Non-Persisted Live Controllers` --rationale_for--> `TerminalSessionController`  [EXTRACTED]
+  CLAUDE.md → Sources/AgentBoard/Services/TerminalSessionController.swift
+- `Periodic Sync Loop (0.5s timer coalescing)` --rationale_for--> `SessionStore`  [EXTRACTED]
+  CLAUDE.md → Sources/AgentBoard/Stores/SessionStore.swift
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Release Packaging Pipeline** — release_release_workflow, script_create_dmg_packager, script_build_and_run_launcher, script_version_app_version [EXTRACTED 1.00]
-- **Persisted Session Architecture** — agentsession_agent_session, external_session_store, terminalsessioncontroller_terminal_controller, concept_persisted_metadata_live_controllers [EXTRACTED 1.00]
-- **Terminal Output Pipeline** — terminalsessioncontroller_agent_terminal_view, terminalsessioncontroller_terminal_controller, external_recent_line_buffer, labelinferenceservice_label_inference, external_attention_evaluator [EXTRACTED 1.00]
-- **Session Lifecycle Flow** — SessionStore_SessionStore, SessionStore_AgentSession, SessionStore_TerminalSessionController, ShellResolver_ShellResolver [EXTRACTED 1.00]
-- **Terminal Find Flow** — TerminalDetailView_TerminalContainer, FindBar_FindBar, SessionStore_TerminalSessionController [EXTRACTED 1.00]
-- **Quick Launch Preferences Flow** — PreferencesStore_PreferencesStore, ContentView_ContentView, NewSessionSheet_NewSessionSheet, SettingsView_SettingsView, SessionStore_AgentLaunchConfig [INFERRED 0.85]
 - **Command Prompt To Agent Workflow Icon** — appicon_agentboard_app_icon, appicon_terminal_prompt_symbol, appicon_agent_workflow_lanes, appicon_status_nodes [INFERRED 0.85]
+- **Terminal Output Pipeline Flow** — services_terminalsessioncontroller_agentterminalview, support_recentlinebuffer_utf8streamdecoder, support_recentlinebuffer_ansisanitizer, support_recentlinebuffer_recentlinebuffer, support_recentlinebuffer_attentionevaluator [EXTRACTED 1.00]
+- **Singleton Services (shared instances)** — stores_sessionstore_sessionstore, stores_preferencesstore_preferencesstore, services_commandpalettemodel_commandpalettemodel, services_updatecheckservice_updatecheckservice, services_commandhistorystore_commandhistorystore [EXTRACTED 1.00]
+- **JSON Persistence Layer** — stores_sessionstore_sessionstore, stores_preferencesstore_preferencesstore, services_commandhistorystore_commandhistorystore, support_apppaths_apppaths, support_jsonhelpers_jsonencoder_agentboard [EXTRACTED 1.00]
+- **Sheet Dismiss and Refocus Pattern** — views_newsessionsheet_newsessionsheet, views_renamesheet_renamesheet, docs_refactoring_checklist_sheet_dismiss_pattern [EXTRACTED 0.95]
+- **Session Action Button Consumers** — views_sessionactionbuttons_sessionactionbuttons, views_sidebarview_sidebarview, views_terminaldetailview_terminalcontainer [EXTRACTED 1.00]
+- **Build and Release Pipeline** — script_build_and_run, script_create_dmg, script_version, site_vercel_json [EXTRACTED 0.95]
+- **AgentBoard Core Feature Set** — site_index_feature_monitor_sessions, site_index_feature_spot_attention, site_index_feature_restart_with_history, site_index_feature_native_macos_workflow [EXTRACTED 1.00]
+- **Supported Agent Ecosystem** — site_index_supported_agents, site_index_agent_heavy_development, site_index_feature_monitor_sessions, site_index_feature_spot_attention [INFERRED 0.85]
+- **Multiple AI Agent Sessions Displayed** — assets_agentboard_hero_claude_session, assets_agentboard_hero_codex_session, assets_agentboard_hero_gemini_session, assets_agentboard_hero_aider_session, assets_agentboard_hero_shell_session [EXTRACTED 1.00]
+- **macOS NavigationSplitView UI Layout** — assets_agentboard_hero_sidebar, assets_agentboard_hero_terminal_detail, assets_agentboard_hero_toolbar, assets_agentboard_hero_statusbar, assets_agentboard_hero_navigationsplitview [EXTRACTED 1.00]
 
-## Communities (29 total, 7 thin omitted)
+## Communities (38 total, 11 thin omitted)
 
-### Community 0 - "Preferences Model"
+### Community 0 - "Update Check & Codable Infra"
+Cohesion: 0.07
+Nodes (37): AppVersion, CodingKey, Decodable, Equatable, LocalizedError, Asset, AvailableUpdate, CodingKeys (+29 more)
+
+### Community 1 - "Terminal Session Controller"
+Cohesion: 0.07
+Nodes (24): CGPoint, CGSize, Persisted Value-Type Metadata vs Non-Persisted Live Controllers, LabelInferenceService, LocalProcessTerminalView, LocalProcessTerminalViewDelegate, RecentLineBuffer, AgentTerminalView (+16 more)
+
+### Community 2 - "Session Store & Persistence"
+Cohesion: 0.09
+Nodes (18): SessionStorePersistenceTests, Debounced Persistence Strategy, Periodic Sync Loop (0.5s timer coalescing), IndexSet, AgentLaunchConfig, AgentSession, Bool, DispatchWorkItem (+10 more)
+
+### Community 3 - "Views & UI Components"
 Cohesion: 0.06
-Nodes (42): CaseIterable, Codable, Decoder, Identifiable, AgentBoardPreferences, AppTheme, dark, light (+34 more)
+Nodes (37): Color, Refactoring Checklist, Session Action Button Consolidation, FocusState, FolderGroup, Identifiable, Bool, String (+29 more)
 
-### Community 1 - "Main Views State"
-Cohesion: 0.05
-Nodes (35): Color, FocusState, FolderGroup, CommandPaletteModel, PreferencesStore, SessionStore, Bool, String (+27 more)
-
-### Community 2 - "Session Persistence"
-Cohesion: 0.11
-Nodes (15): Data, DispatchWorkItem, IndexSet, AgentLaunchConfig, AgentSession, FileManager, Int, Int32 (+7 more)
-
-### Community 3 - "Terminal Controller"
+### Community 4 - "Terminal Buffer Tests"
 Cohesion: 0.10
-Nodes (18): ArraySlice, LabelInferenceService, LocalProcessTerminalView, LocalProcessTerminalViewDelegate, RecentLineBuffer, AgentTerminalView, TerminalSessionController, TerminalSnapshot (+10 more)
+Nodes (13): TerminalBufferTests, Terminal Output Pipeline, NSRegularExpression, S, Bool, Int, String, UInt8 (+5 more)
 
-### Community 4 - "Core UI Flow"
+### Community 5 - "Update & Preferences Tests"
+Cohesion: 0.06
+Nodes (18): AgentBoardPreferencesMigrationTests, AppVersionTests, UpdateCheckServiceTests, ColorScheme, Data, AgentBoardPreferences, URL, URL (+10 more)
+
+### Community 6 - "Command Palette Tests & App Entry"
+Cohesion: 0.07
+Nodes (24): CommandPaletteModelTests, App, AgentBoardApp, AppCommands, Commands, ObservableObject, Scene, Action (+16 more)
+
+### Community 7 - "Preferences Model"
 Cohesion: 0.10
-Nodes (34): AppPaths, AppDelegate, CommandPaletteModel, CommandPaletteView, PaletteRow, ContentView, FindBar, NewSessionSheet (+26 more)
+Nodes (27): CaseIterable, Codable, Decoder, AgentBoardPreferences, AppTheme, dark, light, system (+19 more)
 
-### Community 5 - "App Architecture Docs"
-Cohesion: 0.08
-Nodes (34): App Menu Commands, AgentBoard SwiftUI App Shell, App Theme, AgentBoard Preferences, Agent Launch Config, Agent Session Metadata, Session Status, Application Lifecycle Delegate (+26 more)
+### Community 8 - "Ghost Text & NSView Bridge"
+Cohesion: 0.10
+Nodes (17): CGFloat, Context, NSCoder, NSPoint, NSRect, NSView, NSViewRepresentable, Bool (+9 more)
 
-### Community 6 - "Terminal Text Parsing"
-Cohesion: 0.16
-Nodes (10): NSRegularExpression, S, Bool, Int, String, UInt8, AnsiSanitizer, AttentionEvaluator (+2 more)
+### Community 9 - "Session Store Tests"
+Cohesion: 0.13
+Nodes (8): SessionStorePersistenceTests, CommandHistoryStore, DispatchWorkItem, Int, String, URL, JSONEncoder, URL
 
-### Community 7 - "App Lifecycle"
-Cohesion: 0.16
+### Community 10 - "Inline Autocomplete Engine"
+Cohesion: 0.15
+Nodes (12): InlineAutocompleteEngine, State, collecting, inactive, suggesting, AgentTerminalView, ArraySlice, Bool (+4 more)
+
+### Community 11 - "App Delegate Lifecycle"
+Cohesion: 0.15
 Nodes (8): Any, AppDelegate, Notification, NSApplication, NSApplicationDelegate, NSObject, NSWindow, Bool
 
-### Community 8 - "Label Inference"
-Cohesion: 0.30
-Nodes (6): Equatable, LabelInferenceService, Result, AgentSession, Int, String
+### Community 12 - "Notification Service"
+Cohesion: 0.12
+Nodes (12): Content, NotificationService, Bool, String, PreferencesStore, UpdateCheckService, UpdateCheckService, View (+4 more)
 
-### Community 9 - "Terminal Bridge View"
-Cohesion: 0.29
-Nodes (7): AgentTerminalView, Context, NSFont, NSViewRepresentable, Double, TerminalSessionController, TerminalRepresentable
+### Community 13 - "Session Sheets (New/Rename)"
+Cohesion: 0.13
+Nodes (11): Sheet Dismiss Pattern, AgentLaunchConfig, PreferencesStore, SessionStore, String, UUID, AgentSession, SessionStore (+3 more)
 
-### Community 10 - "New Session Flow"
-Cohesion: 0.21
-Nodes (6): AgentLaunchConfig, PreferencesStore, SessionStore, String, UUID, NewSessionSheet
-
-### Community 11 - "App Commands"
+### Community 14 - "Label Inference Tests"
 Cohesion: 0.18
-Nodes (9): App, AgentBoardApp, AppCommands, Commands, Scene, CommandPaletteModel, Double, PreferencesStore (+1 more)
+Nodes (5): LabelInferenceServiceTests, LabelInferenceService, Result, AgentSession, String
 
-### Community 12 - "Command Palette"
-Cohesion: 0.31
+### Community 15 - "Autocomplete Engine Tests"
+Cohesion: 0.24
+Nodes (3): InlineAutocompleteEngineTests, CommandHistoryStore, InlineAutocompleteEngine
+
+### Community 16 - "Hero Screenshot UI"
+Cohesion: 0.18
+Nodes (12): AgentBoard Hero Screenshot, Aider bugfix/tty Session, Claude api-refactor Session, Codex feature/cli Session, Gemini docs-sync Session, NavigationSplitView Layout Pattern, Shell server Session, Navigation Sidebar with Sessions (+4 more)
+
+### Community 18 - "Landing Page Features"
+Cohesion: 0.20
+Nodes (11): Agent-Heavy Development Workflow, Download Distribution via GitHub Releases, Feature: Monitor Sessions, Feature: Native macOS Workflow, Feature: Restart with History, Feature: Spot Attention, GitHub Repository (fahmidhasann/agentboard), Keyboard Shortcuts (Cmd+N, Cmd+1-9, Cmd+Shift+P, Cmd+K) (+3 more)
+
+### Community 19 - "Command Palette View"
+Cohesion: 0.33
 Nodes (6): Bool, CommandPaletteModel, SessionStore, String, CommandPaletteView, PaletteRow
 
-### Community 13 - "Status Evaluation"
+### Community 20 - "App Version Parsing"
+Cohesion: 0.33
+Nodes (7): Comparable, CustomStringConvertible, Bool, Int, String, AppVersion, SemanticVersion
+
+### Community 21 - "Status Service"
 Cohesion: 0.25
 Nodes (6): StatusService, Bool, Date, Int32, SessionStatus, TimeInterval
 
-### Community 14 - "Preferences Store"
-Cohesion: 0.38
-Nodes (4): AgentBoardPreferences, ColorScheme, URL, PreferencesStore
+### Community 22 - "Build & Deploy Scripts"
+Cohesion: 0.29
+Nodes (3): build_and_run.sh script, create_dmg.sh script, version.sh script
 
-### Community 15 - "Notifications"
-Cohesion: 0.40
-Nodes (3): NotificationService, Bool, String
-
-### Community 16 - "Shell Resolution"
+### Community 23 - "Shell Resolver"
 Cohesion: 0.40
 Nodes (3): FileManager, String, ShellResolver
 
-### Community 17 - "App Icon Design"
+### Community 24 - "App Icon Design"
 Cohesion: 0.50
 Nodes (5): Agent Workflow Lanes, AgentBoard App Icon, Dark Rounded Square Background, Workflow Status Nodes, Green Terminal Prompt Symbol
 
-### Community 18 - "Vercel Project Metadata"
+### Community 25 - "Vercel Config"
 Cohesion: 0.50
-Nodes (3): orgId, projectId, projectName
-
-### Community 21 - "Vercel Site Setup"
-Cohesion: 0.67
-Nodes (3): Vercel AgentBoard Project, Vercel Linked Project Notes, Vercel Static Output Configuration
+Nodes (3): buildCommand, ignoreCommand, outputDirectory
 
 ## Knowledge Gaps
-- **108 isolated node(s):** `Scene`, `SessionStore`, `CommandPaletteModel`, `PreferencesStore`, `Double` (+103 more)
+- **146 isolated node(s):** `Scene`, `SessionStore`, `CommandPaletteModel`, `PreferencesStore`, `UpdateCheckService` (+141 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `FolderGroup` connect `Preferences Model` to `Main Views State`?**
-  _High betweenness centrality (0.101) - this node is a cross-community bridge._
-- **Why does `SessionStore` connect `Session Persistence` to `Preferences Model`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `SessionStore` connect `Session Store & Persistence` to `Terminal Session Controller`, `Views & UI Components`, `Update & Preferences Tests`, `Command Palette Tests & App Entry`, `Preferences Model`, `App Delegate Lifecycle`, `Notification Service`, `Session Sheets (New/Rename)`, `Label Inference Tests`, `Command Palette View`?**
+  _High betweenness centrality (0.379) - this node is a cross-community bridge._
+- **Why does `TerminalSessionController` connect `Terminal Session Controller` to `Session Store & Persistence`, `Terminal Buffer Tests`, `Ghost Text & NSView Bridge`, `App Delegate Lifecycle`, `Label Inference Tests`?**
+  _High betweenness centrality (0.235) - this node is a cross-community bridge._
+- **Why does `UpdateCheckService` connect `Update Check & Codable Infra` to `Update & Preferences Tests`, `Command Palette Tests & App Entry`, `App Delegate Lifecycle`, `Notification Service`, `App Version Parsing`?**
+  _High betweenness centrality (0.155) - this node is a cross-community bridge._
 - **What connects `Scene`, `SessionStore`, `CommandPaletteModel` to the rest of the system?**
-  _108 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Preferences Model` be split into smaller, more focused modules?**
-  _Cohesion score 0.06184012066365008 - nodes in this community are weakly interconnected._
-- **Should `Main Views State` be split into smaller, more focused modules?**
-  _Cohesion score 0.05272108843537415 - nodes in this community are weakly interconnected._
-- **Should `Session Persistence` be split into smaller, more focused modules?**
-  _Cohesion score 0.1076923076923077 - nodes in this community are weakly interconnected._
-- **Should `Terminal Controller` be split into smaller, more focused modules?**
-  _Cohesion score 0.09682539682539683 - nodes in this community are weakly interconnected._
+  _149 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Update Check & Codable Infra` be split into smaller, more focused modules?**
+  _Cohesion score 0.07256894049346879 - nodes in this community are weakly interconnected._
+- **Should `Terminal Session Controller` be split into smaller, more focused modules?**
+  _Cohesion score 0.06862745098039216 - nodes in this community are weakly interconnected._
+- **Should `Session Store & Persistence` be split into smaller, more focused modules?**
+  _Cohesion score 0.08784313725490196 - nodes in this community are weakly interconnected._

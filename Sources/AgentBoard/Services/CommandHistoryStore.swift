@@ -44,9 +44,11 @@ final class CommandHistoryStore {
 
     private func scheduleSave() {
         saveWorkItem?.cancel()
-        let item = DispatchWorkItem { [weak self] in self?.saveNow() }
+        let item = DispatchWorkItem { [weak self] in
+            DispatchQueue.main.async { self?.saveNow() }
+        }
         saveWorkItem = item
-        DispatchQueue.global(qos: .utility).asyncAfter(deadline: .now() + 2.0, execute: item)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: item)
     }
 
     func saveNow() {

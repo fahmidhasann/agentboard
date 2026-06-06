@@ -1,0 +1,1 @@
+{"nodes": [{"id": "services_labelinferenceservice_labelinferenceservice", "label": "LabelInferenceService", "file_type": "code", "source_file": "Sources/AgentBoard/Services/LabelInferenceService.swift", "source_location": "line 7", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}

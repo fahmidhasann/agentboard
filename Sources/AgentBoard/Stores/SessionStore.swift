@@ -351,7 +351,14 @@ final class SessionStore: ObservableObject {
         controller.isSelected = true // didSet clears any pending bell + attention badge
         // Reflect cleared attention immediately rather than waiting for the next tick.
         if let index = sessions.firstIndex(where: { $0.id == current }), sessions[index].status == .attentionNeeded {
-            sessions[index].status = controller.isProcessRunning ? .running : .exited
+            sessions[index].status = statusService.evaluate(
+                now: Date(),
+                lastActivityAt: sessions[index].lastActivityAt,
+                isProcessRunning: controller.isProcessRunning,
+                exitCode: sessions[index].exitCode,
+                attentionSignaled: false,
+                isSelected: true
+            )
         }
         controller.focusTerminal()
     }

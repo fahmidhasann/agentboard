@@ -1,0 +1,1 @@
+{"nodes": [{"id": "support_jsonhelpers_jsonencoder_agentboard", "label": "JSONEncoder.agentBoard extension", "file_type": "code", "source_file": "Sources/AgentBoard/Support/JSONHelpers.swift", "source_location": "line 3", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}
